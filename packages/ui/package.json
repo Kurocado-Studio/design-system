@@ -26,6 +26,9 @@
     "typescript": "^5.3.2"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "@kurocado-studio/animation-client": "*",
+    "@kurocado-studio/css-client": "*",
+    "@kurocado-studio/ui-primitives-client": "*"
   }
 }
