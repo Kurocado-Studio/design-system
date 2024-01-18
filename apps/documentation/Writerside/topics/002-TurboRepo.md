@@ -1,6 +1,5 @@
 # TurboRepo
 
-
 ## Context
 
 Our project requires a robust solution to manage a monorepo setup that consolidates various applications and shared resources. We need a tool that simplifies dependency management, streamlines workflows, and enhances collaboration across teams. The key requirements include efficient build caching, scalable architecture, and a seamless developer experience. After evaluating several options, we focused on Turborepo due to its specific features and community support.

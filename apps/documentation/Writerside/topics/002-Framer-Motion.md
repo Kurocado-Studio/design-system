@@ -1,9 +1,11 @@
 # Framer Motion for Animations
 
 ## Context
+
 In modern web development, creating dynamic and engaging user interfaces is essential. Animation plays a key role in enhancing user experience, making interfaces more intuitive and visually appealing. After evaluating various animation libraries, our team has focused on Framer Motion, a popular animation library for React.
 
 ## Decision
+
 We have decided to adopt Framer Motion as our primary tool for implementing animations in our React applications. This decision is influenced by several key factors:
 
 1. **Simplicity and Power**: Framer Motion provides a straightforward API that simplifies the creation of complex animations. It balances ease of use with powerful capabilities, making it accessible for developers of all skill levels.
@@ -19,6 +21,7 @@ We have decided to adopt Framer Motion as our primary tool for implementing anim
 6. **Strong Community and Documentation**: The library is well-documented and supported by a robust community. This ecosystem provides valuable resources, tutorials, and third-party extensions.
 
 ## Consequences
+
 1. **Learning Curve**: While Framer Motion is user-friendly, there is a learning curve, especially for developers new to animation concepts in React.
 
 2. **Design Collaboration**: Close collaboration between developers and designers will be necessary to ensure animations align with design intent and enhance the user experience.
