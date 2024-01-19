@@ -60,10 +60,10 @@ Running `pnpm build` from the root of the Turborepo will run the `build` command
 For `acme-core`, the `build` command is the following:
 
 ```bash
-tsup src/index.tsx --format esm,cjs --dts --external react
+tsup src/index.ts --format esm,cjs --dts --external react
 ```
 
-`tsup` compiles `src/index.tsx`, which exports all of the components in the design system, into both ES Modules and CommonJS formats as well as their TypeScript types. The `package.json` for `acme-core` then instructs the consumer to select the correct format:
+`tsup` compiles `src/index.ts`, which exports all of the components in the design system, into both ES Modules and CommonJS formats as well as their TypeScript types. The `package.json` for `acme-core` then instructs the consumer to select the correct format:
 
 ```json:acme-core/package.json
 {
@@ -104,9 +104,9 @@ export function Button(props: ButtonProps) {
 Button.displayName = 'Button';
 ```
 
-When adding a new file, ensure the component is also exported from the entry `index.tsx` file:
+When adding a new file, ensure the component is also exported from the entry `index.ts` file:
 
-```tsx:acme-core/src/index.tsx
+```tsx:acme-core/src/index.ts
 import * as React from "react";
 export { Button, type ButtonProps } from "./Button";
 // Add new component exports here

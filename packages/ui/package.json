@@ -29,6 +29,7 @@
     "access": "public",
     "@kurocado-studio/animation-client": "*",
     "@kurocado-studio/css-client": "*",
+    "@kurocado-studio/ioc-client": "*",
     "@kurocado-studio/ui-core-config": "*",
     "@kurocado-studio/ui-primitives-client": "*",
     "@kurocado-studio/event-emitter-client": "*"

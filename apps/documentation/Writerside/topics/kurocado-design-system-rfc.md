@@ -64,7 +64,7 @@ graph TD
 -
 - **src**: The source directory where the actual React components and other JavaScript modules live.
 -
-- ****tests****: A dedicated directory for automated tests, enabling a test-driven development approach.
+- \***\*tests\*\***: A dedicated directory for automated tests, enabling a test-driven development approach.
   Configuration files: Essential configurations for ESLint, TypeScript, and other tools will be standardized across the repository.
 
 ## System Architecture Using Abstract Classes

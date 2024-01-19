@@ -1,7 +1,7 @@
 import { MutableRefObject } from "react";
-interface IDefaultHTMLElement extends HTMLElement {}
+import { IDefaultHTMLElement } from "@kurocado-studio/ui-core-config";
 
-abstract class ClientEvent<
+export abstract class ClientEvent<
   T,
   K extends string = string,
   R = IDefaultHTMLElement,

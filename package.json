@@ -2,9 +2,9 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --concurrency=11",
     "lint": "turbo run lint",
-    "clean": "turbo run clean && rm -rf node_modules",
+    "clean": "turbo run clean && rm -rf node_modules && yarn",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
