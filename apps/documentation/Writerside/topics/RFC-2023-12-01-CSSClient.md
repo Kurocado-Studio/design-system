@@ -1,7 +1,7 @@
 # RFC 2023-12-01 CSSClient
 
 | Status | Accepted |
-| :----- |:---------|
+| :----- | :------- |
 
 ## Background
 
@@ -70,25 +70,25 @@ dynamically, enabling a more interactive and responsive design.
 
 ```typescript
 interface ICSSClient {
-	classNames: Array<string> | undefined;
-	prependClassNames(classNames?: Array<string>): Array<string>;
-	appendClassNames(classNames?: Array<string>): Array<string>;
-	resetClassNames(): Array<never>;
-	updateTheme(classNames?: Array<string>): Array<string>;
+  classNames: Array<string> | undefined;
+  prependClassNames(classNames?: Array<string>): Array<string>;
+  appendClassNames(classNames?: Array<string>): Array<string>;
+  resetClassNames(): Array<never>;
+  updateTheme(classNames?: Array<string>): Array<string>;
 }
 
 abstract class CSSClient implements ICSSClient {
-	public abstract readonly classNames: Array<string> | undefined;
-	public abstract readonly appendClassNames: (
-		classNames?: Array<string>,
-	) => Array<string>;
-	public abstract readonly prependClassNames: (
-		classNames?: Array<string>,
-	) => Array<string>;
-	public abstract readonly resetClassNames: () => Array<never>;
-	public abstract readonly updateTheme: (
-		classNames?: Array<string>,
-	) => Array<string>;
+  public abstract readonly classNames: Array<string> | undefined;
+  public abstract readonly appendClassNames: (
+    classNames?: Array<string>,
+  ) => Array<string>;
+  public abstract readonly prependClassNames: (
+    classNames?: Array<string>,
+  ) => Array<string>;
+  public abstract readonly resetClassNames: () => Array<never>;
+  public abstract readonly updateTheme: (
+    classNames?: Array<string>,
+  ) => Array<string>;
 }
 ```
 
@@ -152,14 +152,14 @@ alternative approaches:
 1. **CSS-in-JS Libraries (e.g., Styled Components, Emotion)**:
 
    - **Pros**:
-      - Enhances component encapsulation by co-locating styles with components.
-      - Offers powerful theming capabilities and dynamic styling based on props.
-      - Eliminates class name bugs and eases refactoring.
+     - Enhances component encapsulation by co-locating styles with components.
+     - Offers powerful theming capabilities and dynamic styling based on props.
+     - Eliminates class name bugs and eases refactoring.
    - **Cons**:
-      - Adds an extra layer of abstraction and a slight learning curve.
-      - Potentially increases bundle size.
-      - May not integrate as seamlessly with utility-first CSS frameworks like
-        Tailwind.
+     - Adds an extra layer of abstraction and a slight learning curve.
+     - Potentially increases bundle size.
+     - May not integrate as seamlessly with utility-first CSS frameworks like
+       Tailwind.
    - **Analysis**: While CSS-in-JS offers more dynamic styling capabilities, it
      might not be as straightforward when used with Tailwind, which already
      provides utility classes for most styling needs.
@@ -167,33 +167,33 @@ alternative approaches:
 2. **Inline Styling or Conditional Class Names**:
 
    - **Pros**:
-      - Straightforward implementation with no additional dependencies.
-      - Good for quick, simple style changes.
+     - Straightforward implementation with no additional dependencies.
+     - Good for quick, simple style changes.
    - **Cons**:
-      - Can become unwieldy for complex styling.
-      - Lacks the scalability and maintainability offered by CSS frameworks like
-        Tailwind.
+     - Can become unwieldy for complex styling.
+     - Lacks the scalability and maintainability offered by CSS frameworks like
+       Tailwind.
    - **Analysis**: Inline styling is simple but lacks the robustness of a
      utility-first approach like Tailwind combined with `useRef`.
 
 3. **Higher-Order Components (HOCs) or Render Props**:
 
    - **Pros**:
-      - Offers reusable logic across components.
-      - Can encapsulate and abstract complex logic away from components.
+     - Offers reusable logic across components.
+     - Can encapsulate and abstract complex logic away from components.
    - **Cons**:
-      - Can make the component tree harder to understand.
-      - Adds complexity, especially for newcomers.
+     - Can make the component tree harder to understand.
+     - Adds complexity, especially for newcomers.
    - **Analysis**: HOCs or render props provide reusable solutions but might be
      unnecessarily complex for tasks that `useRef` can handle more directly.
 
 4. **CSS Variables with JavaScript**:
    - **Pros**:
-      - High flexibility in manipulating styles programmatically.
-      - Good browser support and native to the web platform.
+     - High flexibility in manipulating styles programmatically.
+     - Good browser support and native to the web platform.
    - **Cons**:
-      - Can be less intuitive than using a dedicated framework or library.
-      - Requires manual management of dependencies between styles.
+     - Can be less intuitive than using a dedicated framework or library.
+     - Requires manual management of dependencies between styles.
    - **Analysis**: CSS variables offer a native way to handle dynamic styles but
      lack the utility and pre-built patterns of Tailwind CSS.
 
@@ -328,18 +328,18 @@ A custom hook `useToggleStyle` is created to encapsulate the logic for toggling
 styles, adhering to the Single Responsibility Principle.
 
 ```javascript
-import {useRef} from 'react';
+import { useRef } from "react";
 
 const useToggleStyle = (initialClasses, toggleClasses) => {
-	const elementRef = useRef(null);
+  const elementRef = useRef(null);
 
-	const toggleStyle = () => {
-		toggleClasses.forEach((cls) => {
-			elementRef.current.classList.toggle(cls);
-		});
-	};
+  const toggleStyle = () => {
+    toggleClasses.forEach((cls) => {
+      elementRef.current.classList.toggle(cls);
+    });
+  };
 
-	return {elementRef, toggleStyle};
+  return { elementRef, toggleStyle };
 };
 
 export default useToggleStyle;

@@ -46,14 +46,14 @@ streamlining the development process and ensuring consistency across projects.
 
 ```typescript
 interface IUIPrimitivesClient {
-	// Example methods for UIPrimitivesClient abstraction
-	createDropdownMenu(options: DropdownMenuOptions): DropdownMenu;
-	createDialog(options: DialogOptions): Dialog;
-	// Additional methods for other UI components
+  // Example methods for UIPrimitivesClient abstraction
+  createDropdownMenu(options: DropdownMenuOptions): DropdownMenu;
+  createDialog(options: DialogOptions): Dialog;
+  // Additional methods for other UI components
 }
 
 class UIPrimitivesClient implements IUIPrimitivesClient {
-	// Implementation details using Radix Primitives
+  // Implementation details using Radix Primitives
 }
 ```
 
@@ -99,6 +99,7 @@ alternatives, focusing on their ability to provide accessible, customizable, and
 developer-friendly UI components. Below is an analysis of these alternatives:
 
 **Native HTML Elements**:
+
 - **Pros**: Widely supported and require no additional dependencies.
 - **Cons**: Limited in functionality and require significant effort to make
   accessible and customizable.
@@ -107,6 +108,7 @@ developer-friendly UI components. Below is an analysis of these alternatives:
   customization needed for modern web applications.
 
 **Other UI Libraries (e.g., Material-UI, Ant Design)**:
+
 - **Pros**: Offer a wide range of pre-styled components with various
   functionalities.
 - **Cons**: Often come with a predefined design language that may not align with
@@ -157,7 +159,6 @@ developer-friendly UI components. Below is an analysis of these alternatives:
   developers to understand its API and component model.
 - **Styling Integration**: Developing a consistent approach to styling Radix
   components in line with our design system.
-
 
 ## Integration within the Existing System
 

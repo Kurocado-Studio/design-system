@@ -7,6 +7,8 @@ function getAbsolutePath(value) {
 const config = {
   stories: ["../stories/*.stories.tsx", "../stories/**/*.stories.tsx"],
   addons: [
+    "storybook-tailwind-dark-mode",
+    "@storybook/addon-themes",
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-docs"),

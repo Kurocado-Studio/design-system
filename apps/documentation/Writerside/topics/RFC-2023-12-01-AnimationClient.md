@@ -1,7 +1,7 @@
 # RFC 2023-12-01 AnimationClient
 
 | Status | Accepted |
-|:-------|:---------|
+| :----- | :------- |
 
 ## Background
 
@@ -91,13 +91,13 @@ considered and the reasons for preferring Framer Motion.
 1. **CSS Animations**:
 
    - **Pros**:
-      - Native to the web and does not require additional libraries.
-      - Widely supported across all modern browsers.
-      - Simple animations can be implemented quickly.
+     - Native to the web and does not require additional libraries.
+     - Widely supported across all modern browsers.
+     - Simple animations can be implemented quickly.
    - **Cons**:
-      - Limited in complexity and control compared to JavaScript-based solutions.
-      - Requires additional effort to synchronize with Reacts lifecycle and
-        state.
+     - Limited in complexity and control compared to JavaScript-based solutions.
+     - Requires additional effort to synchronize with Reacts lifecycle and
+       state.
    - **Analysis**: While CSS animations are efficient for simpler tasks, they
      lack the dynamic interaction capabilities and integration ease that Framer
      Motion offers with React components.
@@ -105,12 +105,12 @@ considered and the reasons for preferring Framer Motion.
 2. **React Spring**:
 
    - **Pros**:
-      - Provides a more natural physics-based approach to animations.
-      - Supports a wide range of animations and transitions.
-      - Good integration with React's component model.
+     - Provides a more natural physics-based approach to animations.
+     - Supports a wide range of animations and transitions.
+     - Good integration with React's component model.
    - **Cons**:
-      - Steeper learning curve due to its physics-based approach.
-      - Configuration can be complex for elaborate animations.
+     - Steeper learning curve due to its physics-based approach.
+     - Configuration can be complex for elaborate animations.
    - **Analysis**: React Spring is a strong contender with its physics-based
      system, offering realistic animations. However, Framer Motion's simpler API
      and ease of use for a broad range of animations make it more suitable for
@@ -119,12 +119,12 @@ considered and the reasons for preferring Framer Motion.
 3. **GreenSock Animation Platform (GSAP)**:
 
    - **Pros**:
-      - Extremely powerful and versatile, suitable for complex animations.
-      - High performance and browser compatibility.
-      - Large community and extensive documentation.
+     - Extremely powerful and versatile, suitable for complex animations.
+     - High performance and browser compatibility.
+     - Large community and extensive documentation.
    - **Cons**:
-      - Overhead of learning and integrating another external library.
-      - Some advanced features are behind a paid license.
+     - Overhead of learning and integrating another external library.
+     - Some advanced features are behind a paid license.
    - **Analysis**: GSAP is undoubtedly powerful for complex animations, but it
      introduces additional complexity and potential costs. Framer Motion
      provides sufficient capabilities for our needs, with a more straightforward
@@ -133,23 +133,23 @@ considered and the reasons for preferring Framer Motion.
 4. **React Motion**:
 
    - **Pros**:
-      - Physics-based animation library, offering realistic motion.
-      - Integrates well with React's component lifecycle.
+     - Physics-based animation library, offering realistic motion.
+     - Integrates well with React's component lifecycle.
    - **Cons**:
-      - Less intuitive API compared to other libraries.
-      - Somewhat limited in features and community support compared to Framer
-        Motion.
+     - Less intuitive API compared to other libraries.
+     - Somewhat limited in features and community support compared to Framer
+       Motion.
    - **Analysis**: React Motion is a decent option but falls short in ease of
      use and the breadth of features that Framer Motion excels in.
 
 5. **Velocity.js**:
    - **Pros**:
-      - High performance and feature-rich.
-      - Works outside the React ecosystem as well.
+     - High performance and feature-rich.
+     - Works outside the React ecosystem as well.
    - **Cons**:
-      - Requires manual handling to integrate with React's state and component
-        lifecycle.
-      - Not as React-centric as Framer Motion.
+     - Requires manual handling to integrate with React's state and component
+       lifecycle.
+     - Not as React-centric as Framer Motion.
    - **Analysis**: Velocity.js is more suited for general web animations outside
      the React framework. Framer Motion's React-focused approach provides a more
      streamlined and efficient workflow for our React applications.
@@ -333,14 +333,14 @@ projects.
 A basic example showcasing a button with a hover effect using Framer Motion:
 
 ```javascript
-import {motion} from 'framer-motion';
+import { motion } from "framer-motion";
 
 const AnimatedButton = () => {
-	return (
-		<motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
-			Click Me
-		</motion.button>
-	);
+  return (
+    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+      Click Me
+    </motion.button>
+  );
 };
 ```
 
