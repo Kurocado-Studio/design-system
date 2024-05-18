@@ -79,7 +79,7 @@ tsup src/index.ts --format esm,cjs --dts --external react
 Run `pnpm build` to confirm compilation is working correctly. You should see a folder `acme-core/dist` which contains the compiled output.
 
 ```bash
-acme-core
+acme-events
 └── dist
     ├── index.d.ts  <-- Types
     ├── index.js    <-- CommonJS version
