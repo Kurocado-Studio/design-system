@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     extend: {},
   },
+  darkMode: "selector",
   plugins: [
     require("tailwindcss-react-aria-components"),
     require("tailwindcss-animate"),
