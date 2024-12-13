@@ -1,3 +1,0 @@
-# RFC
-
-Start typing here...
