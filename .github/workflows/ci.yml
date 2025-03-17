@@ -24,6 +24,8 @@ jobs:
     uses: kurocado-studio/dev-ops/.github/workflows/workflow.test.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      monorepo: true
 
   release:
     needs: test
@@ -33,3 +35,4 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     with:
       branch_name: ${{ github.ref_name }}
+      monorepo: true

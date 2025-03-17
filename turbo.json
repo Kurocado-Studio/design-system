@@ -10,13 +10,20 @@
       "cache": false
     },
     "prettier:fix": {
+      "dependsOn": ["^setup"],
       "cache": false
     },
     "prettier:check": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["^setup"],
       "cache": false
     },
     "lint": {
-      "dependsOn": ["^setup", "^build"]
+      "dependsOn": ["^setup", "^build"],
+      "cache": false
     },
     "lint:fix": {
       "dependsOn": ["^setup", "^build"],

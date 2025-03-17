@@ -1,8 +1,7 @@
 {
-  "name": "docs",
-  "version": "0.0.0",
+  "name": "@kurocado-studio/design-system-docs",
+  "version": "0.0.0-semantically-released",
   "type": "module",
-  "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build --docs",
@@ -27,6 +26,8 @@
     "@storybook/react-vite": "^8.2.6",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^9.22.0",
+    "semantic-release": "^24.2.3",
+    "semantic-release-monorepo": "^8.0.2",
     "serve": "^14.2.1",
     "storybook": "^8.2.6",
     "typescript": "5.5.4",
