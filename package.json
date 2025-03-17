@@ -1,6 +1,7 @@
 {
   "name": "@kurocado-studio/design-system",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
