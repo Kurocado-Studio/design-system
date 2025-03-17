@@ -1,4 +1,5 @@
 {
+  "name": "@kurocado-studio/design-system",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -19,7 +20,5 @@
     "eslint": "9.22",
     "prettier": "3.4.2",
     "turbo": "^2.0.3"
-  },
-  "packageManager": "pnpm@8.15.6",
-  "name": "design-system"
+  }
 }
