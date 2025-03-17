@@ -1,8 +1,7 @@
 {
-  "name": "docs",
-  "version": "0.0.0",
+  "name": "@kurocado-studio/design-system-docs",
+  "version": "0.0.0-semantically-released",
   "type": "module",
-  "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build --docs",
