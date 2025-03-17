@@ -9,11 +9,18 @@
     "setup": {
       "cache": false
     },
+    "prettier:fix": {
+      "cache": false
+    },
+    "prettier:check": {
+      "cache": false
+    },
     "lint": {
       "dependsOn": ["^setup", "^build"]
     },
     "lint:fix": {
-      "dependsOn": ["^lint:fix"]
+      "dependsOn": ["^setup", "^build"],
+      "cache": false
     },
     "dev": {
       "cache": false,

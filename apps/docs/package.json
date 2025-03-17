@@ -7,6 +7,8 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build --docs",
     "setup": "pnpm install",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --check . --write",
     "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo node_modules",
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0 --no-warn-ignored"
