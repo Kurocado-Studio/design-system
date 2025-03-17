@@ -6,12 +6,12 @@
   "type": "module",
   "exports": {
     "./Button": {
-      "types": "./src/Button.tsx",
-      "import": "./dist/Button.mjs"
+      "types": "./dist/Button.d.ts",
+      "import": "./dist/Button.js"
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "rm -rf dist && tsup --dts",
     "clean": "rm -rf .turbo node_modules dist",
     "prettier:fix": "prettier --check . --write",
     "dev": "tsup --watch",
