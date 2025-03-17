@@ -5,11 +5,12 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "turbo run build",
-    "clean": "turbo run clean",
+    "clean": "turbo run clean && rm -rf .turbo node_modules",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
+    "setup": "turbo run setup",
     "lint:fix": "turbo run lint:fix",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
