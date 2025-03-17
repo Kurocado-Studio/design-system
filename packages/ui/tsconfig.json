@@ -17,7 +17,8 @@
     "tailwind.config.ts",
     "test/**/*.test.ts",
     "test/**/*.test.tsx",
-    "tsup.config.ts"
+    "tsup.config.ts",
+    "setup.remix.ts"
   ],
   "exclude": ["dist", "build", "node_modules"]
 }
