@@ -2,6 +2,7 @@
   "name": "@kurocado-studio/design-system",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@8.6.0",
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
