@@ -40,8 +40,8 @@ importers:
         specifier: ^2.3.1
         version: 2.3.1(@babel/core@7.26.10)(@commitlint/cli@19.8.0(@types/node@22.13.10)(typescript@5.8.2))(@commitlint/config-conventional@19.8.0)(@remix-run/react@2.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.2))(eslint@9.22.0(jiti@2.4.2))(husky@9.1.7)(jiti@2.4.2)(prettier@3.4.2)(rollup@4.36.0)(semantic-release@24.2.3(typescript@5.8.2))(typescript@5.8.2)(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(yaml@2.7.0))(vitest@3.0.9(@types/debug@4.1.12)(@types/node@22.13.10)(jiti@2.4.2)(jsdom@26.0.0)(yaml@2.7.0))(yaml@2.7.0)
       '@storybook/addon-actions':
-        specifier: ^8.2.6
-        version: 8.6.6(storybook@8.6.6(prettier@3.4.2))
+        specifier: ^8.6.7
+        version: 8.6.7(storybook@8.6.6(prettier@3.4.2))
       '@storybook/addon-essentials':
         specifier: ^8.2.6
         version: 8.6.6(@types/react@18.3.18)(storybook@8.6.6(prettier@3.4.2))
@@ -1617,6 +1617,11 @@ packages:
     resolution: {integrity: sha512-RSutBNSwh0KDAGAEUME4GuhrzmdBYnZOWNRsFuKKsgpeDiVEBWafiCQEf39PxzsMThzFvvRx5Pie4968EDy27w==}
     peerDependencies:
       storybook: ^8.6.6
+
+  '@storybook/addon-actions@8.6.7':
+    resolution: {integrity: sha512-XgZCwIcZGThEyD7e2q7rN/jzg7ZHUxn/ln403eex04jWAGBBbtC2IVuowwCWV8HwDihnhpCZEP6HlgjakOYZbQ==}
+    peerDependencies:
+      storybook: ^8.6.7
 
   '@storybook/addon-backgrounds@8.6.6':
     resolution: {integrity: sha512-nhGy/JumrqFxMDdOF33b7p4ZrAZ9dAc1661AyHxJg0UULvV6HUq4BAzmYFEoZGOntEh6HUSw8hxLzF76TL2mVA==}
@@ -9020,6 +9025,15 @@ snapshots:
   '@sindresorhus/merge-streams@4.0.0': {}
 
   '@storybook/addon-actions@8.6.6(storybook@8.6.6(prettier@3.4.2))':
+    dependencies:
+      '@storybook/global': 5.0.0
+      '@types/uuid': 9.0.8
+      dequal: 2.0.3
+      polished: 4.3.1
+      storybook: 8.6.6(prettier@3.4.2)
+      uuid: 9.0.1
+
+  '@storybook/addon-actions@8.6.7(storybook@8.6.6(prettier@3.4.2))':
     dependencies:
       '@storybook/global': 5.0.0
       '@types/uuid': 9.0.8
