@@ -1,9 +1,7 @@
 {
   "name": "@kurocado-studio/design-system",
-  "private": true,
+  "version": "0.0.0-semantically-released",
   "type": "module",
-  "packageManager": "pnpm@8.6.0",
-  "workspaces": ["packages/*", "apps/*"],
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
@@ -23,5 +21,8 @@
     "eslint": "9.22",
     "prettier": "3.4.2",
     "turbo": "^2.0.3"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
