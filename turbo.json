@@ -15,8 +15,13 @@
     "prettier:check": {
       "cache": false
     },
+    "test": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
     "lint": {
-      "dependsOn": ["^setup", "^build"]
+      "dependsOn": ["^setup", "^build"],
+      "cache": false
     },
     "lint:fix": {
       "dependsOn": ["^setup", "^build"],
