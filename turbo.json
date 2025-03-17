@@ -6,11 +6,21 @@
       "outputs": ["dist/**", "storybook-static/**"],
       "dependsOn": ["^build"]
     },
+    "setup": {
+      "cache": false
+    },
+    "prettier:fix": {
+      "cache": false
+    },
+    "prettier:check": {
+      "cache": false
+    },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^setup", "^build"]
     },
     "lint:fix": {
-      "dependsOn": ["^lint:fix"]
+      "dependsOn": ["^setup", "^build"],
+      "cache": false
     },
     "dev": {
       "cache": false,
@@ -20,9 +30,7 @@
       "cache": false
     },
     "preview-storybook": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "cache": false
     }
   }

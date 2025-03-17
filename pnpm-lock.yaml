@@ -26,7 +26,7 @@ importers:
 
   apps/docs:
     dependencies:
-      '@acme/ui':
+      '@kurocado-studio/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       react:
@@ -82,6 +82,12 @@ importers:
       '@kurocado-studio/styleguide':
         specifier: ^2.3.1
         version: 2.3.1(@babel/core@7.26.10)(@commitlint/cli@19.8.0(@types/node@22.13.10)(typescript@5.5.4))(@commitlint/config-conventional@19.8.0)(@remix-run/react@2.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4))(eslint@9.22.0(jiti@2.4.2))(husky@9.1.7)(prettier@3.4.2)(rollup@4.35.0)(semantic-release@24.2.3(typescript@5.5.4))(typescript@5.5.4)(vite@5.4.14(@types/node@22.13.10))
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      '@types/node':
+        specifier: ^22.13.10
+        version: 22.13.10
       '@types/react':
         specifier: ^18.2.61
         version: 18.3.18

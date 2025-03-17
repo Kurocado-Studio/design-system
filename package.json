@@ -1,12 +1,18 @@
 {
-  "private": true,
+  "name": "@kurocado-studio/design-system",
+  "version": "0.0.0-semantically-released",
+  "type": "module",
+  "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "turbo run build",
-    "clean": "turbo run clean",
+    "clean": "turbo run clean && rm -rf .turbo node_modules",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "turbo run dev",
+    "prettier:check": "turbo run prettier:check",
+    "prettier:fix": "turbo run prettier:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
+    "setup": "turbo run setup",
     "lint:fix": "turbo run lint:fix",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
@@ -20,6 +26,7 @@
     "prettier": "3.4.2",
     "turbo": "^2.0.3"
   },
-  "packageManager": "pnpm@8.15.6",
-  "name": "design-system"
+  "engines": {
+    "node": ">=20"
+  }
 }
