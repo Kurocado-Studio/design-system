@@ -4,6 +4,7 @@
   "sideEffects": false,
   "license": "MIT",
   "type": "module",
+  "packageManager": "pnpm@9.12.2",
   "exports": {
     "./Button": {
       "types": "./dist/Button.d.ts",
