@@ -35,3 +35,4 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     with:
       branch_name: ${{ github.ref_name }}
+      monorepo: true
