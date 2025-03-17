@@ -2,14 +2,20 @@
   "name": "@kurocado-studio/ui",
   "version": "0.0.0",
   "sideEffects": false,
+  "keywords": [],
+  "author": "@kurocado-studio",
   "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
-    "./Button": {
-      "types": "./dist/Button.d.ts",
-      "import": "./dist/Button.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
+  "files": ["dist"],
   "scripts": {
     "build": "rm -rf dist && tsup --dts",
     "clean": "rm -rf .turbo node_modules dist",
