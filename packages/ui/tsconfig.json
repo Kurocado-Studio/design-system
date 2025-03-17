@@ -1,5 +1,19 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
-  "include": ["."],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": ["@kurocado-studio/styleguide/remix/tsconfig"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "jsx": "preserve"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "tailwind.config.ts",
+    "test/**/*.test.ts",
+    "test/**/*.test.tsx",
+    "tsup.config.ts",
+  ],
   "exclude": ["dist", "build", "node_modules"]
 }

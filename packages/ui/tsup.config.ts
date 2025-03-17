@@ -1,9 +1,10 @@
-import { defineConfig } from "tsup";
+/* eslint import/no-default-export: 0 */
+import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => ({
-  entryPoints: ["src/button.tsx"],
-  format: ["cjs", "esm"],
+  entryPoints: ['src/Button.tsx'],
+  format: ['esm'],
   dts: true,
-  external: ["react"],
+  external: ['react'],
   ...options,
 }));

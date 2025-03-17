@@ -73,7 +73,7 @@ tsup src/*.tsx --format esm,cjs --dts --external react
   "sideEffects": false,
   "exports":{
     "./button": {
-      "types": "./src/button.tsx",
+      "types": "./src/Button.tsx",
       "import": "./dist/button.mjs",
       "require": "./dist/button.js"
     }
@@ -119,7 +119,7 @@ When adding a new file, ensure that its specifier is defined in `package.json` f
   "sideEffects": false,
   "exports":{
     "./button": {
-      "types": "./src/button.tsx",
+      "types": "./src/Button.tsx",
       "import": "./dist/button.mjs",
       "require": "./dist/button.js"
     }

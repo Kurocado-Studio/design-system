@@ -3,25 +3,29 @@
   "version": "0.0.0",
   "sideEffects": false,
   "license": "MIT",
+  "type": "module",
   "exports": {
-    "./button": {
-      "types": "./src/button.tsx",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js"
+    "./Button": {
+      "types": "./src/Button.tsx",
+      "import": "./dist/Button.mjs"
     }
   },
   "scripts": {
     "build": "tsup",
+    "clean": "rm -rf .turbo node_modules dist",
+    "prettier:fix": "prettier --check . --write",
     "dev": "tsup --watch",
-    "lint": "eslint . --max-warnings 0",
-    "clean": "rm -rf .turbo node_modules dist"
+    "lint": "eslint --max-warnings=0 . --no-warn-ignored",
+    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
+    "@kurocado-studio/styleguide": "^2.3.1",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
-    "eslint": "^8.57.0",
-    "@repo/typescript-config": "workspace:*",
+    "eslint": "^9.22.0",
+    "prettier": "3.4.2",
+    "semantic-release": "^24.2.3",
+    "semantic-release-monorepo": "^8.0.2",
     "tsup": "^8.0.2",
     "typescript": "5.5.4"
   },
