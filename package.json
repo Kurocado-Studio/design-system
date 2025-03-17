@@ -12,7 +12,7 @@
     "prettier:fix": "turbo run prettier:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
-    "setup": "turbo run setup",
+    "setup": "pnpm i && turbo run setup",
     "test": "turbo run test",
     "lint:fix": "turbo run lint:fix",
     "preview-storybook": "turbo run preview-storybook",

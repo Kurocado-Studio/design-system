@@ -10,9 +10,11 @@
       "cache": false
     },
     "prettier:fix": {
+      "dependsOn": ["^setup"],
       "cache": false
     },
     "prettier:check": {
+      "dependsOn": ["^setup"],
       "cache": false
     },
     "test": {
