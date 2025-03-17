@@ -1,5 +1,5 @@
 {
-  "name": "@kurocado-studio/design-system-docs",
+  "name": "docs",
   "version": "0.0.0-semantically-released",
   "type": "module",
   "scripts": {
