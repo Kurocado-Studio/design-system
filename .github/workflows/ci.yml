@@ -16,6 +16,8 @@ on:
 jobs:
   lint:
     uses: kurocado-studio/dev-ops/.github/workflows/workflow.lint.yml@main
+    with:
+      monorepo: true
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
