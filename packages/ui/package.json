@@ -30,7 +30,7 @@
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored"
   },
   "devDependencies": {
-    "@kurocado-studio/qa": "2.0.0-alpha.1",
+    "@kurocado-studio/qa": "2.0.0-alpha.2",
     "@kurocado-studio/styleguide": "^2.3.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
