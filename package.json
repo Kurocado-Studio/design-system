@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.28.1",
-    "@kurocado-studio/styleguide": "^2.3.2",
+    "@kurocado-studio/styleguide": "^2.3.3",
     "commitlint": "^19.8.0",
     "eslint": "9.23",
     "husky": "^9.1.7",
@@ -30,7 +30,9 @@
     "turbo": "^2.0.3"
   },
   "lint-staged": {
-    "*": ["prettier --write"],
+    "*": [
+      "prettier --write"
+    ],
     "{apps,packages}.{ts,tsx}": [
       "prettier --write",
       "turbo run lint:fix --",
