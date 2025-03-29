@@ -7,7 +7,7 @@ export interface ButtonProps
 
 export function Button({ children, ...other }: ButtonProps): React.ReactNode {
   return (
-    <button type='button' data-testid='button-data-testid' {...other}>
+    <button type='button' data-testid='button-testid' {...other}>
       {children}
     </button>
   );
