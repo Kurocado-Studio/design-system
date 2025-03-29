@@ -5,7 +5,7 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "turbo run build",
-    "clean": "turbo run clean && rm -rf .turbo node_modules",
+    "clean": "turbo run clean && rm -rf .turbo node_modules pnpm-lock.yaml",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
