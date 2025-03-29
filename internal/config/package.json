@@ -1,0 +1,50 @@
+{
+  "name": "@internal/config",
+  "version": "0.0.0-semantically-released",
+  "sideEffects": false,
+  "keywords": [],
+  "author": "@kurocado-studio",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "files": ["src"],
+  "scripts": {
+    "setup": "pnpm install",
+    "clean": "rm -rf .turbo node_modules dist",
+    "prettier:check": "prettier --check ..",
+    "prettier:fix": "prettier --check .. --write",
+    "lint": "eslint --max-warnings=0 .. --no-warn-ignored",
+    "lint:fix": "eslint --max-warnings=0 .. --fix --no-warn-ignored"
+  },
+  "devDependencies": {
+    "@kurocado-studio/qa": "2.0.0-alpha.2",
+    "@kurocado-studio/styleguide": "^2.3.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.13.14",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "@vitest/coverage-v8": "^3.0.9",
+    "eslint": "^9.23.0",
+    "prettier": "3.5.3",
+    "semantic-release": "^24.2.3",
+    "semantic-release-monorepo": "^8.0.2",
+    "tsup": "^8.0.2",
+    "typescript": "5.8.2",
+    "vitest": "^3.0.9"
+  },
+  "dependencies": {
+    "react": "^19.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
