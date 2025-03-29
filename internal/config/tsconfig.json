@@ -17,6 +17,5 @@
     "tsup.config.ts",
     "setup.web.ts"
   ],
-  "exclude": [
-    "dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules"]
 }
