@@ -8,7 +8,7 @@ const { render, screen } = ReactTestingLibrary;
 
 describe('Button', () => {
   it('should render with the provided children', () => {
-    render(<Button children={'Click Me'}/>);
+    render(<Button>Click Me</Button>);
     expect(screen.getByText('Click Me')).toBeInTheDocument();
   });
 
