@@ -30,14 +30,16 @@
     "turbo": "^2.0.3"
   },
   "lint-staged": {
-    "*": [
-      "prettier --write"
-    ],
+    "*": ["prettier --write"],
     "{apps,packages}.{ts,tsx}": [
       "prettier --write",
       "turbo run lint:fix --",
       "turbo run lint --"
     ]
+  },
+  "overrides": {
+    "react": "19.x",
+    "react-dom": "19.x"
   },
   "engines": {
     "node": ">=20"

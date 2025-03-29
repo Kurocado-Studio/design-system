@@ -7,6 +7,6 @@
     "baseUrl": ".",
     "jsx": "preserve"
   },
-  "include": [".storybook/**/*.ts", "./stories/**/*.tsx"],
+  "include": [".storybook", "stories"],
   "exclude": ["dist", "build", "node_modules"]
 }
