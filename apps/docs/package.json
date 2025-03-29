@@ -13,9 +13,9 @@
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0 --no-warn-ignored"
   },
   "dependencies": {
-    "@kurocado-studio/ui": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@kurocado-studio/buttons": "workspace:*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@kurocado-studio/styleguide": "^2.3.3",
@@ -24,6 +24,7 @@
     "@storybook/addon-links": "^8.6.10",
     "@storybook/react": "^8.6.10",
     "@storybook/react-vite": "^8.6.10",
+    "@types/react": "19.0.12",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^9.23.0",
     "semantic-release": "^24.2.3",

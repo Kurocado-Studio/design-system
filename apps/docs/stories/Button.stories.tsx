@@ -1,4 +1,4 @@
-import { Button, type ButtonProps } from '@kurocado-studio/ui';
+import { Button, type ButtonProps } from '@kurocado-studio/buttons';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 

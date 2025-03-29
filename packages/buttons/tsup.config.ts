@@ -8,6 +8,6 @@ export default defineConfig((options) => ({
   clean: true,
   splitting: true,
   treeshake: true,
-  external: ['react'],
+  external: ['react', 'react-dom'],
   ...options,
 }));

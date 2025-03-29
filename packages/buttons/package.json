@@ -15,7 +15,9 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsup --dts",
     "setup": "pnpm install",
@@ -46,7 +48,8 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "publishConfig": {
     "access": "public"
