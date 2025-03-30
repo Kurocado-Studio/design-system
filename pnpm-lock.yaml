@@ -293,9 +293,6 @@ importers:
       '@internal/config':
         specifier: workspace:*
         version: link:../../internal/config
-      '@kurocado-studio/qa':
-        specifier: 2.0.0-alpha.2
-        version: 2.0.0-alpha.2(@swc/core@1.11.13(@swc/helpers@0.5.15))(@testing-library/dom@10.4.0)(@types/debug@4.1.12)(@types/react@19.0.12)(eslint@9.23.0(jiti@2.4.2))(jiti@2.4.2)(optionator@0.9.4)(prettier@3.5.3)(react@19.0.0)(rollup@4.38.0)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(yaml@2.7.1))(vitest-axe@0.1.0(vitest@3.0.9(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0)(yaml@2.7.1)))(yaml@2.7.1)
       '@kurocado-studio/styleguide':
         specifier: ^2.3.2
         version: 2.3.3(@babel/core@7.26.10)(@commitlint/cli@19.8.0(@types/node@22.13.14)(typescript@5.8.2))(@commitlint/config-conventional@19.8.0)(@remix-run/react@2.16.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2))(@swc/helpers@0.5.15)(eslint@9.23.0(jiti@2.4.2))(husky@9.1.7)(jiti@2.4.2)(prettier@3.5.3)(rollup@4.38.0)(semantic-release@24.2.3(typescript@5.8.2))(typescript@5.8.2)(vite@6.2.3(@types/node@22.13.14)(jiti@2.4.2)(yaml@2.7.1))(vitest@3.0.9(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0)(yaml@2.7.1))(yaml@2.7.1)
