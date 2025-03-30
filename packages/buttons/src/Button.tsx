@@ -1,5 +1,5 @@
 import { focusRing } from '@kurocado-studio/design-system-utils';
-import { AriaButtonOptions, useButton } from '@react-aria/button';
+import { type AriaButtonOptions, useButton } from '@react-aria/button';
 import { get } from 'lodash-es';
 import React from 'react';
 import { tv } from 'tailwind-variants';
