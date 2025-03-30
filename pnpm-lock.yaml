@@ -69,6 +69,9 @@ importers:
       '@storybook/addon-actions':
         specifier: ^8.4.7
         version: 8.6.11(storybook@8.6.11(prettier@3.5.3))
+      '@storybook/addon-docs':
+        specifier: ^8.6.11
+        version: 8.6.11(@types/react@19.0.12)(storybook@8.6.11(prettier@3.5.3))
       '@storybook/addon-essentials':
         specifier: ^8.4.7
         version: 8.6.11(@types/react@19.0.12)(storybook@8.6.11(prettier@3.5.3))
