@@ -1,3 +1,4 @@
+import { focusRing } from '@kurocado-studio/design-system-utils';
 import { AriaButtonOptions, useButton } from '@react-aria/button';
 import { get } from 'lodash-es';
 import React from 'react';
@@ -10,19 +11,9 @@ export type ButtonProps = React.PropsWithChildren<
   }
 >;
 
-export const focusRing = tv({
-  base: 'outline outline-blue-600 dark:outline-blue-500 forced-colors:outline-[Highlight] outline-offset-2',
-  variants: {
-    isFocusVisible: {
-      false: 'outline-0',
-      true: 'outline-2',
-    },
-  },
-});
-
 const buttonStyles = tv({
   extend: focusRing,
-  base: 'px-5 py-2 text-sm text-center transition rounded-lg border border-black/10 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:shadow-none cursor-default',
+  base: 'px-5 py-2 text-sm text-center transition rounded-lg cursor-default',
   variants: {
     variant: {
       primary: 'bg-blue-600 hover:bg-blue-700 pressed:bg-blue-800 text-white',
