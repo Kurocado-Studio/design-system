@@ -10,6 +10,7 @@ const meta: Meta<ButtonProps> = {
       options: ['button', 'submit', 'reset'],
     },
   },
+  tags: ['autodocs'],
 };
 
 /* eslint import/no-default-export: 0 */
