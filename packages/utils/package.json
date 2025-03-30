@@ -1,5 +1,5 @@
 {
-  "name": "@kurocado-studio/buttons",
+  "name": "@kurocado-studio/design-system-utils",
   "version": "0.0.0-semantically-released",
   "sideEffects": false,
   "keywords": [],
@@ -19,7 +19,6 @@
   "scripts": {
     "build": "rm -rf dist && tsup --dts",
     "setup": "pnpm install",
-    "test": "vitest run --coverage",
     "clean": "rm -rf .turbo node_modules dist",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
@@ -29,7 +28,6 @@
   },
   "devDependencies": {
     "@internal/config": "workspace:*",
-    "@kurocado-studio/qa": "2.0.0-alpha.2",
     "@kurocado-studio/styleguide": "^2.3.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
@@ -48,8 +46,7 @@
   },
   "dependencies": {
     "@react-aria/button": "^3.12.1",
-    "lodash-es": "^4.17.21",
-    "@kurocado-studio/design-system-utils": "workspace:*"
+    "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
     "framer-motion": "^12.6.2",
