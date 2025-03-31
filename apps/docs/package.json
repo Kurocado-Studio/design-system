@@ -22,7 +22,7 @@
     "@storybook/addon-actions": "^8.6.11",
     "@storybook/addon-essentials": "^8.6.11",
     "@storybook/addon-links": "^8.6.10",
-    "@storybook/react": "^8.6.10",
+    "@storybook/react": "^8.6.11",
     "@storybook/react-vite": "^8.6.10",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^9.23.0",
