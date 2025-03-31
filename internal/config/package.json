@@ -2,6 +2,8 @@
   "name": "@internal/config",
   "version": "0.0.0-semantically-released",
   "sideEffects": false,
+  "private": true,
+  "release": false,
   "keywords": [],
   "author": "@kurocado-studio",
   "license": "MIT",
