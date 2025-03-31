@@ -1,4 +1,4 @@
-import { dirname, join, resolve } from 'path';
+import { dirname, join } from 'node:path';
 
 function getAbsolutePath(value) {
   return dirname(require.resolve(join(value, 'package.json')));
@@ -30,8 +30,9 @@ const config = {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
       },
-      propFilter: (prop) => !prop.name.startsWith('aria-'),
     },
   },
 };
+
+/* eslint import/no-default-export: 0 */
 export default config;
