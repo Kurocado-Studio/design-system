@@ -13,7 +13,7 @@
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0 --no-warn-ignored"
   },
   "dependencies": {
-    "@kurocado-studio/buttons": "workspace:*",
+    "@kurocado-studio/ui": "workspace:*",
     "isbot": "^4",
     "lucide-react": "^0.292.0",
     "postcss": "^8.5.3",
