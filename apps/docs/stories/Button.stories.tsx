@@ -1,4 +1,4 @@
-import { Button, type ButtonProps } from '@kurocado-studio/buttons';
+import { Button, type ButtonProps } from '@kurocado-studio/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
@@ -33,40 +33,73 @@ export const Default: StoryObj<ButtonProps> = {
   name: 'Default',
   args: {
     children: 'Hello',
-    type: 'button',
   },
+  tags: ['autodocs'],
 };
 
 export const Secondary: StoryObj<ButtonProps> = {
   render: Template,
   name: 'Secondary',
-  argTypes: meta.argTypes,
   args: {
     children: 'Hello',
     variant: 'secondary',
-    type: 'button',
   },
 };
 
 export const Success: StoryObj<ButtonProps> = {
   render: Template,
   name: 'Success',
-  argTypes: meta.argTypes,
   args: {
     children: 'Hello',
     variant: 'success',
-    type: 'button',
   },
 };
 
 export const Error: StoryObj<ButtonProps> = {
   render: Template,
   name: 'Error',
-  argTypes: meta.argTypes,
   args: {
     children: 'Hello',
     variant: 'destructive',
+  },
+};
+
+export const FadeIn: StoryObj<ButtonProps> = {
+  render: Template,
+  name: 'WIth Motion Props',
+  args: {
+    children: 'Hello',
     type: 'button',
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    transition: { duration: 1 },
+  },
+};
+
+export const SubmitType: StoryObj<ButtonProps> = {
+  render: Template,
+  name: 'As type="submit"',
+  args: {
+    children: 'Hello',
+    type: 'submit',
+  },
+};
+
+export const ButtonType: StoryObj<ButtonProps> = {
+  render: Template,
+  name: 'As type="button"',
+  args: {
+    children: 'Hello',
+    type: 'button',
+  },
+};
+
+export const ResetType: StoryObj<ButtonProps> = {
+  render: Template,
+  name: 'As type="reset"',
+  args: {
+    children: 'Hello',
+    type: 'reset',
   },
 };
 

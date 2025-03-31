@@ -1,15 +1,12 @@
-import { focusRing } from '@kurocado-studio/design-system-utils';
-import { type AriaButtonOptions, useButton } from '@react-aria/button';
+import { useButton } from '@react-aria/button';
+import { motion } from 'framer-motion';
 import { get } from 'lodash-es';
 import React from 'react';
 import { tv } from 'tailwind-variants';
 
-export type ButtonProps = React.PropsWithChildren<
-  AriaButtonOptions<'button'> & {
-    variant?: 'primary' | 'secondary' | 'destructive' | 'success' | 'icon';
-    className?: string;
-  }
->;
+import { type ButtonProps } from 'src/domain/types/button';
+import { composeAnimationProps } from 'src/utils/composeAnimationProps';
+import { focusRing } from 'src/utils/focusRing';
 
 const buttonStyles = tv({
   extend: focusRing,
@@ -40,9 +37,11 @@ export function Button(props: ButtonProps): React.ReactNode {
   const { buttonProps } = useButton({ ...props, type: buttonType }, ref);
 
   return (
-    <button
+    // @ts-expect-error types between Aria and Motion
+    <motion.button
       ref={ref}
       type='button'
+      {...composeAnimationProps(props)}
       {...buttonProps}
       className={buttonStyles({
         variant: get(props, ['variant'], 'primary'),
@@ -50,7 +49,7 @@ export function Button(props: ButtonProps): React.ReactNode {
       })}
     >
       {props.children}
-    </button>
+    </motion.button>
   );
 }
 
