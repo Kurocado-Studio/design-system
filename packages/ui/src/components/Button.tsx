@@ -32,15 +32,14 @@ const buttonStyles = tv({
 
 export function Button(props: ButtonProps): React.ReactNode {
   const ref = React.useRef(null);
-  const buttonType = get(props, ['type'], 'button');
 
-  const { buttonProps } = useButton({ ...props, type: buttonType }, ref);
+  const { buttonProps } = useButton(props, ref);
 
   return (
     // @ts-expect-error types between Aria and Motion
     <motion.button
       ref={ref}
-      type='button'
+      type={get(props, ['type'], 'button')}
       {...composeAnimationProps(props)}
       {...buttonProps}
       className={buttonStyles({

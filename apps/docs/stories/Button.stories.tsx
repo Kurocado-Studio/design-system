@@ -76,32 +76,5 @@ export const FadeIn: StoryObj<ButtonProps> = {
   },
 };
 
-export const SubmitType: StoryObj<ButtonProps> = {
-  render: Template,
-  name: 'As type="submit"',
-  args: {
-    children: 'Hello',
-    type: 'submit',
-  },
-};
-
-export const ButtonType: StoryObj<ButtonProps> = {
-  render: Template,
-  name: 'As type="button"',
-  args: {
-    children: 'Hello',
-    type: 'button',
-  },
-};
-
-export const ResetType: StoryObj<ButtonProps> = {
-  render: Template,
-  name: 'As type="reset"',
-  args: {
-    children: 'Hello',
-    type: 'reset',
-  },
-};
-
 /* eslint import/no-default-export: 0 */
 export default meta;

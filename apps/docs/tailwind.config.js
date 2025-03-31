@@ -1,4 +1,7 @@
-export const content = ['./src/*.{ts,tsx}', '../../packages/ui/src/*.{ts,tsx}'];
+export const content = [
+  './src/**/*.{ts,tsx}',
+  '../../packages/ui/src/**/*.{ts,tsx}',
+];
 
 export const theme = {
   extend: {},
