@@ -39,11 +39,26 @@ export const Placeholder: StoryObj<InputProps> = {
   },
 };
 
+export const Value: StoryObj<InputProps> = {
+  render: Template,
+  name: 'With Value',
+  args: {
+    value: 'Assigned value',
+  },
+};
+
+export const DefaultValue: StoryObj<InputProps> = {
+  render: Template,
+  name: 'With Default Value',
+  args: {
+    defaultValue: 'Default value',
+  },
+};
+
 export const FadeIn: StoryObj<InputProps> = {
   render: Template,
   name: 'WIth Motion Props',
   args: {
-    type: 'Input',
     initial: { opacity: 0 },
     animate: { opacity: 1 },
     transition: { duration: 1 },

@@ -33,7 +33,9 @@ const buttonStyles = tv({
 
 export type ButtonProps = MotionProps &
   AriaButtonOptions<'button'> &
-  CommonProps;
+  CommonProps & {
+    variant?: 'primary' | 'secondary' | 'destructive' | 'success' | 'icon';
+  };
 
 export function Button(props: ButtonProps): React.ReactNode {
   const ref = React.useRef(null);

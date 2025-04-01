@@ -17,10 +17,7 @@ const HtmlFormBase = React.forwardRef<HTMLFormElement, HtmlFormElementProps>(
 
 HtmlFormBase.displayName = 'HtmlForm';
 
-export type HtmlFormElementProps =
-  React.PropsWithChildren<HtmlFormBaseProps> & {
-    ref: React.Ref<HTMLFormElement>;
-  };
+export type HtmlFormElementProps = React.PropsWithChildren<HtmlFormBaseProps>;
 
 export function Form(props: HtmlFormElementProps): React.ReactElement {
   const HtmlFormElement = motion.create(HtmlFormBase);
