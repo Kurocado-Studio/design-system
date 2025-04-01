@@ -1,4 +1,5 @@
-import { type MotionProps } from 'framer-motion';
+import { type HTMLMotionProps, type MotionProps } from 'framer-motion';
+import { type JSX } from 'react/jsx-runtime';
 
 /**
  * AnimationProps details the animation‐related properties that Framer Motion supports.
@@ -39,3 +40,24 @@ export interface AnimationProps {
    */
   transition?: MotionProps['transition'];
 }
+
+export type ModifiedHTMLMotionProps<T extends keyof JSX.IntrinsicElements> =
+  Omit<
+    //@ts-expect-error Type "symbol" is not assignable to type keyof HTMLElements
+    HTMLMotionProps<T>,
+    | 'onAnimationStart'
+    | 'onDrag'
+    | 'onBlur'
+    | 'onFocus'
+    | 'aria-autocomplete'
+    | 'onDragStart'
+    | 'onDragEnd'
+    | 'style'
+    | 'autoCapitalize'
+  >;
+
+export type CommonProps = {
+  className?: string;
+  disabled?: boolean;
+  loading?: boolean;
+};

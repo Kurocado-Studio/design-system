@@ -1,4 +1,7 @@
-export type * from 'src/domain/types/button';
-export type * from 'src/domain/types/animation';
+export type * from 'src/types';
 
-export * from 'src/components/Button';
+export * from 'src/components/common/Button';
+
+export * from 'src/components/forms/Form';
+export * from 'src/components/common/Input';
+export * from 'src/components/common/Label';

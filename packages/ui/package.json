@@ -15,7 +15,9 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsup --dts",
     "setup": "pnpm install",
@@ -47,14 +49,17 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
+    "@kurocado-studio/html-forms": "1.0.0-alpha.2",
     "@react-aria/button": "^3.12.1",
-    "lodash-es": "^4.17.21"
+    "@react-aria/textfield": "^3.17.1",
+    "lodash-es": "^4.17.21",
+    "tailwind-merge": "^3.1.0",
+    "tailwind-variants": "^1.0.0"
   },
   "peerDependencies": {
     "framer-motion": "^12.6.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "tailwind-variants": "^1.0.0",
     "tailwindcss": "^3.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
