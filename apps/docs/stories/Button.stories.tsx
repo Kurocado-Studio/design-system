@@ -9,6 +9,14 @@ function Template(args: ButtonProps): React.ReactElement {
 const meta: Meta<ButtonProps> = {
   component: Button,
   argTypes: {
+    disabled: {
+      control: 'boolean',
+      description: 'Is the button disabled?',
+    },
+    loading: {
+      control: 'boolean',
+      description: 'Is the button loading?',
+    },
     variant: {
       control: {
         type: 'select',
@@ -32,7 +40,7 @@ export const Default: StoryObj<ButtonProps> = {
   render: Template,
   name: 'Default',
   args: {
-    children: 'Hello',
+    children: 'Default',
   },
   tags: ['autodocs'],
 };
@@ -41,7 +49,7 @@ export const Secondary: StoryObj<ButtonProps> = {
   render: Template,
   name: 'Secondary',
   args: {
-    children: 'Hello',
+    children: 'Secondary',
     variant: 'secondary',
   },
 };
@@ -50,7 +58,7 @@ export const Success: StoryObj<ButtonProps> = {
   render: Template,
   name: 'Success',
   args: {
-    children: 'Hello',
+    children: 'Success',
     variant: 'success',
   },
 };
@@ -59,7 +67,7 @@ export const Error: StoryObj<ButtonProps> = {
   render: Template,
   name: 'Error',
   args: {
-    children: 'Hello',
+    children: 'Error',
     variant: 'destructive',
   },
 };
@@ -68,11 +76,29 @@ export const FadeIn: StoryObj<ButtonProps> = {
   render: Template,
   name: 'WIth Motion Props',
   args: {
-    children: 'Hello',
+    children: 'Motion',
     type: 'button',
     initial: { opacity: 0 },
     animate: { opacity: 1 },
     transition: { duration: 1 },
+  },
+};
+
+export const Disabled: StoryObj<ButtonProps> = {
+  render: Template,
+  name: 'Disabled',
+  args: {
+    children: 'Disabled',
+    disabled: true,
+  },
+};
+
+export const Loading: StoryObj<ButtonProps> = {
+  render: Template,
+  name: 'Loading',
+  args: {
+    children: 'Loading',
+    loading: true,
   },
 };
 

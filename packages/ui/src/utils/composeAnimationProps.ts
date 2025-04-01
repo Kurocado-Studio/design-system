@@ -1,19 +1,19 @@
-import { type HTMLMotionProps } from 'framer-motion';
-import type React from 'react';
+import { type Variants } from 'framer-motion';
+import { get } from 'lodash-es';
 
-import { type AnimationProps } from 'src/domain/types/animation';
+import { type AnimationProps } from 'src/types';
 
-export const composeAnimationProps = <T extends React.HTMLElementType>(
-  props: HTMLMotionProps<T>,
+export const composeAnimationProps = (
+  props: Record<symbol, unknown>,
 ): { [K in keyof Required<AnimationProps>]: AnimationProps[K] } => {
   return {
-    animate: props.animate,
-    initial: props.initial,
-    exit: props.exit,
-    whileHover: props.whileHover,
-    whileTap: props.whileTap,
-    whileFocus: props.whileFocus,
-    variants: props.variants,
-    transition: props.transition,
+    animate: get(props, ['animate']),
+    initial: get(props, ['initial']),
+    exit: get(props, ['exit']),
+    whileHover: get(props, ['whileHover']),
+    whileTap: get(props, ['whileTap']),
+    whileFocus: get(props, ['whileFocus']),
+    variants: get(props, ['variants']) as Variants,
+    transition: get(props, ['transition']) as TransitionEvent,
   };
 };

@@ -14,7 +14,6 @@ export default defineConfig((options) => ({
     'react',
     'react-dom',
     'tailwind',
-    'tailwind-variants',
     'tailwindcss-animate',
   ],
   ...options,
