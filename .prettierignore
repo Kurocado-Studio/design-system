@@ -1,0 +1,7 @@
+package.json
+pnpm-lock.yaml
+.husky/commit-msg
+.husky/pre-commit
+.prettierignore
+.npmrc/
+.postcssrc/

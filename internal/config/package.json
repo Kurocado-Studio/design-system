@@ -1,0 +1,37 @@
+{
+  "name": "@internal/config",
+  "version": "0.0.0-semantically-released",
+  "sideEffects": false,
+  "private": true,
+  "keywords": [],
+  "author": "@kurocado-studio",
+  "license": "MIT",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "files": ["src"],
+  "scripts": {
+    "setup": "pnpm install",
+    "clean": "rm -rf .turbo node_modules dist",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --check . --write",
+    "lint": "eslint --max-warnings=0 . --no-warn-ignored",
+    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored"
+  },
+  "devDependencies": {
+    "@kurocado-studio/qa": "2.0.0-alpha.2",
+    "@kurocado-studio/styleguide": "^2.3.2",
+    "semantic-release": "^24.2.3",
+    "semantic-release-monorepo": "^8.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

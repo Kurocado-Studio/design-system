@@ -1,8 +1,7 @@
 import { ReactTestingLibrary } from '@kurocado-studio/qa';
 import React from 'react';
-import { describe, expect, it } from 'vitest';
 
-import { Button } from 'src/Button';
+import { Button } from 'src/components/common/Button';
 
 const { render, screen } = ReactTestingLibrary;
 

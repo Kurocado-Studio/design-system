@@ -5,7 +5,7 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "turbo run build",
-    "clean": "turbo run clean && rm -rf .turbo node_modules",
+    "clean": "turbo run clean && rm -rf .turbo node_modules pnpm-lock.yaml",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
@@ -13,14 +13,13 @@
     "lint:fix": "turbo run lint:fix",
     "prepare": "husky install",
     "prettier:check": "turbo run prettier:check",
-    "prettier:fix": "turbo run prettier:fix",
+    "prettier:fix": "prettier --check . --write && turbo run prettier:fix",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
     "setup": "pnpm i && turbo run setup",
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.28.1",
     "@kurocado-studio/styleguide": "^2.3.3",
     "commitlint": "^19.8.0",
     "eslint": "9.23",
@@ -30,14 +29,18 @@
     "turbo": "^2.0.3"
   },
   "lint-staged": {
-    "*": [
-      "prettier --write"
+    "*": ["prettier --write"],
+    "{apps,packages}/**/*": [
+      "turbo run prettier:fix --"
     ],
-    "{apps,packages}.{ts,tsx}": [
-      "prettier --write",
+    "{apps,packages}/**/*.{ts,tsx}": [
       "turbo run lint:fix --",
       "turbo run lint --"
     ]
+  },
+  "overrides": {
+    "react": "19.x",
+    "react-dom": "19.x"
   },
   "engines": {
     "node": ">=20"
