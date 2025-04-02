@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => ({
   entry: ['./src/index.ts'],
-  target: 'es5',
+  target: 'esnext',
   format: ['esm'],
   dts: true,
   clean: true,
