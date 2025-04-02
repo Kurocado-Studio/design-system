@@ -47,7 +47,7 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
-    "@kurocado-studio/html-forms": "1.0.0-alpha.2",
+    "@kurocado-studio/html-forms": "1.0.0-alpha.5",
     "@react-aria/button": "^3.12.1",
     "@react-aria/textfield": "^3.17.1",
     "lodash-es": "^4.17.21",
