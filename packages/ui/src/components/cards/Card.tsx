@@ -72,5 +72,13 @@ export function Card({
 }
 
 Card.Header = CardHeader;
+// @ts-expect-error on displayName
+Card.Header.displayName = 'Card.Header';
+
 Card.Body = CardBody;
+// @ts-expect-error on displayName
+Card.Body.displayName = 'Card.Body';
+
 Card.Footer = CardFooter;
+// @ts-expect-error on displayName
+Card.Footer.displayName = 'Card.Footer';
