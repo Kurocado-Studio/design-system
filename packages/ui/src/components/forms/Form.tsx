@@ -25,3 +25,5 @@ export function Form(props: HtmlFormElementProps): React.ReactElement {
     <HtmlFormElement {...props} className={twMerge('flex', props.className)} />
   );
 }
+
+Form.displayName = 'Form';
