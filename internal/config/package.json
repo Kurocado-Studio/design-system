@@ -6,9 +6,9 @@
   "keywords": [],
   "author": "@kurocado-studio",
   "license": "MIT",
-  "main": "index.js",
-  "module": "index.js",
-  "types": "index.d.ts",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
