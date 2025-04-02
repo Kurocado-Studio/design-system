@@ -24,3 +24,12 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
       monorepo: true
+
+  release:
+    uses: kurocado-studio/dev-ops/.github/workflows/workflow.release.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    with:
+      branch_name: ${{ github.ref_name }}
+      monorepo: true
