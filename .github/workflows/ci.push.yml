@@ -26,6 +26,7 @@ jobs:
       monorepo: true
 
   release:
+    needs: test
     uses: kurocado-studio/dev-ops/.github/workflows/workflow.release.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
