@@ -5,6 +5,7 @@ import { tv } from 'tailwind-variants';
 
 export interface CardProps extends HTMLMotionProps<'div'> {
   className?: string;
+  children?: Array<React.ReactElement> | React.ReactElement | null;
 }
 
 const cardHeaderClasses = tv({
