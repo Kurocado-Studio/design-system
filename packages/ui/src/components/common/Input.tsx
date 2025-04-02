@@ -9,9 +9,9 @@ import { focusRing } from 'src/utils/focusRing';
 import { type CommonProps } from '../../types';
 import { composeAnimationProps } from '../../utils/composeAnimationProps';
 
-const HtmlInputElementStyles = tv({
+const InputStyles = tv({
   extend: focusRing,
-  base: 'full-width px-4 py-1.5 flex-1 min-w-0 outline outline-0 bg-white dark:bg-zinc-900 text-md text-gray-800 dark:text-zinc-200 ',
+  base: 'full-width px-4 py-1.5 flex-1 min-w-0 outline outline-0 bg-white dark:bg-zinc-900 text-md text-gray-800 dark:text-gray-300 ',
   variants: {
     isFocusWithin: {
       false:
@@ -22,7 +22,7 @@ const HtmlInputElementStyles = tv({
       true: 'border-red-600 dark:border-red-600 forced-colors:border-[Mark]',
     },
     disabled: {
-      true: 'disabled:text-gray-200 dark:disabled:text-zinc-600 border-gray-200 dark:border-zinc-700 forced-colors:border-[GrayText]',
+      true: 'disabled:text-gray-200 dark:disabled:text-gray-500 dark:bg-zinc-700 border-gray-200 dark:border-zinc-700 forced-colors:border-[GrayText]',
     },
   },
 });
@@ -37,7 +37,7 @@ export function Input(props: InputProps): React.ReactElement {
       {...composeAnimationProps({ ...props })}
       {...(props as HTMLMotionProps<'input'>)}
       className={twMerge(
-        HtmlInputElementStyles(props),
+        InputStyles(props),
         cursors(props),
         props.className,
         'w-full flex items-center h-12 bg-white dark:bg-zinc-900 forced-colors:bg-[Field] border-2 rounded-lg overflow-hidden',

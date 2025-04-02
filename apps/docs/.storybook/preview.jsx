@@ -1,10 +1,10 @@
 import { themes } from '@storybook/theming';
 
 import '../tailwind.css';
+import { ModeDecorator } from './ModeDecorator.js';
 
 const preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {},
     },
@@ -18,7 +18,6 @@ const preview = {
 };
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -27,4 +26,5 @@ export const parameters = {
   },
 };
 
-export const decorators = [(Story) => <Story />];
+export const decorators = [(Story) => <Story />, ModeDecorator];
+export const tags = ['autodocs'];

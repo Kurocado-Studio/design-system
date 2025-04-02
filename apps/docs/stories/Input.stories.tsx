@@ -70,6 +70,7 @@ export const Disabled: StoryObj<InputProps> = {
   name: 'Disabled',
   args: {
     disabled: true,
+    value: 'Disabled',
   },
 };
 
