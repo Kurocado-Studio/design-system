@@ -18,10 +18,8 @@ const meta: Meta<ButtonProps> = {
       description: 'Is the button loading?',
     },
     variant: {
-      control: {
-        type: 'select',
-        options: ['primary', 'secondary', 'destructive', 'success', 'icon'],
-      },
+      control: 'select',
+      options: ['primary', 'secondary', 'destructive', 'success', 'icon'],
       description: 'The button variant',
     },
     className: {

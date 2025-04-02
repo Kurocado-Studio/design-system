@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "storybook build --docs",
+    "build": "storybook build",
     "setup": "pnpm install",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
