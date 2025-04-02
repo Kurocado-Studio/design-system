@@ -31,7 +31,7 @@ export type InputProps = MotionProps &
   React.InputHTMLAttributes<HTMLInputElement> &
   CommonProps;
 
-export function Input(props: InputProps): React.ReactElement {
+export function Input(props: InputProps): React.ReactNode {
   return (
     <motion.input
       {...composeAnimationProps({ ...props })}
