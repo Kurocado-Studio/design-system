@@ -32,7 +32,6 @@ export const parameters = {
 
 export const decorators = [
   (Story, context) => {
-    console.log({ context });
     const isDark = !!context.globals.theme === 'dark';
 
     React.useEffect(() => {
