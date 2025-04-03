@@ -49,6 +49,6 @@
     "storybook": "^8.6.11",
     "storybook-tailwind-dark-mode": "^1.0.22",
     "typescript": "5.8.2",
-    "vite": "^6.2.4"
+    "vite": "^6.2.5"
   }
 }
