@@ -8,19 +8,17 @@ interface HtmlFormBaseProps extends HtmlFormProps {
   className?: string;
 }
 
-const HtmlFormBase = React.forwardRef<HTMLFormElement, HtmlFormElementProps>(
-  (props, ref) => {
-    // @ts-ignore ref error
-    return <HtmlForm ref={ref} {...props} />;
-  },
-);
+const FormBase = React.forwardRef<HTMLFormElement, FormProps>((props, ref) => {
+  // @ts-ignore ref error
+  return <HtmlForm ref={ref} {...props} />;
+});
 
-HtmlFormBase.displayName = 'HtmlForm';
+FormBase.displayName = 'FormBase';
 
-export type HtmlFormElementProps = React.PropsWithChildren<HtmlFormBaseProps>;
+export type FormProps = React.PropsWithChildren<HtmlFormBaseProps>;
 
-export function Form(props: HtmlFormElementProps): React.ReactNode {
-  const HtmlFormElement = motion.create(HtmlFormBase);
+export function Form(props: FormProps): React.ReactNode {
+  const HtmlFormElement = motion.create(FormBase);
   return (
     <HtmlFormElement {...props} className={twMerge('flex', props.className)} />
   );

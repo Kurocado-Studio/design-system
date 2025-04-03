@@ -1,4 +1,4 @@
-import { type HTMLMotionProps, type MotionProps, motion } from 'framer-motion';
+import { type HTMLMotionProps, type MotionProps } from 'framer-motion';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
@@ -8,6 +8,7 @@ import { focusRing } from 'src/utils/focusRing';
 
 import { type CommonProps } from '../../types';
 import { composeAnimationProps } from '../../utils/composeAnimationProps';
+import { MotionElement } from '../motion/MotionElement';
 
 const InputStyles = tv({
   extend: focusRing,
@@ -33,8 +34,9 @@ export type InputProps = MotionProps &
 
 export function Input(props: InputProps): React.ReactNode {
   return (
-    <motion.input
-      {...composeAnimationProps({ ...props })}
+    <MotionElement
+      as='input'
+      {...composeAnimationProps(props)}
       {...(props as HTMLMotionProps<'input'>)}
       className={twMerge(
         InputStyles(props),
