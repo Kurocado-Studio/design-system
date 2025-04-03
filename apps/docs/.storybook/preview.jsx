@@ -1,7 +1,8 @@
+import { withThemeByClassName } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
+import React, { memo } from 'react';
 
 import '../tailwind.css';
-import { ModeDecorator } from './ModeDecorator.js';
 
 const preview = {
   parameters: {
@@ -18,6 +19,9 @@ const preview = {
 };
 
 export const parameters = {
+  darkMode: {
+    current: 'light',
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -26,5 +30,23 @@ export const parameters = {
   },
 };
 
-export const decorators = [(Story) => <Story />, ModeDecorator];
+export const decorators = [
+  (Story, context) => {
+    console.log({ context });
+    const isDark = !!context.globals.theme === 'dark';
+
+    React.useEffect(() => {
+      document.documentElement.classList.toggle('dark', !isDark);
+    }, [isDark]);
+
+    return <Story />;
+  },
+  withThemeByClassName({
+    themes: {
+      light: 'light',
+      dark: 'dark',
+    },
+  }),
+];
+
 export const tags = ['autodocs'];

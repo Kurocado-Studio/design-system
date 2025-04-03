@@ -18,6 +18,6 @@
     "jsx": "react",
     "skipLibCheck": true
   },
-  "include": [".storybook/**/*", "stories/**/*"],
+  "include": ["./.storybook/**/*", "./stories/**/*"],
   "exclude": ["dist", "build", "node_modules"]
 }

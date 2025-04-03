@@ -1,11 +1,14 @@
-import { type HTMLMotionProps, motion } from 'framer-motion';
+import { type HTMLMotionProps } from 'framer-motion';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
+import { type ChildrenType } from '../../types';
+import { MotionElement } from '../motion/MotionElement';
+
 export interface CardProps extends HTMLMotionProps<'div'> {
   className?: string;
-  children?: Array<React.ReactNode> | React.ReactNode | null;
+  children?: ChildrenType;
 }
 
 const cardHeaderClasses = tv({
@@ -30,9 +33,12 @@ function CardHeader({
   ...rest
 }: CardProps): React.ReactNode {
   return (
-    <motion.div className={twMerge(cardHeaderClasses(), className)} {...rest}>
+    <MotionElement
+      className={twMerge(cardHeaderClasses(), className)}
+      {...rest}
+    >
       {children}
-    </motion.div>
+    </MotionElement>
   );
 }
 
@@ -42,9 +48,12 @@ function CardFooter({
   ...rest
 }: CardProps): React.ReactNode {
   return (
-    <motion.div className={twMerge(cardFooterClasses(), className)} {...rest}>
+    <MotionElement
+      className={twMerge(cardFooterClasses(), className)}
+      {...rest}
+    >
       {children}
-    </motion.div>
+    </MotionElement>
   );
 }
 
@@ -54,9 +63,9 @@ function CardBody({
   ...rest
 }: CardProps): React.ReactNode {
   return (
-    <motion.div className={twMerge(cardBodyClasses(), className)} {...rest}>
+    <MotionElement className={twMerge(cardBodyClasses(), className)} {...rest}>
       {children}
-    </motion.div>
+    </MotionElement>
   );
 }
 
@@ -66,9 +75,9 @@ export function Card({
   ...rest
 }: CardProps): React.ReactNode {
   return (
-    <motion.div className={twMerge(cardClasses(), className)} {...rest}>
+    <MotionElement className={twMerge(cardClasses(), className)} {...rest}>
       {children}
-    </motion.div>
+    </MotionElement>
   );
 }
 

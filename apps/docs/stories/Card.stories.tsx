@@ -2,7 +2,7 @@ import { Button, Card, type CardProps } from '@kurocado-studio/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-function Template(args: CardProps): React.ReactNode {
+function Template(args: CardProps): React.ReactElement {
   return <Card {...args} />;
 }
 

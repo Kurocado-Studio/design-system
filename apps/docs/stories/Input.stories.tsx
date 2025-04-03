@@ -2,7 +2,7 @@ import { Input, type InputProps } from '@kurocado-studio/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-function Template(args: InputProps): React.ReactNode {
+function Template(args: InputProps): React.ReactElement {
   return <Input {...args} />;
 }
 
@@ -43,6 +43,7 @@ export const Value: StoryObj<InputProps> = {
   render: Template,
   name: 'With Value',
   args: {
+    readOnly: true,
     value: 'Assigned value',
   },
 };
@@ -70,6 +71,7 @@ export const Disabled: StoryObj<InputProps> = {
   name: 'Disabled',
   args: {
     disabled: true,
+    readOnly: true,
     value: 'Disabled',
   },
 };
