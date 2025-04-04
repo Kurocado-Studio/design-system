@@ -1,21 +1,23 @@
-import { motion } from 'framer-motion';
+import { type MotionProps, motion } from 'framer-motion';
 import React from 'react';
 
 import { type HTMLIntrinsicElements } from 'src/types';
 
-export interface MotionElementProps {
+export interface MotionElementProps<T extends HTMLElement> extends MotionProps {
   as?: HTMLIntrinsicElements;
+  ref?: React.Ref<T | null>;
 }
 
-export function MotionElement({
+export function MotionElement<T extends HTMLElement>({
   as,
+  ref,
   ...props
-}: MotionElementProps &
+}: MotionElementProps<T> &
   Record<string | number | symbol, unknown>): React.ReactNode {
   const element = as || 'div';
 
   // @ts-expect-error type-mismatch between JSX HTML elements and Motion HTML elements
   const Component = motion[element];
 
-  return <Component {...props} />;
+  return <Component ref={ref} {...props} />;
 }
