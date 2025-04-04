@@ -1,10 +1,26 @@
-import { withThemeByClassName } from '@storybook/addon-themes';
 import { themes } from '@storybook/theming';
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 
 import '../tailwind.css';
 
+const LIGHT_THEME = 'Light theme';
+const DARK_THEME = 'Dark theme';
+
 const preview = {
+  globalTypes: {
+    theme: {
+      description: 'Global theme for components',
+      toolbar: {
+        title: 'Theme',
+        icon: 'circlehollow',
+        items: [LIGHT_THEME, DARK_THEME],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: {
+    theme: 'light',
+  },
   parameters: {
     controls: {
       matchers: {},
@@ -32,20 +48,16 @@ export const parameters = {
 
 export const decorators = [
   (Story, context) => {
-    const isDark = !!context.globals.theme === 'dark';
+    const selectedTheme = context.globals.theme === LIGHT_THEME;
 
-    React.useEffect(() => {
-      document.documentElement.classList.toggle('dark', !isDark);
-    }, [isDark]);
+    useEffect(() => {
+      document.documentElement.classList.toggle('dark', !selectedTheme);
+    }, [selectedTheme]);
 
     return <Story />;
   },
-  withThemeByClassName({
-    themes: {
-      light: 'light',
-      dark: 'dark',
-    },
-  }),
 ];
 
 export const tags = ['autodocs'];
+
+export default preview;

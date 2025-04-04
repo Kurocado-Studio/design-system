@@ -47,7 +47,6 @@
     "semantic-release-monorepo": "^8.0.2",
     "serve": "^14.2.1",
     "storybook": "^8.6.11",
-    "storybook-tailwind-dark-mode": "^1.0.22",
     "typescript": "5.8.2",
     "vite": "^6.2.4"
   }
