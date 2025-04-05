@@ -4,7 +4,7 @@ import { get } from 'lodash-es';
 import React, { createContext, useContext } from 'react';
 
 import { MotionElement } from 'src/components/motion/MotionElement';
-import type { HTMLIntrinsicElements, PropsWithoutRef } from 'src/types';
+import type { HTMLIntrinsicElements, PropsWithoutRef } from 'src/domain/types';
 
 const FadeInStaggerContext = createContext(false);
 
@@ -80,12 +80,12 @@ export function FadeInStagger({
   return (
     <FadeInStaggerContext.Provider value>
       <MotionElement
+        {...props}
         as={as}
         initial='hidden'
         whileInView='visible'
         viewport={viewport}
         transition={{ staggerChildren: faster ? 0.12 : 0.2 }}
-        {...props}
       />
     </FadeInStaggerContext.Provider>
   );
