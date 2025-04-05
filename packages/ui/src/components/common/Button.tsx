@@ -5,14 +5,13 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-import { type ChildrenType, type CommonProps } from 'src/types';
-import { cursors } from 'src/utils/cursors';
-import { focusRing } from 'src/utils/focusRing';
+import { MotionElement } from 'src/components/motion';
+import { cursors } from 'src/domain/infra/cursors';
+import { focusRing } from 'src/domain/infra/focusRing';
+import { type ChildrenType, type CommonProps } from 'src/domain/types';
+import { composeAnimationProps } from 'src/utils';
 
-import { composeAnimationProps } from '../../utils/composeAnimationProps';
-import { MotionElement } from '../motion/MotionElement';
-
-const buttonStyles = tv({
+export const buttonStyles = tv({
   extend: focusRing,
   base: 'px-5 py-2 text-sm text-center transition rounded-lg',
   variants: {

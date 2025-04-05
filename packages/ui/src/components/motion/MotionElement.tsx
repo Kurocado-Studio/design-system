@@ -1,7 +1,7 @@
 import { type MotionProps, motion } from 'framer-motion';
 import React from 'react';
 
-import { type HTMLIntrinsicElements } from 'src/types';
+import { type HTMLIntrinsicElements } from 'src/domain/types';
 
 export interface MotionElementProps<T extends HTMLElement> extends MotionProps {
   as?: HTMLIntrinsicElements;

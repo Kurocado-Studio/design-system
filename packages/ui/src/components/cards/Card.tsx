@@ -3,27 +3,27 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-import { type ChildrenType } from '../../types';
-import { MotionElement } from '../motion/MotionElement';
+import { MotionElement } from 'src/components/motion';
+import { type ChildrenType } from 'src/domain/types';
 
 export interface CardProps extends HTMLMotionProps<'div'> {
   className?: string;
   children?: ChildrenType;
 }
 
-const cardHeaderClasses = tv({
+export const cardHeaderClasses = tv({
   base: 'px-8 pt-8 pb-4 dark:text-gray-200',
 });
 
-const cardFooterClasses = tv({
+export const cardFooterClasses = tv({
   base: 'bg-gray-50 px-8 pb-8 pt-6 dark:bg-gray-700',
 });
 
-const cardClasses = tv({
+export const cardClasses = tv({
   base: 'divide-y divide-gray-200 dark:divide-gray-700  overflow-hidden rounded-2xl shadow bg-white dark:bg-gray-800',
 });
 
-const cardBodyClasses = tv({
+export const cardBodyClasses = tv({
   base: 'px-8 py-8 dark:text-white',
 });
 
