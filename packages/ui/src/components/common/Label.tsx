@@ -14,7 +14,7 @@ export interface LabelProps
     MotionProps & React.LabelHTMLAttributes<HTMLLabelElement>
   > {}
 
-export function Label(props: LabelProps): React.ReactElement {
+export function Label(props: LabelProps): React.ReactNode {
   return (
     <motion.label
       {...composeAnimationProps({ ...props })}
