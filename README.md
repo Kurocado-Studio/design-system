@@ -1,17 +1,17 @@
 # Kurocado Studio Design System
 
-This repository contains the design system for [Kurocado Studio](https://www.kurocado.studio). It
-provides UI components, design guidelines, and utilities that are shared across our projects.
+## Documentation
 
-**Note:** This project is maintained as a monorepo using
-[PNPM Workspaces](https://pnpm.io/workspaces) and [TurboRepo](https://turbo.build/repo).
+For a complete overview of this Design System’s objectives, features, and success criteria, see the
+[Design System Overview](https://kurocado-studio.github.io/design-system/).
+
+---
 
 ## Prerequisites
 
-Before getting started, make sure you have the following installed:
-
 - **Node.js v20 or higher**  
   [Download Node.js](https://nodejs.org/)
+
 - **PNPM**  
   [PNPM Installation Guide](https://pnpm.io/installation)  
   You can install PNPM globally with:
@@ -19,23 +19,49 @@ Before getting started, make sure you have the following installed:
   npm install -g pnpm
   ```
 
+---
+
 ## Getting Started
 
-1. **Clone the repository**
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/Kurocado-Studio/design-system.git
    cd design-system
    ```
 
-2. **Install dependencies**
+2. **Install dependencies**:
 
    ```bash
    pnpm install
    ```
 
-3. **Initial setup** Run the following command to set up the project (this will install all required
-   packages and run any setup scripts):
+3. **Initial setup**:
    ```bash
    pnpm run setup
    ```
+   This command will install all required packages and run any setup scripts.
+
+---
+
+## Local Development
+
+Depending on your monorepo structure, you might have commands for running a docs site or component
+playground. Common scripts include:
+
+- **Start development server** (e.g., Storybook):
+  ```bash
+  pnpm run dev
+  ```
+- **Build all packages**:
+  ```bash
+  pnpm run build
+  ```
+- **Run tests**:
+  ```bash
+  pnpm run test
+  ```
+- **Lint code**:
+  ```bash
+  pnpm run lint
+  ```
