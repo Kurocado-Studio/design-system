@@ -2,7 +2,7 @@ import { Button, type ButtonProps } from '@kurocado-studio/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-function Template(args: ButtonProps): React.ReactElement {
+function Template(args: ButtonProps): React.ReactNode {
   return <Button {...args} />;
 }
 
