@@ -2,7 +2,7 @@ import { Input, type InputProps } from '@kurocado-studio/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-function Template(args: InputProps): React.ReactElement {
+function Template(args: InputProps): React.ReactNode {
   return <Input {...args} />;
 }
 

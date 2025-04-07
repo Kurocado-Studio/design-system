@@ -19,7 +19,7 @@ HtmlFormBase.displayName = 'HtmlForm';
 
 export type HtmlFormElementProps = React.PropsWithChildren<HtmlFormBaseProps>;
 
-export function Form(props: HtmlFormElementProps): React.ReactElement {
+export function Form(props: HtmlFormElementProps): React.ReactNode {
   const HtmlFormElement = motion.create(HtmlFormBase);
   return (
     <HtmlFormElement {...props} className={twMerge('flex', props.className)} />

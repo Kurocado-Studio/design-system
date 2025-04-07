@@ -5,6 +5,7 @@ import { tv } from 'tailwind-variants';
 
 export interface CardProps extends HTMLMotionProps<'div'> {
   className?: string;
+  children?: Array<React.ReactNode> | React.ReactNode | null;
 }
 
 const cardHeaderClasses = tv({
@@ -27,7 +28,7 @@ function CardHeader({
   children,
   className,
   ...rest
-}: CardProps): React.ReactElement {
+}: CardProps): React.ReactNode {
   return (
     <motion.div className={twMerge(cardHeaderClasses(), className)} {...rest}>
       {children}
@@ -39,7 +40,7 @@ function CardFooter({
   children,
   className,
   ...rest
-}: CardProps): React.ReactElement {
+}: CardProps): React.ReactNode {
   return (
     <motion.div className={twMerge(cardFooterClasses(), className)} {...rest}>
       {children}
@@ -51,7 +52,7 @@ function CardBody({
   children,
   className,
   ...rest
-}: CardProps): React.ReactElement {
+}: CardProps): React.ReactNode {
   return (
     <motion.div className={twMerge(cardBodyClasses(), className)} {...rest}>
       {children}
@@ -63,7 +64,7 @@ export function Card({
   children,
   className,
   ...rest
-}: CardProps): React.ReactElement {
+}: CardProps): React.ReactNode {
   return (
     <motion.div className={twMerge(cardClasses(), className)} {...rest}>
       {children}
