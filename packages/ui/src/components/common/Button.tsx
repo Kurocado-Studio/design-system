@@ -1,15 +1,17 @@
 import { type AriaButtonOptions, useButton } from '@react-aria/button';
-import { type HTMLMotionProps, type MotionProps, motion } from 'framer-motion';
+import { type HTMLMotionProps, type MotionProps } from 'framer-motion';
 import { get } from 'lodash-es';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-import type { CommonProps } from 'src/types';
-import { cursors } from 'src/utils/cursors';
-import { focusRing } from 'src/utils/focusRing';
+import { MotionElement } from 'src/components/motion';
+import { cursors } from 'src/domain/infra/cursors';
+import { focusRing } from 'src/domain/infra/focusRing';
+import { type ChildrenType, type CommonProps } from 'src/domain/types';
+import { composeAnimationProps } from 'src/utils';
 
-const buttonStyles = tv({
+export const buttonStyles = tv({
   extend: focusRing,
   base: 'px-5 py-2 text-sm text-center transition rounded-lg',
   variants: {
@@ -35,6 +37,8 @@ export type ButtonProps = MotionProps &
   AriaButtonOptions<'button'> &
   CommonProps & {
     variant?: 'primary' | 'secondary' | 'destructive' | 'success' | 'icon';
+  } & {
+    children?: ChildrenType;
   };
 
 export function Button(props: ButtonProps): React.ReactNode {
@@ -42,15 +46,16 @@ export function Button(props: ButtonProps): React.ReactNode {
 
   const { buttonProps } = useButton(props, ref);
   return (
-    <motion.button
+    <MotionElement
+      as='button'
+      className={twMerge(buttonStyles(props), cursors(props))}
       ref={ref}
       type={get(props, ['type'], 'button')}
-      {...props}
       {...(buttonProps as HTMLMotionProps<'button'>)}
-      className={twMerge(buttonStyles(props), cursors(props))}
+      {...composeAnimationProps(props)}
     >
       {props.children}
-    </motion.button>
+    </MotionElement>
   );
 }
 

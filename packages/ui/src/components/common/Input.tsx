@@ -1,15 +1,15 @@
-import { type HTMLMotionProps, type MotionProps, motion } from 'framer-motion';
+import { type HTMLMotionProps, type MotionProps } from 'framer-motion';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-import { cursors } from 'src/utils/cursors';
-import { focusRing } from 'src/utils/focusRing';
+import { MotionElement } from 'src/components/motion';
+import { cursors } from 'src/domain/infra/cursors';
+import { focusRing } from 'src/domain/infra/focusRing';
+import { type CommonProps } from 'src/domain/types';
+import { composeAnimationProps } from 'src/utils';
 
-import { type CommonProps } from '../../types';
-import { composeAnimationProps } from '../../utils/composeAnimationProps';
-
-const InputStyles = tv({
+export const inputStyles = tv({
   extend: focusRing,
   base: 'full-width px-4 py-1.5 flex-1 min-w-0 outline outline-0 bg-white dark:bg-zinc-900 text-md text-gray-800 dark:text-gray-300 ',
   variants: {
@@ -33,11 +33,12 @@ export type InputProps = MotionProps &
 
 export function Input(props: InputProps): React.ReactNode {
   return (
-    <motion.input
-      {...composeAnimationProps({ ...props })}
+    <MotionElement
+      as='input'
+      {...composeAnimationProps(props)}
       {...(props as HTMLMotionProps<'input'>)}
       className={twMerge(
-        InputStyles(props),
+        inputStyles(props),
         cursors(props),
         props.className,
         'w-full flex items-center h-12 bg-white dark:bg-zinc-900 forced-colors:bg-[Field] border-2 rounded-lg overflow-hidden',

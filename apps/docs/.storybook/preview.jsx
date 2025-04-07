@@ -1,9 +1,26 @@
 import { themes } from '@storybook/theming';
+import React, { memo, useEffect } from 'react';
 
 import '../tailwind.css';
-import { ModeDecorator } from './ModeDecorator.js';
+
+const LIGHT_THEME = 'Light theme';
+const DARK_THEME = 'Dark theme';
 
 const preview = {
+  globalTypes: {
+    theme: {
+      description: 'Global theme for components',
+      toolbar: {
+        title: 'Theme',
+        icon: 'circlehollow',
+        items: [LIGHT_THEME, DARK_THEME],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: {
+    theme: 'light',
+  },
   parameters: {
     controls: {
       matchers: {},
@@ -18,6 +35,9 @@ const preview = {
 };
 
 export const parameters = {
+  darkMode: {
+    current: 'light',
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -26,5 +46,18 @@ export const parameters = {
   },
 };
 
-export const decorators = [(Story) => <Story />, ModeDecorator];
+export const decorators = [
+  (Story, context) => {
+    const selectedTheme = context.globals.theme === LIGHT_THEME;
+
+    useEffect(() => {
+      document.documentElement.classList.toggle('dark', !selectedTheme);
+    }, [selectedTheme]);
+
+    return <Story />;
+  },
+];
+
 export const tags = ['autodocs'];
+
+export default preview;

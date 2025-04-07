@@ -1,10 +1,10 @@
 import { type Variants } from 'framer-motion';
 import { get } from 'lodash-es';
 
-import { type AnimationProps } from 'src/types';
+import { type AnimationProps } from 'src/domain/types';
 
 export const composeAnimationProps = (
-  props: Record<symbol, unknown>,
+  props: unknown,
 ): { [K in keyof Required<AnimationProps>]: AnimationProps[K] } => {
   return {
     animate: get(props, ['animate']),

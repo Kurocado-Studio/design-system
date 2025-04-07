@@ -1,4 +1,9 @@
-import { type HTMLMotionProps, type MotionProps } from 'framer-motion';
+import {
+  type HTMLMotionProps,
+  type MotionProps,
+  type motion,
+} from 'framer-motion';
+import type React from 'react';
 import { type JSX } from 'react/jsx-runtime';
 
 /**
@@ -61,3 +66,12 @@ export type CommonProps = {
   disabled?: boolean;
   loading?: boolean;
 };
+
+export type HTMLIntrinsicElements = keyof React.JSX.IntrinsicElements;
+
+export type PropsWithoutRef<T extends HTMLIntrinsicElements> =
+  T extends keyof typeof motion
+    ? Omit<React.ComponentPropsWithoutRef<(typeof motion)[T]>, 'ref'>
+    : never;
+
+export type ChildrenType = Array<React.ReactNode> | React.ReactNode;
