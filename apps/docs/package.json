@@ -47,7 +47,7 @@
     "semantic-release-monorepo": "^8.0.2",
     "serve": "^14.2.1",
     "storybook": "^8.6.11",
-    "typescript": "5.8.2",
+    "typescript": "5.8.3",
     "vite": "^6.2.5"
   }
 }
