@@ -148,8 +148,8 @@ importers:
   packages/ui:
     dependencies:
       '@kurocado-studio/html-forms':
-        specifier: 1.0.0-alpha.6
-        version: 1.0.0-alpha.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 1.0.0
+        version: 1.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/button':
         specifier: ^3.12.1
         version: 3.12.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1106,8 +1106,8 @@ packages:
   '@jspm/core@2.1.0':
     resolution: {integrity: sha512-3sRl+pkyFY/kLmHl0cgHiFp2xEqErA8N3ECjMs7serSUBmoJ70lBa0PG5t0IM6WJgdZNyyI0R8YFfi5wM8+mzg==}
 
-  '@kurocado-studio/html-forms@1.0.0-alpha.6':
-    resolution: {integrity: sha512-XrAk9yYOZkqUNrqaHbDDlw4CeQJPS6kN73L02Su1iZku255y1CYmLXQzp0OCFXl1BSYnUuQEgK+ZOVXK4fiy7A==}
+  '@kurocado-studio/html-forms@1.0.0':
+    resolution: {integrity: sha512-gDOT43sblcpGunK56cQ4dqRDZYFlSp7tFgBw5Oozq+vwgReoqReK31biNAdwfwaXzfD2/hi8vrPJLsHRPk4gjA==}
     peerDependencies:
       react: 19.0.0
       react-dom: 19.0.0
@@ -8723,7 +8723,7 @@ snapshots:
 
   '@jspm/core@2.1.0': {}
 
-  '@kurocado-studio/html-forms@1.0.0-alpha.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@kurocado-studio/html-forms@1.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@conform-to/dom': 1.3.0
       '@conform-to/react': 1.3.0(react@19.0.0)
