@@ -1,6 +1,3 @@
-// import { get } from 'lodash-es';
-// import { type Config } from 'tailwindcss';
-
 export const fontFamily = {
   caption: 'Mona Sans',
   content: 'Mona Sans',
@@ -11,7 +8,7 @@ export const fontFamily = {
   'heading-2': 'Mona Sans',
   'heading-1': 'Mona Sans',
   'monospace-body': 'monospace',
-  display: [['Mona Sans'], { fontVariationSettings: '"width" 125' }],
+  display: [['Mona Sans'], { fontVariationSettings: '"wdth" 125' }],
 };
 
 export const kurocadoStudioTheme = {
