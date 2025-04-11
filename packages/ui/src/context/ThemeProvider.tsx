@@ -65,7 +65,7 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
     [cssVariablesMap, handleVariablesMap, root],
   );
 
-  const providerValue = useMemo(
+  const providerValue: ThemeProviderProps = useMemo(
     () => ({
       setThemeVariable,
       toggleLightDarkTheme,
