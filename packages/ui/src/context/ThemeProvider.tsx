@@ -38,6 +38,14 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
     [theme],
   );
 
+  const handleVariablesMap = useCallback(() => {
+    Object.entries(cssVariablesMap).forEach(
+      ([cssVariableName, cssVariableValue]) => {
+        root.style.setProperty(cssVariableName, cssVariableValue);
+      },
+    );
+  }, [cssVariablesMap, root.style]);
+
   const toggleLightDarkTheme: ThemeProviderProps['toggleLightDarkTheme'] =
     useCallback(() => {
       const selectedMode = root.classList.contains('dark');
@@ -46,9 +54,15 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
 
   const setThemeVariable: ThemeProviderProps['setThemeVariable'] = useCallback(
     (variableName, variableValue) => {
+      const styles = getComputedStyle(root);
+      const cssVariableValue = styles.getPropertyValue(variableName);
+
+      if (!cssVariableValue.trim().length) return;
+
       cssVariablesMap[variableName] = variableValue;
+      handleVariablesMap();
     },
-    [cssVariablesMap],
+    [cssVariablesMap, handleVariablesMap, root],
   );
 
   const providerValue = useMemo(
@@ -60,12 +74,8 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
   );
 
   useEffect(() => {
-    Object.entries(cssVariablesMap).forEach(
-      ([cssVariableName, cssVariableValue]) => {
-        root.style.setProperty(cssVariableName, cssVariableValue);
-      },
-    );
-  }, [cssVariablesMap, root.style]);
+    handleVariablesMap();
+  }, [handleVariablesMap]);
 
   return (
     <ThemeContext.Provider value={providerValue}>

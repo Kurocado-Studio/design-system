@@ -22,6 +22,7 @@ function getTailwindColors(): {
       for (const [shade, shadeDef] of Object.entries(colorValue)) {
         if (typeof shadeDef === 'object' && 'value' in shadeDef) {
           const shadeCssVar = `--color-${colorName}-${shade}`;
+
           shades[shade] = `var(${shadeCssVar})`;
           colorCssVariableMap[shadeCssVar] = shadeDef.value;
         }
