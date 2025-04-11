@@ -7,5 +7,6 @@ import { spacing } from './spacing';
 export const kurocadoStudioTheme: Partial<CustomThemeConfig> = {
   colors,
   fontFamily,
-  theme: { colors, spacing, fontFamily },
+  spacing,
+  theme: {},
 };
