@@ -1,0 +1,193 @@
+{
+  "font-weight": {
+    "sans": {
+      "font-thin-100": {
+        "value": "{fontWeights.noto-sans-thin}",
+        "type": "fontWeights"
+      },
+      "font-extralight-200": {
+        "value": "{fontWeights.noto-sans-extralight}",
+        "type": "fontWeights"
+      },
+      "font-normal-400": {
+        "value": "{fontWeights.noto-sans-regular}",
+        "type": "fontWeights"
+      },
+      "font-light-300": {
+        "value": "{fontWeights.noto-sans-light}",
+        "type": "fontWeights"
+      },
+      "font-medium-500": {
+        "value": "{fontWeights.noto-sans-medium}",
+        "type": "fontWeights"
+      },
+      "font-semibold-600": {
+        "value": "{fontWeights.noto-sans-semibold}",
+        "type": "fontWeights"
+      },
+      "font-bold-700": {
+        "value": "{fontWeights.noto-sans-bold}",
+        "type": "fontWeights"
+      },
+      "font-extrabold-800": {
+        "value": "{fontWeights.noto-sans-extrabold}",
+        "type": "fontWeights"
+      },
+      "font-black-900": {
+        "value": "{fontWeights.noto-sans-black}",
+        "type": "fontWeights"
+      }
+    },
+    "serif": {
+      "font-thin-100": {
+        "value": "{fontWeights.noto-serif-thin}",
+        "type": "fontWeights"
+      },
+      "font-extralight-200": {
+        "value": "{fontWeights.noto-serif-extralight}",
+        "type": "fontWeights"
+      },
+      "font-light-300": {
+        "value": "{fontWeights.noto-serif-light}",
+        "type": "fontWeights"
+      },
+      "font-medium-500": {
+        "value": "{fontWeights.noto-serif-medium}",
+        "type": "fontWeights"
+      },
+      "font-normal-400": {
+        "value": "{fontWeights.noto-serif-regular}",
+        "type": "fontWeights"
+      },
+      "font-semibold-600": {
+        "value": "{fontWeights.noto-serif-semibold}",
+        "type": "fontWeights"
+      },
+      "font-bold-700": {
+        "value": "{fontWeights.noto-serif-bold}",
+        "type": "fontWeights"
+      },
+      "font-extrabold-800": {
+        "value": "{fontWeights.noto-serif-extrabold}",
+        "type": "fontWeights"
+      },
+      "font-black-900": {
+        "value": "{fontWeights.noto-serif-black}",
+        "type": "fontWeights"
+      }
+    },
+    "mono": {
+      "font-thin-100": {
+        "value": "{fontWeights.noto-sans-mono-thin}",
+        "type": "fontWeights"
+      },
+      "font-extralight-200": {
+        "value": "{fontWeights.noto-sans-mono-extralight}",
+        "type": "fontWeights"
+      },
+      "font-light-300": {
+        "value": "{fontWeights.noto-sans-mono-light}",
+        "type": "fontWeights"
+      },
+      "font-normal-400": {
+        "value": "{fontWeights.noto-sans-mono-regular}",
+        "type": "fontWeights"
+      },
+      "font-medium-500": {
+        "value": "{fontWeights.noto-sans-mono-medium}",
+        "type": "fontWeights"
+      },
+      "font-semibold-600": {
+        "value": "{fontWeights.noto-sans-mono-semibold}",
+        "type": "fontWeights"
+      },
+      "font-bold-700": {
+        "value": "{fontWeights.noto-sans-mono-bold}",
+        "type": "fontWeights"
+      },
+      "font-extrabold-800": {
+        "value": "{fontWeights.noto-sans-mono-extrabold}",
+        "type": "fontWeights"
+      },
+      "font-black-900": {
+        "value": "{fontWeights.noto-sans-mono-black}",
+        "type": "fontWeights"
+      }
+    }
+  },
+  "font-family": {
+    "font-sans": {
+      "value": "{fontFamilies.noto-sans}",
+      "type": "fontFamilies"
+    },
+    "font-serif": {
+      "value": "{fontFamilies.noto-serif}",
+      "type": "fontFamilies"
+    },
+    "font-mono": {
+      "value": "{fontFamilies.noto-sans-mono}",
+      "type": "fontFamilies"
+    }
+  },
+  "text-transform": {
+    "normal-case": {
+      "value": "none",
+      "type": "textCase",
+      "description": "Selects the \"As typed\" case option in Figma's typography design properties. In Tailwind CSS they note \"The normal-case utility can be used to preserve the original casing — typically to reset capitalization at different breakpoints.\""
+    },
+    "uppercase": {
+      "value": "uppercase",
+      "type": "textCase"
+    },
+    "lowercase": {
+      "value": "lowercase",
+      "type": "textCase"
+    },
+    "capitalize": {
+      "value": "capitalize",
+      "type": "textCase",
+      "description": "Selects the \"Title case\" case option in Figma's typography design properties which doesn't behave as epected but rather capitalizes the first letter of every word."
+    }
+  },
+  "text-decoration-line": {
+    "none": {
+      "value": "none",
+      "type": "textDecoration"
+    },
+    "underline": {
+      "value": "underline",
+      "type": "textDecoration"
+    },
+    "line-through": {
+      "value": "line-through",
+      "type": "textDecoration"
+    }
+  },
+  "notes": {
+    "font-weight": {
+      "numeric-values": {
+        "value": "Figma limitation",
+        "type": "other",
+        "description": "Figma has a written version of the weight, which is combined with some additional styling properties, like italics. This doesn't match the way Tailwind handles font, weights. \n\nSo the names of the tokens contain the numeric value of the property which matches the class name as best as possible. \n\nTailwind docs on Font Weight followed live here https://tailwindcss.com/docs/font-weight"
+      },
+      "customizing": {
+        "value": "error prone",
+        "type": "other",
+        "description": "Figma has a unique way of handling weights in that it uses a written value combined with some styling properties, like italics. The written value is also different between type faces. I suggest if you want to change the typeface and weight, to create them as styles in Figma to import the individual tokens in its own set, and customize from there. "
+      }
+    },
+    "font-family": {
+      "customizing": {
+        "value": "error prone",
+        "type": "other",
+        "description": "Figma has a unique way of handling font families in that it uses a written value of font weights combined with some styling properties, like italics. The written value of font weights are different between type faces. I suggest if you want to change the typeface and weight, to create them as styles in Figma to import the individual tokens in its own set, and customize from there. \n\nSee the token set typeface-satoshi for an example. "
+      }
+    }
+  },
+  "set-name": {
+    "font-styling": {
+      "value": "primitives/font-styling",
+      "type": "other"
+    }
+  }
+}

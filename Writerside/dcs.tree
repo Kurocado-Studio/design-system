@@ -10,4 +10,7 @@
     <toc-element topic="Discovery.md">
         <toc-element topic="ddfdf.md"/>
     </toc-element>
+    <toc-element topic="Tokens.md">
+        <toc-element topic="Empty-MD-Topic.md"/>
+    </toc-element>
 </instance-profile>
