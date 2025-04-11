@@ -1,5 +1,12 @@
 import { get } from 'lodash-es';
-import { type ReactNode, createContext } from 'react';
+import {
+  type ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+} from 'react';
 import React from 'react';
 
 import { colorsCssVariables } from '../domain/theme/colors';
@@ -24,26 +31,48 @@ const ThemeContext = createContext<ThemeProviderProps>({
 export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
   const root = document.documentElement;
 
-  const themeMap: Theme = {
-    colors: get(theme, ['colors'], colorsCssVariables),
-  };
+  const cssVariablesMap: Record<string, string> = useMemo(
+    () => ({
+      ...get(theme, ['colors'], colorsCssVariables),
+    }),
+    [theme],
+  );
 
-  Object.values(themeMap).forEach((cssVariablesMap) => {
+  const toggleLightDarkTheme: ThemeProviderProps['toggleLightDarkTheme'] =
+    useCallback(() => {
+      const selectedMode = root.classList.contains('dark');
+      root.classList.toggle('dark', !selectedMode);
+    }, [root.classList]);
+
+  const setThemeVariable: ThemeProviderProps['setThemeVariable'] = useCallback(
+    (variableName, variableValue) => {
+      cssVariablesMap[variableName] = variableValue;
+    },
+    [cssVariablesMap],
+  );
+
+  const providerValue = useMemo(
+    () => ({
+      setThemeVariable,
+      toggleLightDarkTheme,
+    }),
+    [setThemeVariable, toggleLightDarkTheme],
+  );
+
+  useEffect(() => {
     Object.entries(cssVariablesMap).forEach(
       ([cssVariableName, cssVariableValue]) => {
         root.style.setProperty(cssVariableName, cssVariableValue);
       },
     );
-  });
+  }, [cssVariablesMap, root.style]);
 
   return (
-    <ThemeContext.Provider
-      value={{
-        setThemeVariable: () => {},
-        toggleLightDarkTheme: () => {},
-      }}
-    >
+    <ThemeContext.Provider value={providerValue}>
       {children}
     </ThemeContext.Provider>
   );
 }
+
+export const useThemeContext = (): ThemeProviderProps =>
+  useContext(ThemeContext);
