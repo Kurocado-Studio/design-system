@@ -1,0 +1,16 @@
+{
+  "borderRadius": {
+    "sm": {
+      "type": "borderRadius",
+      "value": "4"
+    },
+    "lg": {
+      "type": "borderRadius",
+      "value": "8"
+    },
+    "xl": {
+      "$type": "borderRadius",
+      "value": "16"
+    }
+  }
+}
