@@ -17,6 +17,8 @@ function getTailwindColors(): {
 
   for (const [colorName, colorValue] of Object.entries(primitives)) {
     if (typeof colorValue === 'undefined') continue;
+    if (colorValue === null) continue;
+
     const variableValue = get(colorValue, ['value']);
 
     if (typeof variableValue === 'string') {
