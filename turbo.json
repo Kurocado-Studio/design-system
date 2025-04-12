@@ -7,6 +7,7 @@
       "dependsOn": ["^build"]
     },
     "setup": {
+      "dependsOn": ["^setup"],
       "cache": false
     },
     "prettier:fix": {
