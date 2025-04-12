@@ -17,8 +17,7 @@ function getTailwindColors(): {
   const colorCssVariableMap: Record<string, string> = {};
 
   for (const [colorName, colorValue] of Object.entries(primitives)) {
-    if (typeof colorValue === 'undefined') continue;
-    if (colorValue === null) continue;
+    if (!colorValue) continue;
 
     const variableValue = get(colorValue, ['value']);
 
@@ -33,18 +32,13 @@ function getTailwindColors(): {
 
       for (const [shade, shadeDef] of Object.entries(colorValue)) {
         const shadeValue = get(shadeDef, ['value']);
+        if (typeof shadeValue !== 'string') continue;
 
-        if (typeof shadeValue === 'string') {
-          const { cssVariableName, cssVariableValue, cssVariableReference } =
-            createCssVariableEntry(
-              'color',
-              `${colorName}-${shade}`,
-              shadeValue,
-            );
+        const { cssVariableName, cssVariableValue, cssVariableReference } =
+          createCssVariableEntry('color', `${colorName}-${shade}`, shadeValue);
 
-          shades[shade] = cssVariableReference;
-          colorCssVariableMap[cssVariableName] = cssVariableValue;
-        }
+        shades[shade] = cssVariableReference;
+        colorCssVariableMap[cssVariableName] = cssVariableValue;
       }
       colors[colorName] = shades;
     }
