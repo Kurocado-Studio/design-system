@@ -7,15 +7,18 @@ function getTailwindColors(): {
   colorThemeMap: Record<string, unknown>;
   colorCssVariableMap: Record<string, string>;
 } {
-  const primitives = get(tokens['primitives/colors'], ['colors'], {});
+  const primitives: Record<string, unknown> = get(tokens, ['colors'], {});
   const colorThemeMap: Record<string, unknown> = {};
   const colorCssVariableMap: Record<string, string> = {};
 
   for (const [colorName, colorValue] of Object.entries(primitives)) {
-    if ('value' in colorValue) {
+    if (typeof colorValue === 'undefined') continue;
+    const variableValue = get(colorValue, ['value']);
+
+    if (typeof variableValue === 'string') {
       const cssVar = `--color-${colorName})`;
       colorThemeMap[colorName] = `var(${cssVar})`;
-      colorCssVariableMap[cssVar] = colorValue.value;
+      colorCssVariableMap[cssVar] = variableValue;
     } else {
       const shades: Record<string, string> = {};
 
@@ -24,7 +27,7 @@ function getTailwindColors(): {
           const shadeCssVar = `--color-${colorName}-${shade}`;
 
           shades[shade] = `var(${shadeCssVar})`;
-          colorCssVariableMap[shadeCssVar] = shadeDef.value;
+          colorCssVariableMap[shadeCssVar] = shadeDef.value as string;
         }
       }
       colorThemeMap[colorName] = shades;
