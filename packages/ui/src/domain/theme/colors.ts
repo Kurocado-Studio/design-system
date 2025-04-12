@@ -4,7 +4,7 @@ import type { CustomThemeConfig } from 'tailwindcss/types/config';
 import tokens from '../tokens/tokens.json';
 
 function getTailwindColors(): {
-  colorThemeMap: Record<string, unknown>;
+  colors: Required<CustomThemeConfig['colors']>;
   colorCssVariableMap: Record<string, string>;
 } {
   const primitives: Record<string, unknown> = get(
@@ -12,7 +12,7 @@ function getTailwindColors(): {
     ['colors/colors', 'colors'],
     {},
   );
-  const colorThemeMap: Record<string, unknown> = {};
+  const colors: Record<string, unknown> = {};
   const colorCssVariableMap: Record<string, string> = {};
 
   for (const [colorName, colorValue] of Object.entries(primitives)) {
@@ -23,7 +23,7 @@ function getTailwindColors(): {
 
     if (typeof variableValue === 'string') {
       const cssVar = `--color-${colorName})`;
-      colorThemeMap[colorName] = `var(${cssVar})`;
+      colors[colorName] = `var(${cssVar})`;
       colorCssVariableMap[cssVar] = variableValue;
     } else {
       const shades: Record<string, string> = {};
@@ -36,15 +36,11 @@ function getTailwindColors(): {
           colorCssVariableMap[shadeCssVar] = shadeDef.value as string;
         }
       }
-      colorThemeMap[colorName] = shades;
+      colors[colorName] = shades;
     }
   }
 
-  return { colorThemeMap, colorCssVariableMap };
+  return { colors, colorCssVariableMap };
 }
 
-export const colors: Required<CustomThemeConfig['colors']> =
-  getTailwindColors().colorThemeMap;
-
-export const colorsCssVariables: Record<string, string> =
-  getTailwindColors().colorCssVariableMap;
+export const { colors, colorCssVariableMap } = getTailwindColors();

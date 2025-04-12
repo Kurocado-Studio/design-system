@@ -9,7 +9,7 @@ import {
 } from 'react';
 import React from 'react';
 
-import { colorsCssVariables } from '../domain/theme/colors';
+import { colorCssVariableMap } from 'src/domain/theme/colors';
 
 export type Theme = Record<string, Record<string, string>>;
 
@@ -32,9 +32,7 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
   const root = document.documentElement;
 
   const cssVariablesMap: Record<string, string> = useMemo(
-    () => ({
-      ...get(theme, ['colors'], colorsCssVariables),
-    }),
+    () => get(theme, ['colors'], colorCssVariableMap),
     [theme],
   );
 
