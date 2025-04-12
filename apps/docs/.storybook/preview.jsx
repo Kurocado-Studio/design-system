@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@kurocado-studio/ui';
 import { themes } from '@storybook/theming';
 import React, { memo, useEffect } from 'react';
 
@@ -54,7 +55,11 @@ export const decorators = [
       document.documentElement.classList.toggle('dark', !selectedTheme);
     }, [selectedTheme]);
 
-    return <Story />;
+    return (
+      <ThemeProvider>
+        <Story />
+      </ThemeProvider>
+    );
   },
 ];
 

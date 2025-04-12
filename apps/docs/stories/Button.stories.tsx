@@ -100,5 +100,15 @@ export const Loading: StoryObj<ButtonProps> = {
   },
 };
 
+export const ghost: StoryObj<ButtonProps> = {
+  render: Template,
+  name: 'Ghost',
+  args: {
+    children: 'Ghost',
+    variant: 'destructive',
+    ghost: true,
+  },
+};
+
 /* eslint import/no-default-export: 0 */
 export default meta;
