@@ -1,10 +1,11 @@
 import { get } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
+import { createCssVariableEntry } from '../../utils/createCssVariableEntry';
 import tokens from '../tokens/tokens.json';
 
 function getTailwindColors(): {
-  colorThemeMap: Record<string, unknown>;
+  colors: Required<CustomThemeConfig['colors']>;
   colorCssVariableMap: Record<string, string>;
 } {
   const primitives: Record<string, unknown> = get(
@@ -12,39 +13,38 @@ function getTailwindColors(): {
     ['colors/colors', 'colors'],
     {},
   );
-  const colorThemeMap: Record<string, unknown> = {};
+  const colors: Record<string, unknown> = {};
   const colorCssVariableMap: Record<string, string> = {};
 
   for (const [colorName, colorValue] of Object.entries(primitives)) {
-    if (typeof colorValue === 'undefined') continue;
-    if (colorValue === null) continue;
+    if (!colorValue) continue;
 
     const variableValue = get(colorValue, ['value']);
 
     if (typeof variableValue === 'string') {
-      const cssVar = `--color-${colorName})`;
-      colorThemeMap[colorName] = `var(${cssVar})`;
-      colorCssVariableMap[cssVar] = variableValue;
+      const { cssVariableReference, cssVariableName, cssVariableValue } =
+        createCssVariableEntry('color', colorName, variableValue);
+
+      colors[colorName] = cssVariableReference;
+      colorCssVariableMap[cssVariableName] = cssVariableValue;
     } else {
       const shades: Record<string, string> = {};
 
       for (const [shade, shadeDef] of Object.entries(colorValue)) {
-        if (typeof shadeDef === 'object' && 'value' in shadeDef) {
-          const shadeCssVar = `--color-${colorName}-${shade}`;
+        const shadeValue = get(shadeDef, ['value']);
+        if (typeof shadeValue !== 'string') continue;
 
-          shades[shade] = `var(${shadeCssVar})`;
-          colorCssVariableMap[shadeCssVar] = shadeDef.value as string;
-        }
+        const { cssVariableName, cssVariableValue, cssVariableReference } =
+          createCssVariableEntry('color', `${colorName}-${shade}`, shadeValue);
+
+        shades[shade] = cssVariableReference;
+        colorCssVariableMap[cssVariableName] = cssVariableValue;
       }
-      colorThemeMap[colorName] = shades;
+      colors[colorName] = shades;
     }
   }
 
-  return { colorThemeMap, colorCssVariableMap };
+  return { colors, colorCssVariableMap };
 }
 
-export const colors: Required<CustomThemeConfig['colors']> =
-  getTailwindColors().colorThemeMap;
-
-export const colorsCssVariables: Record<string, string> =
-  getTailwindColors().colorCssVariableMap;
+export const { colors, colorCssVariableMap } = getTailwindColors();

@@ -9,7 +9,9 @@ import {
 } from 'react';
 import React from 'react';
 
-import { colorsCssVariables } from '../domain/theme/colors';
+import { colorCssVariableMap } from 'src/domain/theme/colors';
+
+import { borderRadiusCssVariableMap } from '../domain/theme/borderRadius';
 
 export type Theme = Record<string, Record<string, string>>;
 
@@ -33,7 +35,8 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
 
   const cssVariablesMap: Record<string, string> = useMemo(
     () => ({
-      ...get(theme, ['colors'], colorsCssVariables),
+      ...get(theme, ['colors'], colorCssVariableMap),
+      ...get(theme, ['borderRadius'], borderRadiusCssVariableMap),
     }),
     [theme],
   );
