@@ -9,7 +9,7 @@ function getTailwindColors(): {
 } {
   const primitives: Record<string, unknown> = get(
     tokens,
-    ['colors', 'colors'],
+    ['colors/colors', 'colors'],
     {},
   );
   const colorThemeMap: Record<string, unknown> = {};
