@@ -1,8 +1,8 @@
 import { get } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
-import { createCssVariableEntry } from '../../utils/createCssVariableEntry';
-import tokens from '../tokens/tokens.json';
+import tokens from 'src/domain/tokens/tokens.json';
+import { createCssVariableEntry } from 'src/utils/createCssVariableEntry';
 
 function getTailwindBorderRadius(): {
   borderRadius: Required<CustomThemeConfig['borderRadius']>;
@@ -41,7 +41,7 @@ function getTailwindBorderRadius(): {
         if (borderRadiusKeyName === 'value') {
           const { cssVariableReference, cssVariableName, cssVariableValue } =
             createCssVariableEntry(
-              'border-radius',
+              'radius',
               borderRadiusPrimitiveName,
               borderRadiusKeyValue,
             );

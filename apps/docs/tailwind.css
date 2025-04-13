@@ -2,11 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Mona Sans';
-  src: url('@kurocado-studio/ui/fonts/Mona-Sans.var.woff2') format('woff2');
-  font-weight: 100 900;
-  font-display: swap;
-}
-
 @custom-variant dark (&:where(.dark, .dark *));

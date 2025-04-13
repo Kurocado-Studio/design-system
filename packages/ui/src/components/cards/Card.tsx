@@ -76,6 +76,7 @@ export function Card({
 }: CardProps): React.ReactNode {
   return (
     <MotionElement className={twMerge(cardClasses(), className)} {...rest}>
+      <p className='text-9xl' />
       {children}
     </MotionElement>
   );
