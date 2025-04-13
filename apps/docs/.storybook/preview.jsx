@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@kurocado-studio/ui';
+import '@kurocado-studio/ui/typography';
 import { themes } from '@storybook/theming';
 import React, { memo, useEffect } from 'react';
 
