@@ -9,9 +9,10 @@ import {
 } from 'react';
 import React from 'react';
 
+import { borderRadiusCssVariableMap } from 'src/domain/theme/borderRadius';
 import { colorCssVariableMap } from 'src/domain/theme/colors';
 
-import { borderRadiusCssVariableMap } from '../domain/theme/borderRadius';
+import { fontSizeCssVariableMap } from '../domain/theme/fontSize';
 
 export type Theme = Record<string, Record<string, string>>;
 
@@ -37,6 +38,7 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
     () => ({
       ...get(theme, ['colors'], colorCssVariableMap),
       ...get(theme, ['borderRadius'], borderRadiusCssVariableMap),
+      ...get(theme, ['fontSize'], fontSizeCssVariableMap),
     }),
     [theme],
   );
