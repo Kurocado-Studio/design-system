@@ -16,9 +16,7 @@
       "import": "./src/index.js"
     }
   },
-  "files": [
-    "src"
-  ],
+  "files": ["src"],
   "scripts": {
     "clean": "rm -rf .turbo node_modules dist",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
