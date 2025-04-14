@@ -7,14 +7,14 @@ import type { ChildrenType, CommonProps } from './index';
  * Represents a token configuration for a button variant, defining styles for various states and themes.
  *
  * Properties:
- * - bg: Specifies the background color for the button in the default theme.
- * - darkBg: Specifies the background color for the button in a dark theme.
- * - darkHover: Defines the hover state background color for the button in a dark theme.
- * - darkPressed: Defines the pressed state background color for the button in a dark theme.
- * - darkText: Specifies the text color for the button in a dark theme.
- * - hover: Defines the hover state background color for the button in the default theme.
- * - pressed: Defines the pressed state background color for the button in the default theme.
- * - text: Specifies the text color for the button in the default theme.
+ * - bg: Specifies the background color for the button in the default setup.
+ * - darkBg: Specifies the background color for the button in a dark setup.
+ * - darkHover: Defines the hover state background color for the button in a dark setup.
+ * - darkPressed: Defines the pressed state background color for the button in a dark setup.
+ * - darkText: Specifies the text color for the button in a dark setup.
+ * - hover: Defines the hover state background color for the button in the default setup.
+ * - pressed: Defines the pressed state background color for the button in the default setup.
+ * - text: Specifies the text color for the button in the default setup.
  */
 export interface ButtonVariantToken {
   bg?: string;

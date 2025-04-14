@@ -10,6 +10,8 @@ import { cursors } from 'src/domain/infra/cursors';
 import { type ButtonProps } from 'src/domain/types/button';
 import { composeAnimationProps } from 'src/utils';
 
+export { type ButtonProps } from 'src/domain/types/button';
+
 export function Button(props: ButtonProps): React.ReactNode {
   const ref = React.useRef(null);
 

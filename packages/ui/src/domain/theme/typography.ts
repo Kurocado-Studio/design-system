@@ -1,18 +1,18 @@
 import { get } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
-import tokens from 'src/domain/tokens/tokens.json';
-import { createCssVariableEntry } from 'src/utils/createCssVariableEntry';
+import { createCssVariableEntry } from '../../utils/createCssVariableEntry';
+import type { Theme } from '../types';
 
-function getTailwindFontSize(): {
+export function getTailwindFontSize(theme: Theme): {
   fontSize: Required<CustomThemeConfig['fontSize']>;
   fontSizeCssVariableMap: Record<string, string>;
 } {
-  const primitives: Record<string, unknown> = get(
-    tokens,
+  const primitives = get(
+    theme,
     ['typography/typography', 'font-size'],
     {},
-  );
+  ) as Record<string, unknown>;
 
   const fontSize: Record<string, unknown> = {};
   const fontSizeCssVariableMap: Record<string, string> = {};
@@ -38,5 +38,3 @@ function getTailwindFontSize(): {
     fontSizeCssVariableMap,
   };
 }
-
-export const { fontSize, fontSizeCssVariableMap } = getTailwindFontSize();

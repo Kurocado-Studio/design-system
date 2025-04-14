@@ -17,7 +17,7 @@
 
 - **Tailwind Integration:**  
   We plan to use Tailwind CSS for our utility-first styling. The key is to integrate our CSS
-  variables into Tailwind’s theme so that developers can use classes like `bg-primary-button-bg` or
+  variables into Tailwind’s setup so that developers can use classes like `bg-primary-button-bg` or
   `hover:bg-primary-button-bg_hover` directly.
 
 - **Tooling:**  
@@ -35,7 +35,7 @@
   and produces a CSS file (e.g., `design-tokens.css`).
 
 - **Integrate with Tailwind:**  
-  Extend the Tailwind theme (in `tailwind.config.js`) to reference these CSS variables, so tokens
+  Extend the Tailwind setup (in `tailwind.config.js`) to reference these CSS variables, so tokens
   are used in spacing, colors, borderRadius, etc.
 
 - **Maintain Flexibility:**  
@@ -115,11 +115,11 @@ The generated CSS might look like:
 ### Tailwind Theme Extension
 
 The generated `design-tokens.css` file is imported globally. In our `tailwind.config.js`, we extend
-the theme by referencing these variables:
+the setup by referencing these variables:
 
 ```js
 module.exports = {
-  theme: {
+  setup: {
     extend: {
       spacing: {
         xl: 'var(--spacing-xl)', // Map the token "xl" from spacing.
@@ -144,7 +144,7 @@ module.exports = {
 
 ### Component Usage Example
 
-A React button component then uses Tailwind classes referencing these theme extensions:
+A React button component then uses Tailwind classes referencing these setup extensions:
 
 ```tsx
 import React from 'react';

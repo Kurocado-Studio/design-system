@@ -1,4 +1,3 @@
-import { get } from 'lodash-es';
 import {
   type ReactNode,
   createContext,
@@ -9,12 +8,10 @@ import {
 } from 'react';
 import React from 'react';
 
-import { borderRadiusCssVariableMap } from 'src/domain/theme/borderRadius';
-import { colorCssVariableMap } from 'src/domain/theme/colors';
-
-import { fontSizeCssVariableMap } from '../domain/theme/fontSize';
-
-export type Theme = Record<string, Record<string, string>>;
+// import { composeTheme } from '../domain/theme';
+import { composeTheme } from '../domain/theme';
+import { tokens } from '../domain/tokens/tokens';
+import { type Theme } from '../domain/types';
 
 interface ThemeProps {
   theme?: Theme;
@@ -34,19 +31,17 @@ const ThemeContext = createContext<ThemeProviderProps>({
 export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
   const root = document.documentElement;
 
-  const cssVariablesMap: Record<string, string> = useMemo(
-    () => ({
-      ...get(theme, ['colors'], colorCssVariableMap),
-      ...get(theme, ['borderRadius'], borderRadiusCssVariableMap),
-      ...get(theme, ['fontSize'], fontSizeCssVariableMap),
-    }),
-    [theme],
-  );
+  const cssVariablesMap: Record<string, unknown> = useMemo(() => {
+    const { cssVariables } = composeTheme(theme || tokens);
+    return cssVariables;
+  }, [theme]);
 
   const handleVariablesMap = useCallback(() => {
     Object.entries(cssVariablesMap).forEach(
       ([cssVariableName, cssVariableValue]) => {
-        root.style.setProperty(cssVariableName, cssVariableValue);
+        if (typeof cssVariableValue === 'string') {
+          root.style.setProperty(cssVariableName, cssVariableValue);
+        }
       },
     );
   }, [cssVariablesMap, root.style]);

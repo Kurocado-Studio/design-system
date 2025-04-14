@@ -1,18 +1,18 @@
 import { get } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
-import tokens from 'src/domain/tokens/tokens.json';
-import { createCssVariableEntry } from 'src/utils/createCssVariableEntry';
+import { createCssVariableEntry } from '../../utils/createCssVariableEntry';
+import type { Theme } from '../types';
 
-function getTailwindColors(): {
+export function getTailwindColors(theme: Theme): {
   colors: Required<CustomThemeConfig['colors']>;
   colorCssVariableMap: Record<string, string>;
 } {
-  const primitives: Record<string, unknown> = get(
-    tokens,
-    ['colors/colors', 'colors'],
-    {},
-  );
+  const primitives = get(theme, ['colors/colors', 'colors'], {}) as Record<
+    string,
+    unknown
+  >;
+
   const colors: Record<string, unknown> = {};
   const colorCssVariableMap: Record<string, string> = {};
 
@@ -46,5 +46,3 @@ function getTailwindColors(): {
 
   return { colors, colorCssVariableMap };
 }
-
-export const { colors, colorCssVariableMap } = getTailwindColors();
