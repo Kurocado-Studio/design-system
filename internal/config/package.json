@@ -18,12 +18,13 @@
   },
   "files": ["src"],
   "scripts": {
-    "setup": "pnpm install",
     "clean": "rm -rf .turbo node_modules dist",
+    "lint": "eslint --max-warnings=0 . --no-warn-ignored",
+    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
-    "lint": "eslint --max-warnings=0 . --no-warn-ignored",
-    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored"
+    "setup": "pnpm install",
+    "typecheck": "tsc"
   },
   "devDependencies": {
     "@kurocado-studio/qa": "2.0.0-alpha.2",

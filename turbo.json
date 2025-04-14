@@ -18,6 +18,10 @@
       "dependsOn": ["^setup"],
       "cache": false
     },
+    "typecheck": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
     "test": {
       "dependsOn": ["^setup", "^build"],
       "cache": false
