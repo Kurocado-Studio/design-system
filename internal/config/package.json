@@ -16,7 +16,9 @@
       "import": "./src/index.js"
     }
   },
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "clean": "rm -rf .turbo node_modules dist",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
@@ -29,6 +31,8 @@
   "devDependencies": {
     "@kurocado-studio/qa": "2.0.0-alpha.2",
     "@kurocado-studio/styleguide": "^2.3.2",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.13.14",
     "semantic-release": "^24.2.3",
     "semantic-release-monorepo": "^8.0.2"
   },
