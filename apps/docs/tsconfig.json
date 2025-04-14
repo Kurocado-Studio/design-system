@@ -2,7 +2,10 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": ["@kurocado-studio/styleguide/remix/tsconfig"],
   "compilerOptions": {
+    "types": ["@types/lodash-es", "@types/node"],
+    "typeRoots": ["./node_modules"],
     "target": "ES2020",
+    "rootDir": ".",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "esModuleInterop": true,
@@ -16,7 +19,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@kurocado-studio/ui": ["node_modules/@kurocado-studio/ui"]
+    }
   },
   "include": ["./.storybook/**/*", "./stories/**/*"],
   "exclude": ["dist", "build", "node_modules"]

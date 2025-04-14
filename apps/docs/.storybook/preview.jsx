@@ -1,17 +1,17 @@
 import { ThemeProvider } from '@kurocado-studio/ui';
-import '@kurocado-studio/ui/typography';
+import '@kurocado-studio/ui/typography.css';
 import { themes } from '@storybook/theming';
 import React, { memo, useEffect } from 'react';
 
 import '../tailwind.css';
 
-const LIGHT_THEME = 'Light theme';
-const DARK_THEME = 'Dark theme';
+const LIGHT_THEME = 'Light setup';
+const DARK_THEME = 'Dark setup';
 
 const preview = {
   globalTypes: {
     theme: {
-      description: 'Global theme for components',
+      description: 'Global setup for components',
       toolbar: {
         title: 'Theme',
         icon: 'circlehollow',

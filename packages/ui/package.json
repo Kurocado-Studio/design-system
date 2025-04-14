@@ -15,20 +15,21 @@
       "import": "./dist/index.js"
     },
     "./theme": "./dist/domain/theme/index.js",
-    "./typography": "./dist/styles/typography.css",
+    "./typography.css": "./dist/styles/typography.css",
     "./fonts/Mona-Sans.var.woff2": "./dist/fonts/Mona-Sans.var.woff2"
   },
   "files": ["dist"],
   "scripts": {
     "build": "rm -rf dist && tsup --dts",
-    "setup": "pnpm install",
-    "test": "vitest run --coverage",
     "clean": "rm -rf .turbo node_modules dist",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --check . --write",
     "dev": "tsup --watch",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
-    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored"
+    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --check . --write",
+    "setup": "pnpm install",
+    "test": "vitest run --coverage",
+    "typecheck": "tsc"
   },
   "devDependencies": {
     "@internal/config": "workspace:*",

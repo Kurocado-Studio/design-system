@@ -13,7 +13,7 @@ export default defineConfig((options) => ({
   treeshake: true,
   external: ['framer-motion', 'react', 'react-dom', 'tailwindcss'],
   onSuccess: async (): Promise<void> => {
-    execSync('copyfiles -u 1 "src/fonts/**/*" "src/styles/**/*"  dist', {
+    execSync('copyfiles -u 1 "src/fonts/**/*" "src/styles/**/*" dist', {
       stdio: 'inherit',
     });
   },

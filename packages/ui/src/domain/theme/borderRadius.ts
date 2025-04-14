@@ -1,23 +1,19 @@
 import { get } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
-import tokens from 'src/domain/tokens/tokens.json';
-import { createCssVariableEntry } from 'src/utils/createCssVariableEntry';
+import { createCssVariableEntry } from '../../utils/createCssVariableEntry';
+import { type Theme } from '../types';
 
-function getTailwindBorderRadius(): {
+export function getTailwindBorderRadius(theme: Theme): {
   borderRadius: Required<CustomThemeConfig['borderRadius']>;
   borderRadiusCssVariableMap: Record<string, string>;
 } {
-  const primitives: Record<string, unknown> = get(
-    tokens,
-    ['border-radius/border-radius'],
-    {},
-  );
+  const primitives = get(theme, ['border-radius/border-radius'], {});
   const borderRadius: Record<string, unknown> = {};
   const borderRadiusCssVariableMap: Record<string, string> = {};
 
   for (const [borderRadiusPrimitiveName, borderRadiusValue] of Object.entries(
-    primitives,
+    primitives as Record<string, unknown>,
   )) {
     if (typeof borderRadiusValue === 'undefined') continue;
     if (borderRadiusValue === null) continue;
@@ -58,6 +54,3 @@ function getTailwindBorderRadius(): {
     borderRadiusCssVariableMap,
   };
 }
-
-export const { borderRadius, borderRadiusCssVariableMap } =
-  getTailwindBorderRadius();

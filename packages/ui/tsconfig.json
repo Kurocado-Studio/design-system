@@ -5,6 +5,8 @@
     "@kurocado-studio/styleguide/remix/tsconfig"
   ],
   "compilerOptions": {
+    "types": ["vitest/globals", "node"],
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "rootDir": ".",
     "baseUrl": ".",

@@ -6,6 +6,9 @@ export * from 'src/components/forms';
 export * from 'src/components/motion';
 
 export * from 'src/domain/infra';
+export * from 'src/domain/theme';
+export * from 'src/domain/tokens/tokens';
+
 export * from 'src/context/ThemeProvider';
 
 export * from 'src/utils';

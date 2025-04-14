@@ -5,6 +5,7 @@
     "@kurocado-studio/styleguide/remix/tsconfig"
   ],
   "compilerOptions": {
+    "types": ["@types/lodash-es", "@types/node"],
     "skipLibCheck": true,
     "rootDir": ".",
     "baseUrl": "./",

@@ -92,5 +92,5 @@ palette (e.g. `true‑gray`, `blue‑gray`) are kebab‑cased.
 ## Future Work
 
 - Map remaining token sets (`font-styling`, `text-dimensions-tailwind`, etc.).
-- Document dark‑mode overrides once the `theme.default` & `theme.dark` sets are finalized.
+- Document dark‑mode overrides once the `setup.default` & `setup.dark` sets are finalized.
 - Add visual swatches in Storybook via the `@storybook/addon-docs` MDX integration.
