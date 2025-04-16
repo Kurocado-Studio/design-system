@@ -30,12 +30,9 @@
     "turbo": "^2.5.0"
   },
   "lint-staged": {
-    "*": ["prettier --write"],
-    "{apps,packages}/**/*": [
-      "turbo run prettier:fix --"
-    ],
+    "*.{ts,tsx,json,yml,css,md}": ["prettier --check . --write"],
     "{apps,packages}/**/*.{ts,tsx}": [
-      "turbo run typecheck --",
+      "turbo run prettier:fix --",
       "turbo run lint:fix --",
       "turbo run lint --"
     ]

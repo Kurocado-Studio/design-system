@@ -1,11 +1,10 @@
 import { type CustomThemeConfig } from 'tailwindcss/types/config';
 
-import { tokens } from '../tokens/tokens';
+import tokens from '../tokens/tokens.json';
 import { type Theme } from '../types';
 import { getTailwindBorderRadius } from './borderRadius';
 import { getTailwindColors } from './colors';
 import { getTailwindDimensions } from './dimensions';
-// import { fontFamily } from './fontFamily';
 import { getTailwindFontSize } from './typography';
 
 export type ComposedTheme = {
@@ -13,13 +12,13 @@ export type ComposedTheme = {
   cssVariables: Record<string, unknown>;
 };
 
-export const composeTheme = (payload?: Theme): ComposedTheme => {
-  const theme = payload || tokens;
-  const { fontSize, fontSizeCssVariableMap } = getTailwindFontSize(theme);
-  const { colors, colorCssVariableMap } = getTailwindColors(theme);
-  const { dimensions, dimensionsCssVariableMap } = getTailwindDimensions(theme);
+export function composeDesignSystemTheme(payload: Theme): ComposedTheme {
+  const { fontSize, fontSizeCssVariableMap } = getTailwindFontSize(payload);
+  const { colors, colorCssVariableMap } = getTailwindColors(payload);
+  const { dimensions, dimensionsCssVariableMap } =
+    getTailwindDimensions(payload);
   const { borderRadius, borderRadiusCssVariableMap } =
-    getTailwindBorderRadius(theme);
+    getTailwindBorderRadius(payload);
 
   return {
     tailwindTheme: { spacing: dimensions, fontSize, colors, borderRadius },
@@ -30,7 +29,7 @@ export const composeTheme = (payload?: Theme): ComposedTheme => {
       ...borderRadiusCssVariableMap,
     },
   };
-};
+}
 
 export const kurocadoStudioTheme: Partial<CustomThemeConfig> =
-  composeTheme().tailwindTheme;
+  composeDesignSystemTheme(tokens).tailwindTheme;

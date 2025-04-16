@@ -3,6 +3,7 @@ import '@kurocado-studio/ui/typography.css';
 import { themes } from '@storybook/theming';
 import React, { memo, useEffect } from 'react';
 
+import designTokens from '../../../packages/ui/src/domain/tokens/tokens.json';
 import '../tailwind.css';
 
 const LIGHT_THEME = 'Light setup';
@@ -50,17 +51,21 @@ export const parameters = {
 
 export const decorators = [
   (Story, context) => {
-    const selectedTheme = context.globals.theme === LIGHT_THEME;
+    const Decorator = () => {
+      const selectedTheme = context.globals.theme === LIGHT_THEME;
 
-    useEffect(() => {
-      document.documentElement.classList.toggle('dark', !selectedTheme);
-    }, [selectedTheme]);
+      useEffect(() => {
+        document.documentElement.classList.toggle('dark', !selectedTheme);
+      }, [selectedTheme]);
 
-    return (
-      <ThemeProvider>
-        <Story />
-      </ThemeProvider>
-    );
+      return (
+        <ThemeProvider theme={designTokens}>
+          <Story />
+        </ThemeProvider>
+      );
+    };
+
+    return <Decorator />;
   },
 ];
 

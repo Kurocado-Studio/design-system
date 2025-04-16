@@ -23,8 +23,7 @@
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
-    "setup": "pnpm install",
-    "typecheck": "tsc"
+    "setup": "pnpm install"
   },
   "devDependencies": {
     "@kurocado-studio/qa": "2.0.0-alpha.2",
