@@ -16,7 +16,7 @@ export const cardHeaderClasses = tv({
 });
 
 export const cardFooterClasses = tv({
-  base: 'bg-gray-50 px-8 pb-8 pt-6 dark:bg-gray-700',
+  base: 'bg-gray-50 px-8 pb-8 pt-6 dark:bg-gray-700 dark:text-white',
 });
 
 export const cardClasses = tv({
