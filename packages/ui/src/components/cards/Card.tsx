@@ -1,40 +1,20 @@
-import { type HTMLMotionProps } from 'framer-motion';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import { tv } from 'tailwind-variants';
 
 import { MotionElement } from 'src/components/motion';
-import { type ChildrenType } from 'src/domain/types';
+import { cardStyles } from 'src/domain/infra/card';
+import { type ReactCardProps } from 'src/domain/types/card';
 
-export interface CardProps extends HTMLMotionProps<'div'> {
-  className?: string;
-  children?: ChildrenType;
-}
-
-export const cardHeaderClasses = tv({
-  base: 'px-8 pt-8 pb-4 dark:text-gray-200',
-});
-
-export const cardFooterClasses = tv({
-  base: 'bg-gray-50 px-8 pb-8 pt-6 dark:bg-gray-700 dark:text-white',
-});
-
-export const cardClasses = tv({
-  base: 'divide-y divide-gray-200 dark:divide-gray-700  overflow-hidden rounded-2xl shadow bg-white dark:bg-gray-800',
-});
-
-export const cardBodyClasses = tv({
-  base: 'px-8 py-8 dark:text-white',
-});
+export type CardProps = ReactCardProps;
 
 function CardHeader({
   children,
   className,
   ...rest
-}: CardProps): React.ReactNode {
+}: ReactCardProps): React.ReactNode {
   return (
     <MotionElement
-      className={twMerge(cardHeaderClasses(), className)}
+      className={twMerge(cardStyles.header(), className)}
       {...rest}
     >
       {children}
@@ -46,10 +26,10 @@ function CardFooter({
   children,
   className,
   ...rest
-}: CardProps): React.ReactNode {
+}: ReactCardProps): React.ReactNode {
   return (
     <MotionElement
-      className={twMerge(cardFooterClasses(), className)}
+      className={twMerge(cardStyles.footer(), className)}
       {...rest}
     >
       {children}
@@ -61,9 +41,9 @@ function CardBody({
   children,
   className,
   ...rest
-}: CardProps): React.ReactNode {
+}: ReactCardProps): React.ReactNode {
   return (
-    <MotionElement className={twMerge(cardBodyClasses(), className)} {...rest}>
+    <MotionElement className={twMerge(cardStyles.body(), className)} {...rest}>
       {children}
     </MotionElement>
   );
@@ -73,9 +53,12 @@ export function Card({
   children,
   className,
   ...rest
-}: CardProps): React.ReactNode {
+}: ReactCardProps): React.ReactNode {
   return (
-    <MotionElement className={twMerge(cardClasses(), className)} {...rest}>
+    <MotionElement
+      className={twMerge(cardStyles.component(), className)}
+      {...rest}
+    >
       {children}
     </MotionElement>
   );

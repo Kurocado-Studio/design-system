@@ -1,4 +1,4 @@
-import { Card, type CardProps } from '@kurocado-studio/ui';
+import { Card, type CardProps } from '@kurocado-studio/ui/react';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
