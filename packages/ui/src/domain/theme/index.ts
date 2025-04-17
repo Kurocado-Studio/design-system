@@ -29,8 +29,6 @@ export function composeDesignSystemTheme(payload: Theme): ComposedTheme {
     borderRadius,
   });
 
-  console.log({ tailwindTheme });
-
   return {
     tailwindTheme,
     cssVariables: {

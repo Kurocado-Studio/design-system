@@ -9,7 +9,6 @@ export function resolvePrimitive<T>(
   ref: string,
   fallBack: T,
 ): T {
-  console.log({ tokenTree, ref });
   return get(tokenTree, stripBraces(ref), fallBack);
 }
 
