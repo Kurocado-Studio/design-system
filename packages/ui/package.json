@@ -15,7 +15,7 @@
       "import": "./dist/index.js"
     },
     "./react": "./dist/react.js",
-    "./theme": "./dist/domain/theme/index.js",
+    "./theme": "./dist/domain/infra/theme.js",
     "./typography.css": "./dist/styles/typography.css",
     "./fonts/Mona-Sans.var.woff2": "./dist/fonts/Mona-Sans.var.woff2"
   },

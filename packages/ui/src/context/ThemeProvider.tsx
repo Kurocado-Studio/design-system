@@ -8,7 +8,7 @@ import React, {
   useRef,
 } from 'react';
 
-import { composeDesignSystemTheme } from '../domain/theme';
+import { composeDesignSystem } from '../domain/application/composeDesignSystem';
 
 interface ThemeProps {
   theme: Record<string, unknown>;
@@ -32,7 +32,7 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
   const root = document.documentElement;
 
   const cssVariablesMap: Record<string, unknown> = useMemo(() => {
-    const { cssVariables } = composeDesignSystemTheme(theme);
+    const { cssVariables } = composeDesignSystem(theme);
     return cssVariables;
   }, [theme]);
 
