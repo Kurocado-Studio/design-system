@@ -9,9 +9,10 @@ import React, {
 } from 'react';
 
 import { composeDesignSystem } from '../domain/application/composeDesignSystem';
+import type { Theme } from '../domain/types';
 
 interface ThemeProps {
-  theme: Record<string, unknown>;
+  theme: Theme;
   children?: React.ReactNode;
 }
 
