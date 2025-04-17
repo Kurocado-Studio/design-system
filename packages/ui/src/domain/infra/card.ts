@@ -3,13 +3,13 @@ import { tv } from 'tailwind-variants';
 import { type CardVariantToken } from '../types/card';
 
 export const cardVariantToken: CardVariantToken = {
-  bg: 'bg-theme.card.default.bg',
-  fg: 'text-theme.card.default.fg',
-  radius: 'text-theme.card.default.radius',
-  padding: 'p-theme.card.default.padding',
-  paddingBody: 'p-theme.card.default.paddingBody',
-  paddingHeader: 'p-theme.card.default.paddingHeader',
-  paddingFooter: 'p-theme.card.default.paddingFooter',
+  bg: 'bg-card-default-bg',
+  fg: 'text-card-default-fg',
+  radius: 'text-card-default-radius',
+  padding: 'p-card-default-padding',
+  paddingBody: 'p-card-default-paddingBody',
+  paddingHeader: 'p-card-default-paddingHeader',
+  paddingFooter: 'p-card-default-paddingFooter',
 };
 
 export const defaultCardStyles = tv({

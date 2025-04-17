@@ -1,11 +1,13 @@
 import { type CustomThemeConfig } from 'tailwindcss/types/config';
 
-import tokens from '../tokens/tokens.json';
-import { type Theme } from '../types';
-import { getTailwindBorderRadius } from './borderRadius';
-import { getTailwindColors } from './colors';
-import { getTailwindDimensions } from './dimensions';
-import { getTailwindFontSize } from './typography';
+import { getTailwindBorderRadius } from 'src/domain/primitives/borderRadius';
+import { getTailwindColors } from 'src/domain/primitives/colors';
+import { getTailwindDimensions } from 'src/domain/primitives/dimensions';
+import { getTailwindFontSize } from 'src/domain/primitives/typography';
+import tokens from 'src/domain/tokens/tokens.json';
+import { type Theme } from 'src/domain/types';
+
+import { composeTheme } from './composeTheme';
 
 export type ComposedTheme = {
   tailwindTheme: Partial<CustomThemeConfig>;
@@ -20,8 +22,17 @@ export function composeDesignSystemTheme(payload: Theme): ComposedTheme {
   const { borderRadius, borderRadiusCssVariableMap } =
     getTailwindBorderRadius(payload);
 
+  const tailwindTheme = composeTheme(payload, {
+    spacing: dimensions,
+    fontSize,
+    colors,
+    borderRadius,
+  });
+
+  console.log({ tailwindTheme });
+
   return {
-    tailwindTheme: { spacing: dimensions, fontSize, colors, borderRadius },
+    tailwindTheme,
     cssVariables: {
       ...colorCssVariableMap,
       ...dimensionsCssVariableMap,
