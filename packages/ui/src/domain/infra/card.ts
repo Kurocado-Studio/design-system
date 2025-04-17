@@ -5,7 +5,7 @@ import { type CardVariantToken } from '../types/card';
 export const cardVariantToken: CardVariantToken = {
   bg: 'bg-card-default-bg',
   fg: 'text-card-default-fg',
-  radius: 'text-card-default-radius',
+  radius: 'rounded-card-default-radius',
   padding: 'p-card-default-padding',
   paddingBody: 'p-card-default-paddingBody',
   paddingHeader: 'p-card-default-paddingHeader',
@@ -16,6 +16,7 @@ export const defaultCardStyles = tv({
   base: Object.values({
     bg: cardVariantToken.bg,
     fg: cardVariantToken.fg,
+    radius: cardVariantToken.radius,
   }),
 });
 
@@ -38,7 +39,6 @@ export const cardClasses = tv({
     'overflow-hidden',
     'shadow',
     cardVariantToken.radius,
-    cardVariantToken.padding,
   ],
 });
 
