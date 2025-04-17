@@ -34,7 +34,7 @@ export function composeTheme(
 
         set(
           tailwindTheme,
-          ['extend', 'spacing', dimensionPath],
+          ['extend', 'borderRadius', dimensionPath],
           dimensionValue,
         );
 

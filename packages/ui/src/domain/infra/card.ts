@@ -16,7 +16,6 @@ export const defaultCardStyles = tv({
   base: Object.values({
     bg: cardVariantToken.bg,
     fg: cardVariantToken.fg,
-    radius: cardVariantToken.radius,
   }),
 });
 
