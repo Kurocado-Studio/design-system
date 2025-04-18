@@ -14,7 +14,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./theme": "./dist/domain/theme/index.js",
+    "./react": "./dist/react.js",
+    "./theme": "./dist/domain/infra/theme.js",
     "./typography.css": "./dist/styles/typography.css",
     "./fonts/Mona-Sans.var.woff2": "./dist/fonts/Mona-Sans.var.woff2"
   },
@@ -29,7 +30,7 @@
     "prettier:fix": "prettier --check . --write",
     "setup": "pnpm install",
     "test": "vitest run --coverage",
-    "typecheck": "tsc"
+    "typecheck": "tsc --noEmit --pretty"
   },
   "devDependencies": {
     "@internal/config": "workspace:*",

@@ -7,6 +7,7 @@
   "compilerOptions": {
     "types": ["vitest/globals", "node"],
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "rootDir": ".",
     "baseUrl": ".",

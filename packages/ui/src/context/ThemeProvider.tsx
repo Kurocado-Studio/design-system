@@ -1,24 +1,23 @@
-import {
+import React, {
   type ReactNode,
   createContext,
   useCallback,
   useContext,
   useEffect,
   useMemo,
+  useRef,
 } from 'react';
-import React from 'react';
 
-// import { composeTheme } from '../domain/theme';
-import { composeTheme } from '../domain/theme';
-import { tokens } from '../domain/tokens/tokens';
-import { type Theme } from '../domain/types';
+import { composeDesignSystem } from '../domain/application/composeDesignSystem';
+import type { Theme } from '../domain/types';
 
 interface ThemeProps {
-  theme?: Theme;
-  children?: ReactNode;
+  theme: Theme;
+  children?: React.ReactNode;
 }
 
 interface ThemeProviderProps {
+  setTheme: (theme: Record<string, unknown>) => void;
   setThemeVariable: (variableName: string, variableValue: string) => void;
   toggleLightDarkTheme: () => void;
 }
@@ -26,25 +25,37 @@ interface ThemeProviderProps {
 const ThemeContext = createContext<ThemeProviderProps>({
   setThemeVariable: () => {},
   toggleLightDarkTheme: () => {},
+  setTheme: () => {},
 });
 
 export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
+  const styleElRef = useRef<HTMLStyleElement | null>(null);
   const root = document.documentElement;
 
   const cssVariablesMap: Record<string, unknown> = useMemo(() => {
-    const { cssVariables } = composeTheme(theme || tokens);
+    const { cssVariables } = composeDesignSystem(theme);
     return cssVariables;
   }, [theme]);
 
-  const handleVariablesMap = useCallback(() => {
-    Object.entries(cssVariablesMap).forEach(
-      ([cssVariableName, cssVariableValue]) => {
-        if (typeof cssVariableValue === 'string') {
-          root.style.setProperty(cssVariableName, cssVariableValue);
-        }
-      },
-    );
-  }, [cssVariablesMap, root.style]);
+  const handleVariablesMap = useCallback(
+    (cssVariablesPayload: Record<string, unknown>) => {
+      if (!styleElRef.current) {
+        styleElRef.current = document.createElement('style');
+        document.head.appendChild(styleElRef.current);
+      }
+
+      styleElRef.current.textContent = `:root {
+        ${Object.entries(cssVariablesPayload)
+          .map(([variableName, variableValue]) =>
+            typeof variableValue === 'string'
+              ? `${variableName}: ${variableValue};`
+              : '',
+          )
+          .join('\n')}
+      }`;
+    },
+    [],
+  );
 
   const toggleLightDarkTheme: ThemeProviderProps['toggleLightDarkTheme'] =
     useCallback(() => {
@@ -60,22 +71,27 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
       if (!cssVariableValue.trim().length) return;
 
       cssVariablesMap[variableName] = variableValue;
-      handleVariablesMap();
+      handleVariablesMap(cssVariablesMap);
     },
     [cssVariablesMap, handleVariablesMap, root],
   );
 
   const providerValue: ThemeProviderProps = useMemo(
     () => ({
+      setTheme: handleVariablesMap,
       setThemeVariable,
       toggleLightDarkTheme,
     }),
-    [setThemeVariable, toggleLightDarkTheme],
+    [setThemeVariable, handleVariablesMap, toggleLightDarkTheme],
   );
 
   useEffect(() => {
-    handleVariablesMap();
-  }, [handleVariablesMap]);
+    handleVariablesMap(cssVariablesMap);
+    return () => {
+      styleElRef.current?.remove();
+      styleElRef.current = null;
+    };
+  }, [handleVariablesMap, cssVariablesMap]);
 
   return (
     <ThemeContext.Provider value={providerValue}>

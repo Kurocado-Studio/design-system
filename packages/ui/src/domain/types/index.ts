@@ -67,7 +67,7 @@ export type CommonProps = {
   loading?: boolean;
 };
 
-export type Theme = Record<string, unknown>;
+export type Theme = Record<string, Record<string, unknown>>;
 
 export type HTMLIntrinsicElements = keyof React.JSX.IntrinsicElements;
 
