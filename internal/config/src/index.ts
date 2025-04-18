@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 export { reactTestingLibrary, vitestReact } from '@kurocado-studio/qa/web';
 export { faker, defineConfig } from '@kurocado-studio/qa';
 export {

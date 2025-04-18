@@ -6,19 +6,24 @@
   "keywords": [],
   "author": "@kurocado-studio",
   "license": "MIT",
-  "main": "./src/index.js",
-  "module": "./src/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
-      "import": "./src/index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
-    "./tsconfig.web": "./src/tsconfig.web.json",
-    "./qa/web/setup": "./src/setup.web.ts"
+    "./tsconfig.web": "./dist/tsconfig.web.json",
+    "./qa/web/setup": "./dist/setup.web.js"
   },
-  "files": ["src"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "rm -rf dist && tsup --dts",
+    "dev": "tsup --watch",
     "clean": "rm -rf .turbo node_modules dist",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
@@ -30,8 +35,10 @@
     "@kurocado-studio/qa": "2.0.1",
     "@kurocado-studio/styleguide": "^2.4.0",
     "@testing-library/jest-dom": "^6.6.3",
+    "copyfiles": "^2.4.1",
     "semantic-release": "^24.2.3",
-    "semantic-release-monorepo": "^8.0.2"
+    "semantic-release-monorepo": "^8.0.2",
+    "tsup": "^8.0.2"
   },
   "publishConfig": {
     "access": "public"

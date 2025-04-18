@@ -1,4 +1,4 @@
-import { semanticReleaseInternalConfig } from './src/index.js';
+import { semanticReleaseInternalConfig } from '@kurocado-studio/styleguide';
 
 export default {
   ...semanticReleaseInternalConfig,

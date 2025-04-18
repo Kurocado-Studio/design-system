@@ -1,1 +1,1 @@
-export { prettierConfig as default } from './src/index.js';
+export { prettierConfig as default } from '@kurocado-studio/styleguide';
