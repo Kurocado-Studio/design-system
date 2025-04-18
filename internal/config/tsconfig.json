@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": ["./src/tsconfig.web.json"],
   "compilerOptions": {
+    "types": ["@types/lodash-es", "@types/node"],
     "skipLibCheck": true,
     "allowJs": true,
     "rootDir": ".",
