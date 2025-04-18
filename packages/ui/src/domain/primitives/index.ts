@@ -1,9 +1,10 @@
+import { type Theme } from '../types';
 import { getTailwindBorderRadius } from './borderRadius';
 import { getTailwindColors } from './colors';
 import { getTailwindDimensions } from './dimensions';
 import { getTailwindFontSize } from './typography';
 
-export function composePrimitives(payload: Record<string, unknown>): {
+export function composePrimitives(payload: Theme): {
   primitives: Record<string, Record<string, unknown>>;
   primitivesCssVariables: Record<string, unknown>;
 } {
