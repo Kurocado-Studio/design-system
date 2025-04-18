@@ -5,7 +5,7 @@ import { defineConfig } from 'tsup';
 export default defineConfig((options) => ({
   ...options,
   bundle: false,
-  entry: ['./src/index.ts'],
+  entry: ['./src/index.ts', './src/setup.web.ts'],
   target: ['esnext'],
   format: ['esm'],
   dts: true,
