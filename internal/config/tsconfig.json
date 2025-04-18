@@ -1,14 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": [
-    "@kurocado-studio/qa/web/tsconfig.qa",
-    "@kurocado-studio/styleguide/remix/tsconfig"
-  ],
+  "extends": ["./src/tsconfig.web.json"],
   "compilerOptions": {
-    "types": ["@types/lodash-es", "@types/node"],
     "skipLibCheck": true,
+    "allowJs": true,
     "rootDir": ".",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "jsx": "preserve"
   },
   "include": [
@@ -16,7 +13,7 @@
     "tailwind.config.ts",
     "test",
     "tsup.config.ts",
-    "setup.web.ts"
+    "src/setup.web.ts"
   ],
   "exclude": ["dist", "build", "node_modules"]
 }

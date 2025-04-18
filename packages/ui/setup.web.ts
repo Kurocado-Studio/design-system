@@ -1,2 +1,2 @@
-import '@kurocado-studio/qa/web/setup';
+import '@internal/config/qa/web/setup';
 import '@testing-library/jest-dom';

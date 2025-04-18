@@ -1,9 +1,9 @@
-import { ReactTestingLibrary } from '@kurocado-studio/qa';
+import { reactTestingLibrary } from '@internal/config';
 import React from 'react';
 
 import { Button } from 'src/components/common/Button';
 
-const { render, screen } = ReactTestingLibrary;
+const { render, screen } = reactTestingLibrary;
 
 describe('Button', () => {
   it('should render with the provided children', () => {
