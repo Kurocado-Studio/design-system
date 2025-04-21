@@ -21,7 +21,7 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@kurocado-studio/styleguide": "^2.3.3",
+    "@kurocado-studio/styleguide": "^2.5.2",
     "commitlint": "^19.8.0",
     "eslint": "9.24",
     "husky": "^9.1.7",
@@ -30,7 +30,9 @@
     "turbo": "^2.5.0"
   },
   "lint-staged": {
-    "*.{ts,tsx,json,yml,css,md}": ["prettier --check . --write"],
+    "*.{ts,tsx,json,yml,css,md}": [
+      "prettier --check . --write"
+    ],
     "{apps,packages}/**/*.{ts,tsx}": [
       "turbo run prettier:fix --",
       "turbo run lint:fix --",
