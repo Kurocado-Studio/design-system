@@ -6,19 +6,17 @@ import { type Theme } from '../types';
 import { composeCardComponent } from './card';
 
 export function composeTheme(
-  tokens: Record<string, unknown>,
-  theme: Theme,
+  tokensPayload: Record<string, unknown>,
+  themePayload: Theme,
 ): Record<string, unknown> {
-  const tailwindTheme = theme;
+  const tokens = flattenTokens(tokensPayload['theme/theme']);
+  const theme = themePayload;
 
-  const flatTokens = flattenTokens(tokens['theme/theme']);
+  const components: Array<Theme> = [composeCardComponent(tokens, theme)];
 
-  for (const _ of flatTokens) {
-    const tailwindCardComponent = composeCardComponent(
-      flatTokens,
-      tailwindTheme,
-    );
-    set(tailwindTheme, ['extend'], tailwindCardComponent['extend']);
+  for (const { extend } of components) {
+    set(theme, ['extend'], extend);
   }
-  return tailwindTheme;
+
+  return theme;
 }
