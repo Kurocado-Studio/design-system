@@ -39,9 +39,9 @@ jobs:
     needs: test
     uses: kurocado-studio/dev-ops/.github/workflows/workflow.release.yml@main
     secrets:
+      PAT_FORCE_PUSH: ${{ secrets.PAT_FORCE_PUSH }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      PAT_FORCE_PUSH: ${{ secrets.PAT_FORCE_PUSH }}
     with:
       branch_name: ${{ github.ref_name }}
       monorepo: true
