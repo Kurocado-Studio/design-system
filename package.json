@@ -33,7 +33,7 @@
     "*.{ts,tsx,json,yml,css,md}": [
       "prettier --check . --write"
     ],
-    "{apps,packages}/**/*.{ts,tsx}": [
+    "{apps,internal,packages}/**/*.{ts,tsx}": [
       "turbo run prettier:fix --",
       "turbo run lint:fix --",
       "turbo run lint --"
