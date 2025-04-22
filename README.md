@@ -1,9 +1,44 @@
 # Kurocado Studio Design System
 
+A token‑driven UI library whose look & feel can be tweaked in Figma and—via Token Studio—propagated
+to React components, guaranteeing pixel‑perfect brand consistency without hand‑off friction.
+
+Kurocado Studio’s Design System delivers a single source of truth for typography, color, spacing,
+and interaction patterns across web and mobile products. Designers iterate visually in Figma; Token
+Studio syncs the updated design tokens to the codebase, and Storybook reflects the changes
+instantly—so product teams ship new features faster while staying perfectly on‑brand.
+
+## High Level Overview
+
+```mermaid
+flowchart LR
+  subgraph Design Tools
+    Figma[Figma]
+    TokenStudio[Token Studio]
+  end
+
+  subgraph Build Process
+    Tailwind[Tailwind CSS Engine]
+    Bundler[Build & Publish]
+  end
+
+  subgraph Applications
+    ReactSDK[React app using the Design System]
+    VueSDK[Vue app using the Design System]
+  end
+
+  Figma --> TokenStudio --> Tailwind --> Bundler --> ReactSDK
+  TokenStudio --> Bundler --> VueSDK
+```
+
+## Quick Demo
+
+[![Demo Video](./demo/quick-demo-overview-cover.png)](https://youtu.be/RBpAYT4iMuU)
+
 ## Documentation
 
-For a complete overview of this Design System’s objectives, features, and success criteria, see the
-[Design System Overview](https://kurocado-studio.github.io/design-system/).
+For more information about this Design System’s objectives, features, and success criteria, see the
+[Design System Overview](https://kurocado-studio.github.io/platform/design-system.html).
 
 ---
 
