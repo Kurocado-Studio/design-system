@@ -35,6 +35,13 @@ flowchart LR
 
 [![Demo Video](./demo/quick-demo-overview-cover.png)](https://youtu.be/RBpAYT4iMuU)
 
+## New Project Setup
+
+The quickest and easiest way to start using the Kurocado Studio Design System is with our
+[Product Starter Kit](https://github.com/Kurocado-Studio/product-starter-kit). It’s a fully wired-up
+boilerplate that includes everything you need to hit the ground running—design tokens, Tailwind
+config, Storybook setup, and more.
+
 ## Documentation
 
 For more information about this Design System’s objectives, features, and success criteria, see the
