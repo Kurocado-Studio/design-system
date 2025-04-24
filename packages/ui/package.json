@@ -14,10 +14,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./react": "./dist/react.js",
-    "./theme": "./dist/domain/infra/theme.js",
-    "./typography.css": "./dist/styles/typography.css",
-    "./fonts/Mona-Sans.var.woff2": "./dist/fonts/Mona-Sans.var.woff2"
+    "./react": "./dist/react/exports.js",
+    "./vue": "./dist/vue/exports.js",
+    "./theme": "./dist/lib/infra/theme.js",
+    "./typography.css": "./dist/lib/domain/styles/typography.css",
+    "./fonts/Mona-Sans.var.woff2": "./dist/lib/domain/fonts/Mona-Sans.var.woff2"
   },
   "files": ["dist"],
   "scripts": {
