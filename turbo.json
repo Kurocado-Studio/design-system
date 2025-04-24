@@ -42,6 +42,13 @@
     "clean": {
       "cache": false
     },
+    "vite:watch": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
+    "storybook": {
+      "dependsOn": ["dev:watch"]
+    },
     "preview-storybook": {
       "dependsOn": ["^build"],
       "cache": false

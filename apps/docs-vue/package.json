@@ -13,7 +13,7 @@
     "prettier:fix": "prettier --check . --write",
     "preview-storybook": "serve storybook-static",
     "setup": "pnpm install",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6008",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -23,8 +23,8 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@internal/config": "workspace:*",
     "@chromatic-com/storybook": "^3",
+    "@internal/config": "workspace:*",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
@@ -32,13 +32,12 @@
     "@storybook/test": "^8.6.12",
     "@storybook/vue3": "^8.6.12",
     "@storybook/vue3-vite": "^8.6.12",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue": "^5.2.3",
     "@vitest/browser": "^3.1.2",
     "@vitest/coverage-v8": "^3.1.2",
     "playwright": "^1.52.0",
     "storybook": "^8.6.12",
     "typescript": "^5.7.2",
-    "vite": "^6.0.3",
     "vitest": "^3.1.2",
     "vue-tsc": "^2.1.10"
   }
