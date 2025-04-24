@@ -4,8 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:vue": "vite",
-    "build:vue": "vue-tsc && vite build",
     "preview": "vite preview",
     "build": "storybook build",
     "clean": "rm -rf .turbo node_modules",
