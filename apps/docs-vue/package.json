@@ -25,6 +25,7 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@internal/config": "workspace:*",
     "@chromatic-com/storybook": "^3",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
