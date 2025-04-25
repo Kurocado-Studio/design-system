@@ -12,10 +12,13 @@
   },
   "include": [
     "src",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
     "tailwind.config.ts",
     "test",
     "tsup.config.ts",
     "vitest.config.ts",
+    "vite.config.ts",
     "setup.web.ts"
   ],
   "exclude": ["dist", "build", "node_modules"]

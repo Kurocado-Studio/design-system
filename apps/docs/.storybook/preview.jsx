@@ -3,7 +3,7 @@ import '@kurocado-studio/ui/typography.css';
 import { themes } from '@storybook/theming';
 import React, { memo, useEffect } from 'react';
 
-import designTokens from '../../../packages/ui/src/domain/tokens/tokens.json';
+import designTokens from '../../../packages/ui/src/lib/domain/tokens/tokens.json';
 import '../tailwind.css';
 
 const LIGHT_THEME = 'Light setup';

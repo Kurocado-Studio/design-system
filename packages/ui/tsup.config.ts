@@ -5,10 +5,10 @@ import { defineConfig } from 'tsup';
 export default defineConfig((options) => ({
   ...options,
   entry: [
-    './src/domain/infra/theme.ts',
+    './src/lib/infra/theme.ts',
     './src/index.ts',
-    './src/react.ts',
-    './src/theme.ts',
+    './src/react/exports.ts',
+    './src/vue/exports.ts',
   ],
   target: ['esnext'],
   format: ['esm'],
@@ -16,10 +16,15 @@ export default defineConfig((options) => ({
   clean: true,
   splitting: true,
   treeshake: true,
-  external: ['framer-motion', 'react', 'react-dom', 'tailwindcss'],
+  external: ['framer-motion', 'react', 'vue', 'react-dom', 'tailwindcss'],
+  noExternal: ['@internal/domain'],
+  watch: true, // Watch mode for rebuilding on file changes
   onSuccess: async (): Promise<void> => {
-    execSync('copyfiles -u 1 "src/fonts/**/*" "src/styles/**/*" dist', {
-      stdio: 'inherit',
-    });
+    execSync(
+      'copyfiles -u 1 "src/lib/domain/fonts/**/*" "src/lib/domain/styles/**/*" dist',
+      {
+        stdio: 'inherit',
+      },
+    );
   },
 }));
