@@ -13,6 +13,7 @@
   "include": [
     "src",
     "src/**/*.vue",
+    "src/**/*.d.ts",
     "tailwind.config.ts",
     "test",
     "tsup.config.ts",

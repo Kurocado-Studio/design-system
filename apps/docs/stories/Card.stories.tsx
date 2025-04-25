@@ -26,7 +26,7 @@ export const WithCardBody: StoryObj<CardProps> = {
   args: {
     children: (
       <Card.Body>
-        <p className='text-sm'>Card body</p>
+        <p className='text-sm'>Card Body</p>
       </Card.Body>
     ),
   },
@@ -39,7 +39,7 @@ export const WithFramerMotionProps: StoryObj<CardProps> = {
   args: {
     children: (
       <Card.Body>
-        <p className='text-base'>Card body</p>
+        <p className='text-base'>Card Body</p>
       </Card.Body>
     ),
     initial: { opacity: 0 },
@@ -56,10 +56,10 @@ export const WithCardHeader: StoryObj<CardProps> = {
     children: (
       <>
         <Card.Header>
-          <h1 className='text-3xl'>Card header</h1>
+          <h1 className='text-3xl'>Card Header</h1>
         </Card.Header>
         <Card.Body>
-          <p className='text-base'>Card body</p>
+          <p className='text-base'>Card Body</p>
         </Card.Body>
       </>
     ),
@@ -74,13 +74,13 @@ export const WithCardFooter: StoryObj<CardProps> = {
     children: (
       <>
         <Card.Header>
-          <h1 className='text-3xl'>Card header</h1>
+          <h1 className='text-3xl'>Card Header</h1>
         </Card.Header>
         <Card.Body>
-          <p className='text-base'>Card body</p>
+          <p className='text-base'>Card Body</p>
         </Card.Body>
         <Card.Footer>
-          <p className='text-base'>Card footer</p>
+          <p className='text-base'>Card Footer</p>
         </Card.Footer>
       </>
     ),
