@@ -12,6 +12,7 @@
   },
   "include": [
     "src",
+    "src/**/*.vue",
     "tailwind.config.ts",
     "test",
     "tsup.config.ts",
