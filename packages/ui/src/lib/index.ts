@@ -1,9 +1,14 @@
 export type * from './domain/types';
+export type * from './domain/types/card';
+export type * from './domain/types/provider';
+
+export { ThemeProviderSymbol } from './domain/provider';
 
 export {
   composeTheme,
   composePrimitives,
   composeDesignSystem,
+  composeThemeProvider,
 } from './application';
 
 export {

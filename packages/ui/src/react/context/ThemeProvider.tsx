@@ -8,17 +8,16 @@ import React, {
   useRef,
 } from 'react';
 
-import { type Theme, composeDesignSystem } from 'src/lib';
+import {
+  type Theme,
+  type ThemeProviderProps,
+  composeDesignSystem,
+  composeThemeProvider,
+} from 'src/lib';
 
 interface ThemeProps {
   theme: Theme;
   children?: React.ReactNode;
-}
-
-interface ThemeProviderProps {
-  setTheme: (theme: Record<string, unknown>) => void;
-  setThemeVariable: (variableName: string, variableValue: string) => void;
-  toggleLightDarkTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeProviderProps>({
@@ -28,8 +27,8 @@ const ThemeContext = createContext<ThemeProviderProps>({
 });
 
 export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
+  const themeProvider = useMemo(() => composeThemeProvider(), []);
   const styleElRef = useRef<HTMLStyleElement | null>(null);
-  const root = document.documentElement;
 
   const cssVariablesMap: Record<string, unknown> = useMemo(() => {
     const { cssVariables } = composeDesignSystem(theme);
@@ -38,41 +37,32 @@ export function ThemeProvider({ theme, children }: ThemeProps): ReactNode {
 
   const handleVariablesMap = useCallback(
     (cssVariablesPayload: Record<string, unknown>) => {
-      if (!styleElRef.current) {
-        styleElRef.current = document.createElement('style');
-        document.head.appendChild(styleElRef.current);
-      }
-
-      styleElRef.current.textContent = `:root {
-        ${Object.entries(cssVariablesPayload)
-          .map(([variableName, variableValue]) =>
-            typeof variableValue === 'string'
-              ? `${variableName}: ${variableValue};`
-              : '',
-          )
-          .join('\n')}
-      }`;
+      styleElRef.current = themeProvider.handleVariablesMap(
+        styleElRef.current,
+        cssVariablesPayload,
+      );
     },
-    [],
+    [themeProvider],
   );
 
   const toggleLightDarkTheme: ThemeProviderProps['toggleLightDarkTheme'] =
     useCallback(() => {
-      const selectedMode = root.classList.contains('dark');
-      root.classList.toggle('dark', !selectedMode);
-    }, [root.classList]);
+      themeProvider.handleToggleLightDarkTheme();
+    }, [themeProvider]);
 
   const setThemeVariable: ThemeProviderProps['setThemeVariable'] = useCallback(
     (variableName, variableValue) => {
-      const styles = getComputedStyle(root);
-      const cssVariableValue = styles.getPropertyValue(variableName);
+      const payload = themeProvider.handleSetThemeVariable({
+        variableName,
+        variableValue,
+      });
 
-      if (!cssVariableValue.trim().length) return;
-
-      cssVariablesMap[variableName] = variableValue;
-      handleVariablesMap(cssVariablesMap);
+      if (payload) {
+        cssVariablesMap[payload.variableName] = payload.variableValue;
+        handleVariablesMap(cssVariablesMap);
+      }
     },
-    [cssVariablesMap, handleVariablesMap, root],
+    [cssVariablesMap, handleVariablesMap, themeProvider],
   );
 
   const providerValue: ThemeProviderProps = useMemo(
