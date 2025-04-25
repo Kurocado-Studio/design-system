@@ -19,7 +19,7 @@
       "cache": false
     },
     "typecheck": {
-      "dependsOn": ["^setup"],
+      "dependsOn": ["^setup", "^build"],
       "cache": false
     },
     "test": {

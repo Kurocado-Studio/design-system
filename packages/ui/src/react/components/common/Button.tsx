@@ -22,7 +22,7 @@ export function Button(props: ButtonProps): React.ReactNode {
       className={twMerge(buttonStyles(props), cursors(props))}
       ref={ref}
       type={get(props, ['type'], 'button')}
-      {...(buttonProps as HTMLMotionProps<'button'>)}
+      {...(buttonProps as unknown as HTMLMotionProps<'button'>)}
       {...composeAnimationProps(props)}
     >
       {props.children}
