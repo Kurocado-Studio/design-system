@@ -22,7 +22,6 @@ export const decorators = [
   (storyFn, context) => {
     const selectedTheme = context.globals.theme === LIGHT_THEME;
 
-    // Set the <html class="dark"> based on theme
     if (typeof window !== 'undefined') {
       document.documentElement.classList.toggle('dark', !selectedTheme);
     }
@@ -33,10 +32,10 @@ export const decorators = [
         return { designTokens };
       },
       template: `
-          <ThemeProvider :theme="designTokens">
-            <Story />
-          </ThemeProvider>
-        `,
+        <ThemeProvider :theme="designTokens">
+          <Story />
+        </ThemeProvider>
+      `,
     };
   },
 ];
