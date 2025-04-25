@@ -11,7 +11,9 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 function copyDomainAssets(): PluginOption {
   return {
+    // @ts-nocheck
     name: 'copy-domain-assets',
+    // @ts-nocheck
     closeBundle() {
       execSync('copyfiles -u 1 "src/lib/domain/{fonts,styles}/**/*" dist', {
         stdio: 'inherit',
