@@ -17,7 +17,7 @@ function copyDomainAssets(): PluginOption {
         stdio: 'inherit',
       });
     },
-  };
+  } satisfies PluginOption;
 }
 
 export default defineConfig((options) => ({
