@@ -1,21 +1,36 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": ["@internal/config/tsconfig.web"],
+  "extends": ["@kurocado-studio/qa/web/tsconfig.qa"],
   "compilerOptions": {
-    "types": ["vitest/globals", "node"],
+    "types": [
+      "vitest/globals",
+      "node",
+      "./src/global.d.ts",
+      "@testing-library/jest-dom"
+    ],
+    "outDir": "dist/types",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "rootDir": ".",
+    "paths": {
+      "src/*": ["./src/*"]
+    },
     "baseUrl": ".",
-    "jsx": "preserve"
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "jsx": "react"
   },
   "include": [
-    "src",
-    "src/**/*.vue",
-    "src/**/*.d.ts",
+    "src/domain",
+    "src/lib",
+    "src/react",
+    "src/vue",
+    "src/shared/index.ts",
     "tailwind.config.ts",
-    "test",
     "tsup.config.ts",
     "vitest.config.ts",
     "vite.config.ts",

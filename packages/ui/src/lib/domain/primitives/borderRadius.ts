@@ -8,7 +8,7 @@ export function getTailwindBorderRadius(theme: Theme): {
   borderRadius: Required<CustomThemeConfig['borderRadius']>;
   borderRadiusCssVariableMap: Record<string, string>;
 } {
-  const primitives = get(theme, ['border-radius/border-radius'], {});
+  const primitives = get(theme, ['primitives', 'dimension', 'radius'], {});
 
   const borderRadius: Record<string, unknown> = {};
   const borderRadiusCssVariableMap: Record<string, string> = {};
@@ -19,7 +19,7 @@ export function getTailwindBorderRadius(theme: Theme): {
     if (typeof borderRadiusValue === 'undefined') continue;
     if (borderRadiusValue === null) continue;
 
-    const variableValue = get(borderRadiusValue, ['value']);
+    const variableValue = get(borderRadiusValue, ['$value']);
 
     if (typeof variableValue === 'string') {
       const { cssVariableReference, cssVariableName, cssVariableValue } =
@@ -35,7 +35,7 @@ export function getTailwindBorderRadius(theme: Theme): {
       for (const [borderRadiusKeyName, borderRadiusKeyValue] of Object.entries(
         borderRadiusValue,
       )) {
-        if (borderRadiusKeyName === 'value') {
+        if (borderRadiusKeyName === '$value') {
           const { cssVariableReference, cssVariableName, cssVariableValue } =
             createCssVariableEntry(
               'radius',
