@@ -11,16 +11,17 @@ export function composePrimitives(payload: Theme): {
   primitivesCssVariables: Record<string, unknown>;
 } {
   const { fontSize, fontSizeCssVariableMap } = getTailwindFontSize(payload);
-  const { color, colorCssVariableMap } = getTailwindColors(payload);
-  const { dimension, dimensionCssVariableMap } = getTailwindDimensions(payload);
+  const { colors, colorCssVariableMap } = getTailwindColors(payload);
+  const { dimensions, dimensionsCssVariableMap } =
+    getTailwindDimensions(payload);
   const { borderRadius, borderRadiusCssVariableMap } =
     getTailwindBorderRadius(payload);
 
   return {
-    primitives: { spacing: dimension, fontSize, color, borderRadius },
+    primitives: { spacing: dimensions, fontSize, colors, borderRadius },
     primitivesCssVariables: {
       ...colorCssVariableMap,
-      ...dimensionCssVariableMap,
+      ...dimensionsCssVariableMap,
       ...fontSizeCssVariableMap,
       ...borderRadiusCssVariableMap,
     },

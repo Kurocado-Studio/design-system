@@ -1,4 +1,4 @@
-import { get, set } from 'lodash-es';
+import { get } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
 import { createCssVariableEntry } from 'src/lib/domain/utils/createCssVariableEntry';
@@ -6,21 +6,21 @@ import { createCssVariableEntry } from 'src/lib/domain/utils/createCssVariableEn
 import { type Theme } from '../types';
 
 export function getTailwindDimensions(theme: Theme): {
-  dimension: Required<CustomThemeConfig['spacing']>;
-  dimensionCssVariableMap: Record<string, string>;
+  dimensions: Required<CustomThemeConfig['spacing']>;
+  dimensionsCssVariableMap: Record<string, string>;
 } {
-  const primitives = get(theme, ['primitives', 'dimension'], {}) as Record<
+  const primitives = get(theme, ['dimensions/dimensions'], {}) as Record<
     string,
     unknown
   >;
 
-  const dimension: Record<string, unknown> = {};
-  const dimensionCssVariableMap: Record<string, string> = {};
+  const dimensions: Record<string, unknown> = {};
+  const dimensionsCssVariableMap: Record<string, string> = {};
 
   for (const [dimensionsVariant, dimensionsDefinition] of Object.entries(
     primitives,
   )) {
-    const dimensionsValue = get(dimensionsDefinition, ['$value']);
+    const dimensionsValue = get(dimensionsDefinition, ['value']);
 
     if (!dimensionsDefinition) continue;
     if (typeof dimensionsValue !== 'string') continue;
@@ -28,10 +28,13 @@ export function getTailwindDimensions(theme: Theme): {
     const { cssVariableName, cssVariableValue, cssVariableReference } =
       createCssVariableEntry('dimensions', dimensionsVariant, dimensionsValue);
 
-    set(dimension, [dimensionsVariant], cssVariableReference);
+    dimensions[dimensionsVariant] = cssVariableReference;
 
-    set(dimensionCssVariableMap, [cssVariableName], cssVariableValue);
+    dimensionsCssVariableMap[cssVariableName] = cssVariableValue;
   }
 
-  return { dimension, dimensionCssVariableMap };
+  return {
+    dimensions,
+    dimensionsCssVariableMap,
+  };
 }

@@ -1,26 +1,22 @@
-import { get, set } from 'lodash-es';
+import { set } from 'lodash-es';
 
-import { composeCard } from 'src/lib/domain/components/Card/composeCard';
 import { flattenTokens } from 'src/lib/domain/tokens/flattenTokens';
-import { type Theme } from 'src/lib/domain/types';
+
+import { composeCard } from '../domain/theme/composeCard';
+import { type Theme } from '../domain/types';
 
 export function composeTheme(
   tokensPayload: Record<string, unknown>,
   themePayload: Theme,
 ): Record<string, unknown> {
-  const tailwindTheme = themePayload;
+  const tokens = flattenTokens(tokensPayload['theme/theme']);
+  const theme = themePayload;
 
-  const CardComponent = composeCard({
-    tailwindTheme,
-    tokensPayload,
-    flatTokens: flattenTokens(get(tokensPayload, ['component', 'card'])),
-  });
-
-  const components: Array<Theme> = [CardComponent];
+  const components: Array<Theme> = [composeCard(tokens, theme)];
 
   for (const { extend } of components) {
-    set(tailwindTheme, ['extend'], extend);
+    set(theme, ['extend'], extend);
   }
 
-  return tailwindTheme;
+  return theme;
 }

@@ -1,22 +1,22 @@
 import { tv } from 'tailwind-variants';
 
-import { tailwindCardComponentToken } from 'src/lib/domain/components/Card/tokens';
+import { cardVariantToken } from 'src/lib/domain/tokens/card';
 
 const defaultCardStyles = tv({
   base: Object.values({
-    bg: tailwindCardComponentToken.bg,
-    fg: tailwindCardComponentToken.fg,
+    bg: cardVariantToken.bg,
+    fg: cardVariantToken.fg,
   }),
 });
 
 export const cardHeaderClasses = tv({
   extend: defaultCardStyles,
-  base: [tailwindCardComponentToken.padding],
+  base: [cardVariantToken.paddingHeader],
 });
 
 export const cardFooterClasses = tv({
   extend: defaultCardStyles,
-  base: [tailwindCardComponentToken.padding],
+  base: [cardVariantToken.paddingFooter],
 });
 
 export const cardComponentWrapperClasses = tv({
@@ -27,11 +27,11 @@ export const cardComponentWrapperClasses = tv({
     'divide-y',
     'overflow-hidden',
     'shadow',
-    tailwindCardComponentToken.borderRadius,
+    cardVariantToken.radius,
   ],
 });
 
 export const cardBodyClasses = tv({
   extend: defaultCardStyles,
-  base: [tailwindCardComponentToken.padding],
+  base: [cardVariantToken.paddingBody],
 });
