@@ -7,12 +7,12 @@ export default defineConfig((options) => ({
   ...options,
   entry: {
     theme: './src/lib/infra/theme.ts',
-    shared: './src/lib/infra/theme.ts',
+    shared: './src/shared/index.ts',
     react: './src/react/exports.ts',
     vue: './src/vue/exports.ts',
   },
   target: ['esnext'],
-  format: ['esm'],
+  format: ['esm', 'cjs'],
   dts: false,
   clean: true,
   splitting: true,
@@ -27,7 +27,7 @@ export default defineConfig((options) => ({
     execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
       stdio,
     });
-    // execSync('pnpm run build:types:react', { stdio });
-    // execSync('pnpm run build:types:vue', { stdio });
+    execSync('pnpm run build:types:react', { stdio });
+    execSync('pnpm run build:types:vue', { stdio });
   },
 }));

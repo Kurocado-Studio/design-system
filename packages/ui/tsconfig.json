@@ -8,16 +8,12 @@
       "./src/global.d.ts",
       "@testing-library/jest-dom"
     ],
-    "outDir": "dist/types",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "rootDir": ".",
-    "paths": {
-      "src/*": ["./src/*"]
-    },
     "baseUrl": ".",
     "declaration": true,
     "emitDeclarationOnly": true,
@@ -25,11 +21,10 @@
     "jsx": "react"
   },
   "include": [
-    "src/domain",
     "src/lib",
     "src/react",
     "src/vue",
-    "src/shared/index.ts",
+    "src/shared",
     "tailwind.config.ts",
     "tsup.config.ts",
     "vitest.config.ts",

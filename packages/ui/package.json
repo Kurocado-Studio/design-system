@@ -7,15 +7,26 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+    "./react": {
+      "types": "./dist/types/src/react/exports.d.ts",
+      "import": "./dist/react.js",
+      "require": "./dist/react.cjs",
+      "default": "./dist/react.js"
     },
-    "./react": "./dist/react.js",
-    "./vue": "./dist/vue.js",
+    "./vue": {
+      "types": "./dist/types/src/vue/exports.d.ts",
+      "import": "./dist/vue.js",
+      "require": "./dist/vue.cjs",
+      "default": "./dist/vue.js"
+    },
+    "./shared": {
+      "types": "./dist/types/src/lib/index.d.ts",
+      "import": "./dist/shared.js",
+      "require": "./dist/shared.cjs",
+      "default": "./dist/shared.js"
+    },
     "./theme": "./dist/theme.js",
     "./tokens.json": "./dist/lib/domain/tokens/tokens.json",
     "./typography.css": "./dist/lib/domain/styles/typography.css",
@@ -25,7 +36,7 @@
   "scripts": {
     "build": "rm -rf dist && tsup",
     "build:types": "pnpm run build:types:react & pnpm run build:types:vue",
-    "build:types:react": "tsc --project tsconfig.types.react.json",
+    "build:types:react": "vue-tsc --project tsconfig.types.react.json",
     "build:types:vue": "vue-tsc --project tsconfig.types.vue.json",
     "clean": "rm -rf .turbo node_modules dist",
     "dev": "tsup --watch",
