@@ -1,11 +1,9 @@
-/* eslint import/no-default-export: 0 */
 import { ThemeProvider } from '@kurocado-studio/ui/react';
-import tokens from '@kurocado-studio/ui/tokens.json';
 import '@kurocado-studio/ui/typography.css';
 import { themes } from '@storybook/theming';
-import { get } from 'lodash-es';
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 
+import designTokens from '../../../packages/ui/src/lib/domain/tokens/tokens.json';
 import '../tailwind.css';
 
 const LIGHT_THEME = 'Light setup';
@@ -45,28 +43,27 @@ export const parameters = {
   },
   controls: {
     matchers: {
-      color: /(?<temp1>background|color)$/i,
+      color: /(background|color)$/i,
       date: /Date$/,
     },
   },
 };
 
 export const decorators = [
-  (Story: () => React.ReactNode, context: Record<string, unknown>) => {
-    function Decorator(): React.ReactNode {
-      const selectedTheme =
-        get(context, ['globals', 'theme'], '') === LIGHT_THEME;
+  (Story, context) => {
+    const Decorator = () => {
+      const selectedTheme = context.globals.theme === LIGHT_THEME;
 
       useEffect(() => {
         document.documentElement.classList.toggle('dark', !selectedTheme);
       }, [selectedTheme]);
 
       return (
-        <ThemeProvider theme={tokens}>
+        <ThemeProvider theme={designTokens}>
           <Story />
         </ThemeProvider>
       );
-    }
+    };
 
     return <Decorator />;
   },

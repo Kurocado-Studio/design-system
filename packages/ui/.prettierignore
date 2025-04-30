@@ -1,6 +1,5 @@
 .turbo
 node_modules
 dist
-.npmrc
 coverage
 .postcssrc
