@@ -9,20 +9,6 @@ import { type PluginOption, defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-function copyDomainAssets(): PluginOption {
-  return {
-    name: 'copy-domain-assets',
-    closeBundle() {
-      const stdio = 'inherit';
-      execSync('copyfiles -u 1 "src/lib/domain/styles/**/*" dist', { stdio });
-      execSync('copyfiles -u 1 "src/lib/domain/fonts/**/*" dist', { stdio });
-      execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
-        stdio,
-      });
-    },
-  } satisfies PluginOption;
-}
-
 export default defineConfig((options) => ({
   ...options,
   plugins: [
@@ -54,7 +40,19 @@ export default defineConfig((options) => ({
       },
     },
   },
-  ssr: {
-    noExternal: ['@internal/domain'],
-  },
 }));
+
+function copyDomainAssets(): PluginOption {
+  return {
+    // @ts-ignore name convention
+    name: 'copy-domain-assets',
+    closeBundle() {
+      const stdio = 'inherit';
+      execSync('copyfiles -u 1 "src/lib/domain/styles/**/*" dist', { stdio });
+      execSync('copyfiles -u 1 "src/lib/domain/fonts/**/*" dist', { stdio });
+      execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
+        stdio,
+      });
+    },
+  } satisfies PluginOption;
+}
