@@ -18,12 +18,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "skipLibCheck": true,
     "paths": {
       "@kurocado-studio/ui": ["node_modules/@kurocado-studio/ui"]
     }
   },
-  "include": ["./.storybook/**/*", "./stories/**/*"],
+  "include": ["stories", ".storybook"],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -19,7 +19,7 @@
   "include": [
     "src",
     "stories",
-    ".storybook/vitest.setup.ts",
+    ".storybook/**/*",
     "vitest.workspace.ts",
     "src/**/*.vue"
   ],

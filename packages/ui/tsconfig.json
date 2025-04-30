@@ -9,7 +9,7 @@
       "@testing-library/jest-dom"
     ],
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
