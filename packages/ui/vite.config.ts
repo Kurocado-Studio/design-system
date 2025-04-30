@@ -11,12 +11,13 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 function copyDomainAssets(): PluginOption {
   return {
-    // @ts-ignore
     name: 'copy-domain-assets',
-    // @ts-ignore
     closeBundle() {
-      execSync('copyfiles -u 1 "src/lib/domain/{fonts,styles}/**/*" dist', {
-        stdio: 'inherit',
+      const stdio = 'inherit';
+      execSync('copyfiles -u 1 "src/lib/domain/styles/**/*" dist', { stdio });
+      execSync('copyfiles -u 1 "src/lib/domain/fonts/**/*" dist', { stdio });
+      execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
+        stdio,
       });
     },
   } satisfies PluginOption;
@@ -52,7 +53,6 @@ export default defineConfig((options) => ({
         preserveModulesRoot: 'src',
       },
     },
-    watch: process.env['WATCH'] === 'true' ? {} : undefined,
   },
   ssr: {
     noExternal: ['@internal/domain'],
