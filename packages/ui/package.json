@@ -10,21 +10,18 @@
   "type": "module",
   "exports": {
     "./react": {
-      "types": "./dist/types/src/react/exports.d.ts",
+      "types": "./dist/react.d.ts",
       "import": "./dist/react.js",
-      "require": "./dist/react.cjs",
       "default": "./dist/react.js"
     },
     "./vue": {
-      "types": "./dist/types/src/vue/exports.d.ts",
+      "types": "./dist/vue.d.ts",
       "import": "./dist/vue.js",
-      "require": "./dist/vue.cjs",
       "default": "./dist/vue.js"
     },
     "./shared": {
-      "types": "./dist/types/src/lib/index.d.ts",
+      "types": "./dist/shared.d.ts",
       "import": "./dist/shared.js",
-      "require": "./dist/shared.cjs",
       "default": "./dist/shared.js"
     },
     "./theme": "./dist/theme.js",
@@ -34,12 +31,13 @@
   },
   "files": ["dist"],
   "scripts": {
-    "build": "rm -rf dist && tsup",
+    "build:tsup": "rm -rf dist && tsup",
     "build:types": "pnpm run build:types:react & pnpm run build:types:vue",
     "build:types:react": "vue-tsc --project tsconfig.types.react.json",
     "build:types:vue": "vue-tsc --project tsconfig.types.vue.json",
     "clean": "rm -rf .turbo node_modules dist",
-    "dev": "tsup --watch",
+    "dev": "vite build --watch --mode development",
+    "dev:tsup": "tsup --watch",
     "dev:types": "vue-tsc --watch --noEmit",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
@@ -48,7 +46,7 @@
     "setup": "pnpm install",
     "test": "vitest run --coverage",
     "typecheck": "tsc --noEmit --pretty",
-    "vite:build": "rm -rf dist && vite build --mode production",
+    "build": "rm -rf dist && vite build --mode production",
     "vite:watch": "vite build --watch --mode development",
     "vue:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/vue"
   },

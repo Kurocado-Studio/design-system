@@ -15,9 +15,14 @@ function copyDomainAssets(): PluginOption {
     name: 'copy-domain-assets',
     // @ts-ignore
     closeBundle() {
-      execSync('copyfiles -u 1 "src/lib/domain/{fonts,styles}/**/*" dist', {
-        stdio: 'inherit',
+      const stdio = 'inherit';
+      execSync('copyfiles -u 1 "src/lib/domain/styles/**/*" dist', { stdio });
+      execSync('copyfiles -u 1 "src/lib/domain/fonts/**/*" dist', { stdio });
+      execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
+        stdio,
       });
+      // execSync('pnpm run build:types:react', { stdio });
+      // execSync('pnpm run build:types:vue', { stdio });
     },
   } satisfies PluginOption;
 }
@@ -35,7 +40,7 @@ export default defineConfig((options) => ({
     lib: {
       entry: {
         theme: resolve(__dirname, 'src/lib/infra/theme.ts'),
-        index: resolve(__dirname, 'src/index.ts'),
+        shared: resolve(__dirname, 'src/shared/index.ts'),
         react: resolve(__dirname, 'src/react/exports.ts'),
         vue: resolve(__dirname, 'src/vue/exports.ts'),
       },
@@ -52,7 +57,6 @@ export default defineConfig((options) => ({
         preserveModulesRoot: 'src',
       },
     },
-    watch: process.env['WATCH'] === 'true' ? {} : undefined,
   },
   ssr: {
     noExternal: ['@internal/domain'],
