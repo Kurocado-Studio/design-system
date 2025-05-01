@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "build": "storybook build",
     "clean": "rm -rf .turbo node_modules",
-    "dev": "storybook dev -p 6008",
+    "dev": "storybook dev -p 6007",
     "lint": "eslint ./stories/*.stories.ts --max-warnings 0 --no-warn-ignored",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
