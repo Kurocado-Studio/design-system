@@ -18,6 +18,7 @@
     "./vue": "./dist/vue.js",
     "./theme": "./dist/theme.js",
     "./typography.css": "./dist/lib/domain/styles/typography.css",
+    "./kurocado.ui.css": "./dist/lib/domain/styles/kurocado.ui.css",
     "./fonts/Mona-Sans.var.woff2": "./dist/lib/domain/fonts/Mona-Sans.var.woff2"
   },
   "files": ["dist"],
