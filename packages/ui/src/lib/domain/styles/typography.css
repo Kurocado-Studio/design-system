@@ -7,6 +7,10 @@
   src: url('../fonts/Mona-Sans.var.woff2') format('woff2');
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer components {
   .typography {
     color: theme(colors.neutral.950);
