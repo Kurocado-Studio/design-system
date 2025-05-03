@@ -21,7 +21,7 @@
     "./typography.css": "./dist/lib/domain/styles/typography.css",
     "./fonts/Mona-Sans.var.woff2": "./dist/lib/domain/fonts/Mona-Sans.var.woff2"
   },
-  "files": ["dist"],
+  "files": ["dist", "src"],
   "scripts": {
     "build:tsup": "rm -rf dist && tsup --dts",
     "clean": "rm -rf .turbo node_modules dist",
