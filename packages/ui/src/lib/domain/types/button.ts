@@ -1,7 +1,4 @@
-import type { AriaButtonOptions } from '@react-aria/button';
-import type { MotionProps } from 'framer-motion';
-
-import type { CommonProps } from './index';
+import type { CommonHTMLElementProps } from './index';
 
 /**
  * Represents a token configuration for a button variant, defining styles for various states and themes.
@@ -66,9 +63,10 @@ export type ButtonVariants =
  * - `variant`: Specifies the button's style. Can be `'primary'`, `'secondary'`, `'destructive'`, `'success'`, or `'icon'`. Optional.
  * - `children`: Defines the content to be displayed inside the button. Optional.
  */
-export type ButtonProps = MotionProps &
-  AriaButtonOptions<'button'> &
-  CommonProps & {
-    variant?: ButtonVariants;
-    ghost?: boolean;
-  } & {};
+export type ButtonProps = CommonHTMLElementProps<
+  HTMLButtonElement,
+  'button'
+> & {
+  variant?: ButtonVariants;
+  ghost?: boolean;
+} & {};

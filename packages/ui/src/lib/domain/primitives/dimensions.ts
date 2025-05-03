@@ -1,7 +1,7 @@
 import { get, set } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
-import { createCssVariableEntry } from 'src/lib/domain/utils/createCssVariableEntry';
+import { createCssVariableEntry } from 'src/lib/utils/createCssVariableEntry';
 
 import { type Theme } from '../types';
 

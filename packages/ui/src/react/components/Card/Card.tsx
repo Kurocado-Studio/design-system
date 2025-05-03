@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import {
-  type CardProps as CardPropsType,
+  type CardComponentProps as CardPropsType,
   cardBodyClasses,
   cardComponentWrapperClasses,
   cardFooterClasses,

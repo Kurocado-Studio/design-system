@@ -5,15 +5,30 @@
 | React Storybook | <https://design-system-kurocado-studio.vercel.app>          |
 | Vue Storybook   | <https://design-system-docs-vue-kurocado-studio.vercel.app> |
 
-A token‑driven UI library whose look & feel can be tweaked in Figma and—via Token Studio—propagated
-to React and Vue components, guaranteeing pixel‑perfect brand consistency without hand‑off friction.
+## 🚧 Current Status & Direction
+
+Kurocado Studio’s Design System is currently in an early-stage, proof-of-concept (PoC) phase. The
+primary focus so far has been on building a technical foundation—ensuring multi-framework support
+(React + Vue), a robust design-token pipeline via Token Studio, and automated integration with
+Tailwind CSS and Storybook.
+
+This system is evolving into a fully-fledged Design System, but currently operates as a Component
+Library with centralized governance. Governance and contribution processes are in early planning and
+will follow a centralized model to ensure consistency during the initial rollout.
+
+Long-term documentation and design decisions will be managed using Supernova, to ensure a scalable
+and collaborative workflow between design and development teams.
+
+## High Level Overview
+
+A token‑driven Design System whose look & feel can be tweaked in Figma and—via Token
+Studio—propagated to React and Vue components, guaranteeing pixel‑perfect brand consistency without
+hand‑off friction.
 
 Kurocado Studio’s Design System delivers a single source of truth for typography, color, spacing,
 and interaction patterns across web and mobile products. Designers iterate visually in Figma; Token
 Studio syncs the updated design tokens to the codebase, and Storybook reflects the changes
 instantly—so product teams ship new features faster while staying perfectly on‑brand.
-
-## High Level Overview
 
 ```mermaid
 flowchart LR

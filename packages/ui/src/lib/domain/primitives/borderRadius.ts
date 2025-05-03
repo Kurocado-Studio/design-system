@@ -2,7 +2,7 @@ import { get } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
 import { type Theme } from 'src/lib/domain/types';
-import { createCssVariableEntry } from 'src/lib/domain/utils/createCssVariableEntry';
+import { createCssVariableEntry } from 'src/lib/utils/createCssVariableEntry';
 
 export function getTailwindBorderRadius(theme: Theme): {
   borderRadius: Required<CustomThemeConfig['borderRadius']>;

@@ -21,7 +21,6 @@ const meta: Meta<CardProps> = {
 };
 
 export const WithCardBody: StoryObj<CardProps> = {
-  render: Template,
   name: 'With Card Body',
   args: {
     children: (
@@ -34,7 +33,6 @@ export const WithCardBody: StoryObj<CardProps> = {
 };
 
 export const WithFramerMotionProps: StoryObj<CardProps> = {
-  render: Template,
   name: 'With Framer Motion Props',
   args: {
     children: (
@@ -50,7 +48,6 @@ export const WithFramerMotionProps: StoryObj<CardProps> = {
 };
 
 export const WithCardHeader: StoryObj<CardProps> = {
-  render: Template,
   name: 'With Card Header',
   args: {
     children: (
@@ -68,7 +65,6 @@ export const WithCardHeader: StoryObj<CardProps> = {
 };
 
 export const WithCardFooter: StoryObj<CardProps> = {
-  render: Template,
   name: 'With Card Footer',
   args: {
     children: (

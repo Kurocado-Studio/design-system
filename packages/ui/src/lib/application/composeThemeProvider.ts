@@ -2,7 +2,7 @@ import { handleSetThemeVariable } from 'src/lib/domain/provider/handleSetThemeVa
 import { handleToggleLightDarkTheme } from 'src/lib/domain/provider/lightDarkThemeToggle';
 import { handleVariablesMap } from 'src/lib/domain/provider/variablesMap';
 
-import { type ThemeProviderComposer } from '../domain/types/provider';
+import { type ThemeProviderComposer } from '../domain/provider/provider';
 
 export function composeThemeProvider(): ThemeProviderComposer {
   return {

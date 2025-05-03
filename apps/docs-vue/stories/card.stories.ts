@@ -1,9 +1,9 @@
-import { Card, CardBody, type CardProps } from '@kurocado-studio/ui/vue';
+import { Card, CardBody, type CardProps, Input } from '@kurocado-studio/ui/vue';
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta = {
-  title: 'Example/Card',
+  title: 'Card',
   component: Card,
   tags: ['autodocs'],
   argTypes: {},
@@ -27,7 +27,7 @@ const template = `
 
 export const Default: Story = {
   render: (args: CardProps) => ({
-    components: { Card, CardBody },
+    components: { Card, CardBody, Input },
     setup() {
       return { args };
     },

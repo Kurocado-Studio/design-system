@@ -1,10 +1,9 @@
-// buttonStyles.ts
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-import { focusRing } from 'src/lib/infra/focusRing';
+import { type ButtonVariantToken } from 'src/lib/domain/types/button';
 
-import { type ButtonVariantToken } from '../domain/types/button';
+import { controlCommonStyles } from './control.common.styles';
 
 const primary: ButtonVariantToken = {
   bg: 'bg-[GreenYellow]',
@@ -80,8 +79,9 @@ const iconGhost: ButtonVariantToken = {
   hover: 'hover:bg-black/[5%]',
   pressed: 'pressed:bg-black/10',
 };
+
 export const buttonStyles = tv({
-  extend: focusRing,
+  extend: controlCommonStyles,
   base: 'px-5 py-2 text-sm text-center rounded-lg',
   variants: {
     variant: {
@@ -94,9 +94,6 @@ export const buttonStyles = tv({
     ghost: {
       true: '',
       false: '',
-    },
-    disabled: {
-      true: 'bg-gray-200 hover:bg-gray-200 dark:bg-zinc-800 text-gray-500 dark:text-zinc-600 forced-colors:text-[GrayText]',
     },
   },
   compoundVariants: [
