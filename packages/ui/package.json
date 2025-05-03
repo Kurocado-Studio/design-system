@@ -18,6 +18,7 @@
     "./vue": "./dist/vue/exports.js",
     "./theme": "./dist/lib/infra/theme.js",
     "./stories": "./dist/stories/index.js",
+    "./tailwindPreset": "./dist/tailwindPreset.js",
     "./typography.css": "./dist/lib/domain/styles/typography.css",
     "./fonts/Mona-Sans.var.woff2": "./dist/lib/domain/fonts/Mona-Sans.var.woff2"
   },

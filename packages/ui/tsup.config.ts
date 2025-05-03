@@ -10,6 +10,7 @@ export default defineConfig({
     'src/react/exports.ts',
     'src/vue/exports.ts',
     'src/stories/index.ts',
+    'src/tailwindPreset.ts',
   ],
   format: ['esm'],
   dts: false,
