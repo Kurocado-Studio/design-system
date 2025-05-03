@@ -1,5 +1,6 @@
+/* eslint import/no-default-export: 0 */
 import type { StorybookConfig } from '@storybook/vue3-vite';
-import { dirname, join } from 'path';
+import { dirname, join } from 'node:path';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -22,6 +23,15 @@ const config: StorybookConfig = {
   framework: {
     name: getAbsolutePath('@storybook/vue3-vite'),
     options: {},
+  },
+  viteFinal: async (config) => {
+    config.server = config.server || {};
+    config.server.watch = {
+      ...config.server.watch,
+      usePolling: true,
+      interval: 100,
+    };
+    return config;
   },
 };
 export default config;

@@ -3,16 +3,18 @@
 </template>
 
 <script lang="ts" setup>
+import { get } from 'lodash-es';
 import { twMerge } from 'tailwind-merge';
-import { computed, toRefs } from 'vue';
+import { computed, useAttrs } from 'vue';
 
-import { type CardProps, cardFooterClasses } from 'src/lib';
+import { cardFooterClasses } from 'src/lib';
 
-const props = defineProps<CardProps>();
-
-const { className } = toRefs(props);
+const cardPropsAttributes = useAttrs();
 
 const mergedClass = computed(() => {
-  return twMerge(cardFooterClasses(), className.value);
+  return twMerge(
+    cardFooterClasses(),
+    get(cardPropsAttributes, ['value']) as string | undefined,
+  );
 });
 </script>

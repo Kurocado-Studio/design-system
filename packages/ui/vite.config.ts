@@ -25,6 +25,7 @@ export default defineConfig((options) => ({
         index: resolve(__dirname, 'src/index.ts'),
         react: resolve(__dirname, 'src/react/exports.ts'),
         vue: resolve(__dirname, 'src/vue/exports.ts'),
+        stories: resolve(__dirname, 'src/stories/index.ts'),
       },
       formats: ['es'],
       fileName: (_: unknown, name: string): string => `${name}.js`,

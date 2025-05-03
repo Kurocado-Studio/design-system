@@ -5,12 +5,12 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { composeAnimationProps } from 'src/lib';
-import { type ButtonProps } from 'src/lib/domain/types/button';
-import { buttonStyles } from 'src/lib/infra/button';
-import { cursors } from 'src/lib/infra/cursors';
+import { type ButtonProps as ButtonPropsBase } from 'src/lib/domain/types/button';
+import { buttonStyles } from 'src/lib/infra/button.styles';
+import { cursorStyles } from 'src/lib/infra/cursor.styles';
 import { MotionElement } from 'src/react/components/motion';
 
-export { type ButtonProps } from 'src/lib/domain/types/button';
+export type ButtonProps = React.PropsWithChildren<ButtonPropsBase>;
 
 export function Button(props: ButtonProps): React.ReactNode {
   const ref = React.useRef(null);
@@ -19,7 +19,7 @@ export function Button(props: ButtonProps): React.ReactNode {
   return (
     <MotionElement
       as='button'
-      className={twMerge(buttonStyles(props), cursors(props))}
+      className={twMerge(buttonStyles(props), cursorStyles<ButtonProps>(props))}
       ref={ref}
       type={get(props, ['type'], 'button')}
       {...(buttonProps as unknown as HTMLMotionProps<'button'>)}
