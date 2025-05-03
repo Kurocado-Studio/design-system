@@ -1,7 +1,6 @@
 import type { MotionProps } from 'framer-motion';
 
 export type * from 'framer-motion';
-
 /**
  * AnimationProps details the animation‐related properties that Framer Motion supports.
  * Many of these are already part of HTMLMotionProps, but here we list them with documentation.

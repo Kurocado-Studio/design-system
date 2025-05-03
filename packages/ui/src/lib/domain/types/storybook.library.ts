@@ -1,1 +1,1 @@
-export type * from '@storybook/react';
+export type { ArgTypes, Meta, StoryObj } from '@storybook/react';

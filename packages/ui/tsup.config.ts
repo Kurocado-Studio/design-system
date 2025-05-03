@@ -1,32 +1,39 @@
-/* eslint import/no-default-export: 0 */
+/* eslint import/no-default-export:0 */
 import { execSync } from 'node:child_process';
 import { defineConfig } from 'tsup';
+import vuePlugin from 'unplugin-vue/esbuild';
 
-export default defineConfig((options) => ({
-  ...options,
+export default defineConfig({
   entry: [
-    './src/lib/infra/theme.ts',
-    './src/index.ts',
-    './src/react/exports.ts',
-    './src/vue/exports.ts',
-    './src/stories/index.ts',
+    'src/lib/infra/theme.ts',
+    'src/index.ts',
+    'src/react/exports.ts',
+    'src/vue/exports.ts',
+    'src/stories/index.ts',
   ],
-  target: ['esnext'],
   format: ['esm'],
-  dts: true,
-  bundle: true,
-  clean: true,
+  dts: false,
   splitting: true,
-  treeshake: true,
-  external: ['framer-motion', 'react', 'vue', 'react-dom', 'tailwindcss'],
-  noExternal: ['@internal/domain'],
-  watch: true, // Watch mode for rebuilding on file changes
+  sourcemap: true,
+  target: 'esnext',
+  clean: true,
+  esbuildPlugins: [vuePlugin()],
+  external: [
+    'vue',
+    'react',
+    'react-dom',
+    '@storybook/react',
+    'framer-motion',
+    'tailwindcss',
+  ],
   onSuccess: async (): Promise<void> => {
-    execSync(
-      'copyfiles -u 1 "src/lib/domain/fonts/**/*" "src/lib/domain/styles/**/*" dist',
-      {
-        stdio: 'inherit',
-      },
-    );
+    const stdio = 'inherit';
+    execSync('copyfiles -u 1 "src/lib/domain/{styles,fonts}/**/*" dist', {
+      stdio,
+    });
+    execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
+      stdio,
+    });
+    execSync('vue-tsc -p tsconfig.types.json', { stdio });
   },
-}));
+});
