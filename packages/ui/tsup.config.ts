@@ -10,7 +10,6 @@ export default defineConfig({
     'src/react/exports.ts',
     'src/vue/exports.ts',
     'src/stories/index.ts',
-    'src/tailwindPreset.ts',
   ],
   format: ['esm'],
   dts: false,
@@ -35,6 +34,7 @@ export default defineConfig({
     execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
       stdio,
     });
+    execSync('copyfiles tailwind.preset.mjs dist', { stdio });
     execSync('vue-tsc -p tsconfig.types.json', { stdio });
   },
 });

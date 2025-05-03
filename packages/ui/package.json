@@ -17,12 +17,13 @@
     "./react": "./dist/react/exports.js",
     "./vue": "./dist/vue/exports.js",
     "./theme": "./dist/lib/infra/theme.js",
+    "./tailwind.preset": "./dist/tailwind.preset.mjs",
     "./stories": "./dist/stories/index.js",
     "./tailwindPreset": "./dist/tailwindPreset.js",
     "./typography.css": "./dist/lib/domain/styles/typography.css",
     "./fonts/Mona-Sans.var.woff2": "./dist/lib/domain/fonts/Mona-Sans.var.woff2"
   },
-  "files": ["dist"],
+  "files": ["dist", "tailwind.preset.mjs"],
   "scripts": {
     "build": "rm -rf dist && tsup",
     "clean": "rm -rf .turbo node_modules dist",
