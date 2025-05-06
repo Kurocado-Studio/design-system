@@ -22,12 +22,13 @@ export const cardFooterClasses = tv({
 export const cardComponentWrapperClasses = tv({
   extend: defaultCardStyles,
   base: [
-    'dark:divide-gray-200',
-    'divide-gray-100',
+    'dark:divide-gray-700',
+    'divide-gray-200',
     'divide-y',
     'overflow-hidden',
     'shadow',
     tailwindCardComponentToken.borderRadius,
+    tailwindCardComponentToken.border,
   ],
 });
 

@@ -20,10 +20,10 @@ const secondary: ButtonVariantToken = {
   hover: 'hover:bg-gray-200',
   pressed: 'pressed:bg-gray-300',
   // Optional dark mode tokens
-  darkText: 'dark:text-zinc-100',
-  darkBg: 'dark:bg-zinc-600',
-  darkHover: 'dark:hover:bg-zinc-500',
-  darkPressed: 'dark:pressed:bg-zinc-400',
+  darkText: 'dark:text-gray-100',
+  darkBg: 'dark:bg-gray-600',
+  darkHover: 'dark:hover:bg-gray-500',
+  darkPressed: 'dark:pressed:bg-gray-400',
 };
 
 const destructive: ButtonVariantToken = {
