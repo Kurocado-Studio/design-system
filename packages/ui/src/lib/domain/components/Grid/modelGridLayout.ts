@@ -2,6 +2,16 @@ import { get } from 'lodash-es';
 import { twMerge } from 'tailwind-merge';
 
 import {
+  columnStyles,
+  directionStyles,
+  gapStyles,
+  itemsStyles,
+  justifyStyles,
+  minHStyles,
+  minWStyles,
+  rowStyles,
+} from 'src/lib/domain/components/Grid/grid.styles';
+import {
   type ColumnStyles,
   type DirectionStyles,
   type GapStyles,
@@ -12,16 +22,6 @@ import {
   type MinWStyles,
   type RowStyles,
 } from 'src/lib/domain/components/Grid/types';
-import {
-  columnStyles,
-  directionStyles,
-  gapStyles,
-  itemsStyles,
-  justifyStyles,
-  minHStyles,
-  minWStyles,
-  rowStyles,
-} from 'src/lib/infra/grid.styles';
 
 export function modelGridLayout(payload: GridComponentLayoutOptions): string {
   const gridColumnStyles: ColumnStyles = {

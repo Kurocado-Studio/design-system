@@ -5,7 +5,7 @@ import vuePlugin from 'unplugin-vue/esbuild';
 
 export default defineConfig({
   entry: [
-    'src/lib/infra/theme.ts',
+    'src/lib/theme/theme.ts',
     'src/index.ts',
     'src/react/exports.ts',
     'src/vue/exports.ts',

@@ -55,7 +55,7 @@ type Story = StoryObj<GridProps>;
 
 const renderBoxes = (length: number): React.ReactNode =>
   Array.from({ length }, (_, i) => (
-    <Card key={i}>
+    <Card key={i} className='w-full'>
       <Card.Body>{i + 1}</Card.Body>
     </Card>
   ));

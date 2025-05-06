@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 
 import { type ButtonVariantToken } from 'src/lib/domain/types/button';
 
-import { controlCommonStyles } from './control.common.styles';
+import { controlCommonStyles } from '../common';
 
 const primary: ButtonVariantToken = {
   bg: 'bg-[GreenYellow]',

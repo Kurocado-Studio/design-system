@@ -16,7 +16,7 @@
     },
     "./react": "./dist/react/exports.js",
     "./vue": "./dist/vue/exports.js",
-    "./theme": "./dist/lib/infra/theme.js",
+    "./theme": "./dist/lib/theme/theme.js",
     "./tailwind.preset": "./dist/tailwind.preset.mjs",
     "./stories": "./dist/stories/index.js",
     "./tailwindPreset": "./dist/tailwindPreset.js",

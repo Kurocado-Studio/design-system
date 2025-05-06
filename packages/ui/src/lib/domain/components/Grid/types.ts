@@ -9,7 +9,7 @@ import {
   type minHStyles,
   type minWStyles,
   type rowStyles,
-} from '../../../infra/grid.styles';
+} from './grid.styles';
 import { type CommonHTMLElementProps } from '../../types';
 
 export type ColumnStyles = VariantProps<typeof columnStyles>;
