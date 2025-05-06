@@ -1,4 +1,4 @@
-import { get } from 'lodash-es';
+import { get, set } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
 import { type Theme } from 'src/lib/domain/types';
@@ -29,8 +29,8 @@ export function getTailwindBorderRadius(theme: Theme): {
           variableValue,
         );
 
-      borderRadius[borderRadiusPrimitiveName] = cssVariableReference;
-      borderRadiusCssVariableMap[cssVariableName] = cssVariableValue;
+      set(borderRadius, [borderRadiusPrimitiveName], cssVariableReference);
+      set(borderRadiusCssVariableMap, [cssVariableName], cssVariableValue);
     } else {
       for (const [borderRadiusKeyName, borderRadiusKeyValue] of Object.entries(
         borderRadiusValue,
@@ -43,8 +43,8 @@ export function getTailwindBorderRadius(theme: Theme): {
               borderRadiusKeyValue,
             );
 
-          borderRadius[borderRadiusKeyName] = cssVariableReference;
-          borderRadiusCssVariableMap[cssVariableName] = cssVariableValue;
+          set(borderRadius, [borderRadiusKeyName], cssVariableReference);
+          set(borderRadiusCssVariableMap, [cssVariableName], cssVariableValue);
         }
       }
     }
