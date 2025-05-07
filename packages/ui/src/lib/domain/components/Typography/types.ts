@@ -1,12 +1,12 @@
 import { type VariantProps } from 'tailwind-variants';
 
+import { type CommonHTMLElementProps } from '../../types';
 import {
   type alignStyles,
   type leadingStyles,
   type sizeStyles,
   type weightStyles,
 } from './typography.styles';
-import { type CommonHTMLElementProps } from '../../types';
 
 export type TypographySize =
   | 'xs'

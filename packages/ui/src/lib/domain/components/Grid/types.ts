@@ -1,5 +1,6 @@
 import type { VariantProps } from 'tailwind-variants';
 
+import { type CommonHTMLElementProps } from '../../types';
 import {
   type columnStyles,
   type directionStyles,
@@ -10,7 +11,6 @@ import {
   type minWStyles,
   type rowStyles,
 } from './grid.styles';
-import { type CommonHTMLElementProps } from '../../types';
 
 export type ColumnStyles = VariantProps<typeof columnStyles>;
 export type DirectionStyles = VariantProps<typeof directionStyles>;
