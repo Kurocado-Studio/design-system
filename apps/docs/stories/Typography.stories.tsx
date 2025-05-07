@@ -153,7 +153,7 @@ export const CenteredQuote: Story = {
 
 export const ResponsiveDemo: Story = {
   args: {
-    size: { base: 'sm', md: 'lg', '2xl': '4xl' },
+    size: { base: 'sm', md: 'lg', lg: '4xl' },
     weight: { base: 'normal', lg: 'bold' },
     leading: 'normal',
     children: `Resize the viewport: this text goes sm→lg→4xl.`,
