@@ -25,7 +25,6 @@ const preview = {
     theme: 'light',
   },
   parameters: {
-    layout: 'fullscreen',
     controls: {
       matchers: {},
     },

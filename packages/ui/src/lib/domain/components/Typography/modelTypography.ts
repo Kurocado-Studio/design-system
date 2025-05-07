@@ -50,6 +50,7 @@ export function modelTypography(payload: TypographyLayoutOptions): string {
   };
   return twMerge(
     className,
+    'text-gray-800 dark:text-gray-200',
     alignStyles(alignment),
     italicStyles({ italic }),
     sizeStyles(size),

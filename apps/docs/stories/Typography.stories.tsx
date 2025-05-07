@@ -75,7 +75,6 @@ const meta: Meta<TypographyProps> = {
     leading: 'normal',
     align: 'left',
     italic: false,
-    tag: 'span',
     children: 'The quick brown fox jumps over the lazy dog',
   },
 };
