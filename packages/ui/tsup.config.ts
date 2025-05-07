@@ -34,6 +34,9 @@ export default defineConfig({
     execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
       stdio,
     });
+    execSync('copyfiles packages/ui/src/lib/domain/tokens/tokens.json dist', {
+      stdio,
+    });
     execSync('copyfiles tailwind.preset.mjs dist', { stdio });
     execSync('tsc -p tsconfig.react.json', { stdio });
     execSync('vue-tsc -p tsconfig.vue.json', { stdio });
