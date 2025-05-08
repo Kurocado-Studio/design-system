@@ -2,12 +2,11 @@
 import { Input } from '@kurocado-studio/ui/react';
 import { InputStories } from '@kurocado-studio/ui/stories';
 
-const { inputMeta, withValue, passwordType, disabled } = InputStories;
-
 export default {
   title: 'Components/Input',
   component: Input,
-  ...inputMeta,
+  ...InputStories.inputMeta,
 };
-
-export { withValue, passwordType, disabled };
+export const WithValue = InputStories.WithValue;
+export const PasswordType = InputStories.passwordType;
+export const Disabled = InputStories.disabled;

@@ -16,7 +16,7 @@ export function MotionElement<T extends HTMLElement>({
   Record<string | number | symbol, unknown>): ReactNode {
   const element = as || 'div';
 
-  // @ts-ignore type-mismatch between JSX HTML elements and Motion HTML elements
+  // @ts-ignore type-mismatch between JSX HTML elements and motion HTML elements
   const Component = motion[element];
 
   return <Component ref={ref} {...props} />;

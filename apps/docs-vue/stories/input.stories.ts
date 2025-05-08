@@ -2,7 +2,7 @@
 import { Input } from '@kurocado-studio/ui/vue';
 
 export default {
-  title: 'Input',
+  title: 'Components/Input',
   component: Input,
   tags: ['autodocs'],
 };

@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-import { focusRingStyles } from '../common/focusRing.styles';
+import { focusRingStyles } from '../common';
 
 const baseInputStyles = tv({
   extend: focusRingStyles,
