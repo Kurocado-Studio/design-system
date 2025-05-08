@@ -1,8 +1,18 @@
-import type { MotionProps } from 'framer-motion';
+import type { HTMLMotionProps, MotionProps } from 'framer-motion';
 
 export type * from 'framer-motion';
+
+export type FilteredHTMLElementProps<T extends keyof HTMLElementTagNameMap> = {
+  [K in keyof HTMLElementTagNameMap]: K extends 'className'
+    ? never
+    : HTMLElementTagNameMap[K];
+} & {
+  [K in keyof HTMLMotionProps<T>]: K extends 'className'
+    ? never
+    : HTMLMotionProps<T>[K];
+};
 /**
- * AnimationProps details the animation‐related properties that Framer Motion supports.
+ * AnimationProps details the animation‐related properties that Framer motion supports.
  * Many of these are already part of HTMLMotionProps, but here we list them with documentation.
  */
 export interface AnimationProps {

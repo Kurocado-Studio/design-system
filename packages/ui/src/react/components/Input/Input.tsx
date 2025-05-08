@@ -1,4 +1,3 @@
-import { type HTMLMotionProps } from 'framer-motion';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -15,7 +14,7 @@ export function Input(props: InputProps): React.ReactNode {
     <MotionElement
       as='input'
       {...composeAnimationProps(props)}
-      {...(props as HTMLMotionProps<'input'>)}
+      {...props}
       className={twMerge(
         inputStyles(props),
         cursorStyles(props),

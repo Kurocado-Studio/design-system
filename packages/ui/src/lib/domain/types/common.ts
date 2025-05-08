@@ -7,7 +7,6 @@ export type CommonHTMLElementProps<
   tag?: K;
   loading?: boolean;
   disabled?: boolean;
-  className?: string;
   invalid?: boolean;
 } & MotionProps &
-  Partial<Omit<T, 'children'>>;
+  Partial<T>;

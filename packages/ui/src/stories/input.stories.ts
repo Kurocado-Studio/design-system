@@ -1,15 +1,14 @@
 import type { ArgTypes, InputProps, Meta, StoryObj } from 'src/lib';
 
-import { composeMeta } from './composeMeta';
-
 export interface InputStoriesGroup {
   inputMeta: Meta<InputProps>;
   disabled: StoryObj<InputProps>;
   passwordType: StoryObj<InputProps>;
-  withValue: StoryObj<InputProps>;
+  WithMotionProps: StoryObj<InputProps>;
+  WithValue: StoryObj<InputProps>;
 }
 
-export const inputArgTypes: ArgTypes<InputProps> = {
+const inputArgTypes: ArgTypes<InputProps> = {
   value: {
     control: 'text',
     description: 'Current value of the input',
@@ -38,7 +37,7 @@ export const inputArgTypes: ArgTypes<InputProps> = {
   },
 };
 
-export const inputBaseArgs: InputProps = {
+const inputBaseArgs: InputProps = {
   value: '',
   placeholder: 'Enter something...',
   disabled: false,
@@ -46,7 +45,7 @@ export const inputBaseArgs: InputProps = {
   className: '',
 };
 
-export const disabled: StoryObj<InputProps> = {
+const disabled: StoryObj<InputProps> = {
   name: 'Disabled',
   args: {
     ...inputBaseArgs,
@@ -55,7 +54,7 @@ export const disabled: StoryObj<InputProps> = {
   },
 };
 
-export const passwordType: StoryObj<InputProps> = {
+const passwordType: StoryObj<InputProps> = {
   name: 'Password Type',
   args: {
     ...inputBaseArgs,
@@ -64,7 +63,7 @@ export const passwordType: StoryObj<InputProps> = {
   },
 };
 
-export const withValue: StoryObj<InputProps> = {
+const WithValue = {
   name: 'With Value',
   args: {
     ...inputBaseArgs,
@@ -72,13 +71,16 @@ export const withValue: StoryObj<InputProps> = {
   },
 };
 
-export const composeInputMeta = (component: unknown): Meta<InputProps> =>
-  composeMeta(component, {
-    title: 'Components/Input',
-    argTypes: inputArgTypes,
-    args: inputBaseArgs,
-    tags: ['autodocs'],
-  });
+export const WithMotionProps = {
+  name: 'With Motion Props',
+  props: {
+    placeholder: 'Animated fade-in',
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    transition: { duration: 0.8 },
+  },
+  tags: ['autodocs'],
+};
 
 export const InputStories: InputStoriesGroup = {
   inputMeta: {
@@ -86,7 +88,8 @@ export const InputStories: InputStoriesGroup = {
     argTypes: inputArgTypes,
     args: inputBaseArgs,
   },
+  WithMotionProps,
   disabled,
   passwordType,
-  withValue,
+  WithValue,
 };
