@@ -5,6 +5,7 @@ import { InputStories } from '@kurocado-studio/ui/stories';
 const { inputMeta, withValue, passwordType, disabled } = InputStories;
 
 export default {
+  title: 'Components/Input',
   component: Input,
   ...inputMeta,
 };

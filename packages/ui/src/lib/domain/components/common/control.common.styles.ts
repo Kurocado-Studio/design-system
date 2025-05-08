@@ -14,8 +14,8 @@ export const controlCommonStyles = tv({
     'rounded-full',
     'inline-flex items-center gap-2',
     'font-medium leading-5 text-sm',
-    'rounded-md border border-gray-300 dark:border-zinc-500',
-    'bg-white dark:bg-zinc-900 text-gray-800 dark:text-gray-300',
+    'rounded-md border border-gray-300 dark:border-gray-500',
+    'bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300',
     'outline-none transition-colors duration-150',
   ],
   variants: {
@@ -26,8 +26,8 @@ export const controlCommonStyles = tv({
     },
     disabled: {
       true: [
-        'bg-gray-100 dark:bg-zinc-700 ',
-        'text-gray-400 border-gray-200 dark:border-zinc-700',
+        'bg-gray-100 dark:bg-gray-700 ',
+        'text-gray-400 border-gray-200 dark:border-gray-700',
       ],
     },
   },

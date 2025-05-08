@@ -1,4 +1,4 @@
-import { get } from 'lodash-es';
+import { get, set } from 'lodash-es';
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
 import { createCssVariableEntry } from 'src/lib/utils/createCssVariableEntry';
@@ -9,19 +9,17 @@ export function getTailwindFontSize(theme: Theme): {
   fontSize: Required<CustomThemeConfig['fontSize']>;
   fontSizeCssVariableMap: Record<string, string>;
 } {
-  const primitives = get(
-    theme,
-    ['typography/typography', 'font-size'],
-    {},
-  ) as Record<string, unknown>;
-
+  const primitives = get(theme, ['primitives', 'fontSize'], {}) as Record<
+    string,
+    unknown
+  >;
   const fontSize: Record<string, unknown> = {};
   const fontSizeCssVariableMap: Record<string, string> = {};
 
   for (const [fontSizeVariant, fontSizeDefinition] of Object.entries(
     primitives,
   )) {
-    const fontSizeValue = get(fontSizeDefinition, ['value']);
+    const fontSizeValue = get(fontSizeDefinition, ['$value']);
 
     if (!fontSizeDefinition) continue;
     if (typeof fontSizeValue !== 'string') continue;
@@ -29,9 +27,8 @@ export function getTailwindFontSize(theme: Theme): {
     const { cssVariableName, cssVariableValue, cssVariableReference } =
       createCssVariableEntry('font-size', fontSizeVariant, fontSizeValue);
 
-    fontSize[fontSizeVariant] = cssVariableReference;
-
-    fontSizeCssVariableMap[cssVariableName] = cssVariableValue;
+    set(fontSize, [fontSizeVariant], cssVariableReference);
+    set(fontSizeCssVariableMap, [cssVariableName], cssVariableValue);
   }
 
   return {
