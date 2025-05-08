@@ -1,5 +1,5 @@
 <template>
-  <MotionElement :class="mergedClass" v-bind="animationProps">
+  <MotionElement :class="mergedClass" v-bind="typographyProps">
     <slot />
   </MotionElement>
 </template>
@@ -8,7 +8,7 @@
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { computed, defineProps, useAttrs } from 'vue';
+import { computed, useAttrs } from 'vue';
 
 import {
   type TypographyLayoutOptions,
@@ -21,7 +21,7 @@ export interface TypographyProps extends TypographyLayoutOptions {
   class?: string;
 }
 const inputPropsAttributes = useAttrs() as TypographyProps;
-defineProps<TypographyProps>();
+
 const tag = computed(() => get(inputPropsAttributes, ['tag'], 'p'));
 
 const MotionElement = get(motion, [tag.value]);
@@ -30,7 +30,7 @@ const mergedClass = computed(() =>
   twMerge(modelTypography(inputPropsAttributes), inputPropsAttributes.class),
 );
 
-const animationProps = computed(() => ({
+const typographyProps = computed(() => ({
   ...inputPropsAttributes,
   ...composeAnimationProps(inputPropsAttributes),
 }));

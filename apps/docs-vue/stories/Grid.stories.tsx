@@ -65,7 +65,6 @@ const renderGrid =
     },
     template: `
     <Grid v-bind="args">
-      {{console.log({args})}}
       <Card v-for="item in items" :key="item" class="w-full">
         <CardBody>{{ item }}</CardBody>
       </Card>

@@ -1,3 +1,4 @@
+/* eslint import/no-default-export: 0 */
 import { Card, CardBody, type CardProps, Input } from '@kurocado-studio/ui/vue';
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
@@ -12,7 +13,6 @@ const meta = {
   },
 } satisfies Meta<CardProps>;
 
-/* eslint import/no-default-export: 0 */
 export default meta;
 
 type Story = StoryObj<CardProps>;
