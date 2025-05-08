@@ -2,7 +2,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { kurocadoStudioTheme } from './lib/infra/theme.js';
+import { kurocadoStudioTheme } from './lib/theme/theme.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default {

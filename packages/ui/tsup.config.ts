@@ -5,7 +5,7 @@ import vuePlugin from 'unplugin-vue/esbuild';
 
 export default defineConfig({
   entry: [
-    'src/lib/infra/theme.ts',
+    'src/lib/theme/theme.ts',
     'src/index.ts',
     'src/react/exports.ts',
     'src/vue/exports.ts',
@@ -34,7 +34,11 @@ export default defineConfig({
     execSync('copyfiles -u 1 "src/lib/domain/tokens/tokens.json" dist', {
       stdio,
     });
+    execSync('copyfiles packages/ui/src/lib/domain/tokens/tokens.json dist', {
+      stdio,
+    });
     execSync('copyfiles tailwind.preset.mjs dist', { stdio });
-    execSync('vue-tsc -p tsconfig.types.json', { stdio });
+    execSync('tsc -p tsconfig.react.json', { stdio });
+    execSync('vue-tsc -p tsconfig.vue.json', { stdio });
   },
 });

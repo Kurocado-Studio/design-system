@@ -3,9 +3,14 @@ import type React from 'react';
 
 export type * from './common';
 export type * from './motion.library';
-export type * from '../components/Card/card';
-export type * from '../components/Input/input';
+export type * from '../components/Card/types';
+export type * from '../components/Input/types';
+export type * from '../components/Grid/types';
 export type * from './storybook.library';
+
+export type Breakpoint = 'base' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+
+export type ResponsiveMap<V> = Record<Breakpoint, V>;
 
 export type Theme = Record<string, Record<string, unknown>>;
 

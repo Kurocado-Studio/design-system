@@ -14,7 +14,7 @@ const cardPropsAttributes = useAttrs();
 const mergedClass = computed(() => {
   return twMerge(
     cardComponentWrapperClasses(),
-    get(cardPropsAttributes, ['value']) as string | undefined,
+    get(cardPropsAttributes, ['class']) as string | undefined,
   );
 });
 </script>

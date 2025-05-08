@@ -7,6 +7,7 @@ function Template(args: CardProps): React.ReactElement {
 }
 
 const meta: Meta<CardProps> = {
+  title: 'Components/Card',
   component: Template,
   argTypes: {
     children: {

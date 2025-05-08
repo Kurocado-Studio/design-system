@@ -16,11 +16,12 @@
     },
     "./react": "./dist/react/exports.js",
     "./vue": "./dist/vue/exports.js",
-    "./theme": "./dist/lib/infra/theme.js",
+    "./theme": "./dist/lib/theme/theme.js",
     "./tailwind.preset": "./dist/tailwind.preset.mjs",
     "./stories": "./dist/stories/index.js",
     "./tailwindPreset": "./dist/tailwindPreset.js",
     "./typography.css": "./dist/lib/domain/styles/typography.css",
+    "./tokens.json": "./dist/lib/domain/tokens/tokens.json",
     "./fonts/Mona-Sans.var.woff2": "./dist/lib/domain/fonts/Mona-Sans.var.woff2"
   },
   "files": ["dist", "tailwind.preset.mjs"],
