@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta = {
-  title: 'Card',
+  title: 'Components/Card',
   component: Card,
   tags: ['autodocs'],
   argTypes: {},
