@@ -1,9 +1,8 @@
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-import { type ButtonVariantToken } from 'src/lib/domain/types/button';
-
 import { controlCommonStyles } from '../common';
+import { type ButtonVariantToken } from './types';
 
 const primary: ButtonVariantToken = {
   bg: 'bg-[GreenYellow]',

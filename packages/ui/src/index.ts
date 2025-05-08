@@ -1,3 +1,3 @@
-import tokens from 'src/lib/domain/tokens/tokens.json';
+import tokens from './lib/domain/tokens/tokens.json';
 
 export { tokens };

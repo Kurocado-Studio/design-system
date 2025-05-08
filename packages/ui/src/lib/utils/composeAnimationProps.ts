@@ -1,6 +1,6 @@
 import { get } from 'lodash-es';
 
-import { type AnimationProps } from 'src/lib/domain/types';
+import { type AnimationProps } from '../domain';
 
 export const composeAnimationProps = (
   props: unknown,

@@ -13,7 +13,7 @@ import {
   type ThemeProviderProps,
   composeDesignSystem,
   composeThemeProvider,
-} from 'src/lib';
+} from '../../lib';
 
 interface ThemeProps {
   theme: Theme;

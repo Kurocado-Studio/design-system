@@ -8,7 +8,7 @@ import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
 import { computed, useAttrs } from 'vue';
 
-import { cursorStyles, inputStyles } from 'src/lib';
+import { cursorStyles, inputStyles } from '../../../lib';
 
 const MotionInput = get(motion, ['input']);
 

@@ -8,7 +8,8 @@ import {
   cardFooterClasses,
   cardHeaderClasses,
 } from 'src/lib';
-import { MotionElement } from 'src/react/components/motion';
+
+import { MotionElement } from '../motion';
 
 export interface CardProps extends React.PropsWithChildren<CardPropsType> {}
 

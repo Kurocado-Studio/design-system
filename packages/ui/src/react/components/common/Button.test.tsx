@@ -1,7 +1,7 @@
 import { reactTestingLibrary } from '@internal/config';
 import React from 'react';
 
-import { Button } from 'src/react/components/common/Button';
+import { Button } from './Button';
 
 const { render, screen } = reactTestingLibrary;
 

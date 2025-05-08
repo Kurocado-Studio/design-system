@@ -1,14 +1,16 @@
+/* eslint-disable import/order */
+// TODO: fix ESLint as we still have small conflicts with eslint here and there
 import { set } from 'lodash-es';
 
-import { cardVariantToken } from 'src/lib/domain/components/Card/tokens';
 import {
   resolveAliasColor,
   resolveAliasDimensions,
   resolvePrimitiveColors,
   resolvePrimitiveDimensions,
-} from 'src/lib/domain/primitives';
-import { type FlatToken } from 'src/lib/domain/tokens/flattenTokens';
-import { type Theme } from 'src/lib/domain/types';
+} from '../../primitives';
+import { type FlatToken } from '../../tokens/flattenTokens';
+import { type Theme } from '../../types';
+import { cardVariantToken } from './tokens';
 
 export interface ComposeCardOptions {
   flatTokens: Array<FlatToken>;

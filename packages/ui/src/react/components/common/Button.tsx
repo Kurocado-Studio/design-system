@@ -4,11 +4,13 @@ import { get } from 'lodash-es';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { composeAnimationProps } from 'src/lib';
-import { buttonStyles } from 'src/lib/domain/components/Button/button.styles';
-import { cursorStyles } from 'src/lib/domain/components/common/cursor.styles';
-import { type ButtonProps as ButtonPropsBase } from 'src/lib/domain/types/button';
-import { MotionElement } from 'src/react/components/motion';
+import {
+  type ButtonProps as ButtonPropsBase,
+  buttonStyles,
+  composeAnimationProps,
+  cursorStyles,
+} from '../../../lib';
+import { MotionElement } from '../motion';
 
 export type ButtonProps = React.PropsWithChildren<ButtonPropsBase>;
 

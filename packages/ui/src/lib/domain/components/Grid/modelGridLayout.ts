@@ -10,7 +10,7 @@ import {
   minHStyles,
   minWStyles,
   rowStyles,
-} from 'src/lib/domain/components/Grid/grid.styles';
+} from './grid.styles';
 import {
   type ColumnStyles,
   type DirectionStyles,
@@ -21,7 +21,7 @@ import {
   type MinHStyles,
   type MinWStyles,
   type RowStyles,
-} from 'src/lib/domain/components/Grid/types';
+} from './types';
 
 export function modelGridLayout(payload: GridComponentLayoutOptions): string {
   const gridColumnStyles: ColumnStyles = {

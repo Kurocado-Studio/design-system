@@ -18,7 +18,7 @@ export const Disabled = {
   component: Input,
   name: 'Disabled',
   args: {
-    placeholder: 'Disabled input',
+    placeholder: 'Disabled Input',
     disabled: true,
   },
   tags: ['autodocs'],

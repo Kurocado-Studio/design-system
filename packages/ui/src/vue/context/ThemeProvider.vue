@@ -12,7 +12,7 @@ import {
   ThemeProviderSymbol,
   composeDesignSystem,
   composeThemeProvider,
-} from 'src/lib';
+} from '../../lib';
 
 const props = defineProps<{
   theme: Theme;

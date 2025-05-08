@@ -1,4 +1,4 @@
-import { type CommonHTMLElementProps } from '../../types';
+import { type CommonHTMLElementProps } from '../common';
 
 export interface CardComponentToken {
   bg: string;

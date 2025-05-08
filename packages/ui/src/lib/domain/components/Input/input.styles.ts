@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-import { focusRingStyles } from '../common/focusRing.styles';
+import { focusRingStyles } from '../common';
 
 const baseInputStyles = tv({
   extend: focusRingStyles,
@@ -10,7 +10,7 @@ const baseInputStyles = tv({
     'bg-white dark:bg-gray-900 forced-colors:bg-[Field]',
     'border-2 rounded-2xl',
     'text-md text-gray-800 dark:text-gray-300 outline outline-0',
-    'rounded-card-root-radius-default',
+    'rounded-Card-root-radius-default',
     'placeholder-gray-500',
   ],
   variants: {

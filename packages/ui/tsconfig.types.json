@@ -15,5 +15,5 @@
     "strict": true,
     "target": "ESNext"
   },
-  "exclude": ["src/**/*.test.*"]
+  "exclude": ["./src/**/*.test.*"]
 }

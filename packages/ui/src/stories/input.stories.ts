@@ -12,23 +12,23 @@ export interface InputStoriesGroup {
 export const inputArgTypes: ArgTypes<InputProps> = {
   value: {
     control: 'text',
-    description: 'Current value of the input',
+    description: 'Current value of the Input',
     table: { category: 'Props' },
   },
   placeholder: {
     control: 'text',
-    description: 'Placeholder text when input is empty',
+    description: 'Placeholder text when Input is empty',
     table: { category: 'Props' },
   },
   disabled: {
     control: 'boolean',
-    description: 'Disables the input field',
+    description: 'Disables the Input field',
     table: { category: 'Props' },
   },
   type: {
     control: { type: 'select' },
     options: ['text', 'password', 'email', 'number'],
-    description: 'HTML input type',
+    description: 'HTML Input type',
     table: { category: 'Props' },
   },
   className: {

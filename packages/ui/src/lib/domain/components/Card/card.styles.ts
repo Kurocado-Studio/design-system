@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-import { tailwindCardComponentToken } from 'src/lib/domain/components/Card/tokens';
+import { tailwindCardComponentToken } from './tokens';
 
 const defaultCardStyles = tv({
   base: Object.values({

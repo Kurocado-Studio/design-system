@@ -1,4 +1,4 @@
-import type { CommonHTMLElementProps } from './index';
+import type { CommonHTMLElementProps } from '../common';
 
 /**
  * Represents a token configuration for a button variant, defining styles for various states and themes.

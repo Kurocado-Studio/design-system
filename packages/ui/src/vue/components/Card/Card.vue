@@ -7,13 +7,13 @@ import { get } from 'lodash-es';
 import { twMerge } from 'tailwind-merge';
 import { computed, useAttrs } from 'vue';
 
-import { cardFooterClasses } from 'src/lib';
+import { cardComponentWrapperClasses } from '../../../lib';
 
 const cardPropsAttributes = useAttrs();
 
 const mergedClass = computed(() => {
   return twMerge(
-    cardFooterClasses(),
+    cardComponentWrapperClasses(),
     get(cardPropsAttributes, ['value']) as string | undefined,
   );
 });
