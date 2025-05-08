@@ -60,7 +60,7 @@ const meta: Meta<TypographyProps> = {
       control: 'text',
       description: 'HTML tag to render',
     },
-    className: {
+    class: {
       control: 'text',
       description: 'Additional CSS classes',
     },
@@ -133,10 +133,10 @@ export const BodySmall: Story = {
 
 export const Label: Story = {
   args: {
-    size: 'caption',
+    size: 'md',
     weight: 'bold',
     leading: 'tight',
-    className: 'uppercase tracking-wide',
+    class: 'uppercase tracking-wide',
   },
   render: renderTypography('Label Text'),
 };
