@@ -1,8 +1,8 @@
 import type { CustomThemeConfig } from 'tailwindcss/types/config';
 
-import { composePrimitives } from 'src/lib/application/composePrimitives';
-import { composeTheme } from 'src/lib/application/composeTheme';
-import type { Theme } from 'src/lib/domain/types';
+import type { Theme } from '../domain';
+import { composePrimitives } from './composePrimitives';
+import { composeTheme } from './composeTheme';
 
 export type ComposedTheme = {
   tailwindTheme: Partial<CustomThemeConfig>;

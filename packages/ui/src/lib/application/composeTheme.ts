@@ -1,8 +1,7 @@
 import { get, set } from 'lodash-es';
 
-import { composeCard } from 'src/lib/domain/components/Card/composeCard';
-import { flattenTokens } from 'src/lib/domain/tokens/flattenTokens';
-import { type Theme } from 'src/lib/domain/types';
+import { type Theme, composeCard } from '../domain';
+import { flattenTokens } from '../domain/tokens/flattenTokens';
 
 export function composeTheme(
   tokensPayload: Record<string, unknown>,

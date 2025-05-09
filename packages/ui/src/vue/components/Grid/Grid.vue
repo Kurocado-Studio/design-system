@@ -14,7 +14,7 @@ import {
   type GridComponentLayoutOptions,
   composeAnimationProps,
   modelGridLayout,
-} from 'src/lib';
+} from '../../../lib';
 
 const props = defineProps<GridProps>();
 

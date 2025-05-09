@@ -6,8 +6,8 @@ import {
   composeAnimationProps,
   cursorStyles,
   inputStyles,
-} from 'src/lib';
-import { MotionElement } from 'src/react/components/motion';
+} from '../../../lib';
+import { MotionElement } from '../motion';
 
 export function Input(props: InputProps): React.ReactNode {
   return (

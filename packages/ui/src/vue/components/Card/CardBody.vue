@@ -7,7 +7,7 @@ import { get } from 'lodash-es';
 import { twMerge } from 'tailwind-merge';
 import { computed, useAttrs } from 'vue';
 
-import { cardBodyClasses } from 'src/lib';
+import { cardBodyClasses } from '../../../lib';
 
 const cardPropsAttributes = useAttrs();
 

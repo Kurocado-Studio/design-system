@@ -3,8 +3,8 @@ import { AnimatePresence, useReducedMotion } from 'framer-motion';
 import { get } from 'lodash-es';
 import React, { createContext, useContext } from 'react';
 
-import type { HTMLIntrinsicElements, PropsWithoutRef } from 'src/lib';
-import { MotionElement } from 'src/react/components/motion/MotionElement';
+import { MotionElement } from './MotionElement';
+import type { HTMLIntrinsicElements, PropsWithoutRef } from '../../../lib';
 
 const FadeInStaggerContext = createContext(false);
 

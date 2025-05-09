@@ -14,7 +14,7 @@ import {
   type TypographyLayoutOptions,
   composeAnimationProps,
   modelTypography,
-} from 'src/lib';
+} from '../../../lib';
 
 export interface TypographyProps extends TypographyLayoutOptions {
   tag?: keyof HTMLElementTagNameMap;

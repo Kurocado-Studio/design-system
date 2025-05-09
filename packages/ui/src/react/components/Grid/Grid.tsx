@@ -5,8 +5,8 @@ import {
   type GridComponentProps,
   composeAnimationProps,
   modelGridLayout,
-} from 'src/lib';
-import { MotionElement } from 'src/react/components/motion';
+} from '../../../lib';
+import { MotionElement } from '../motion';
 
 export type GridProps = React.PropsWithChildren<
   GridComponentProps & { className?: string }

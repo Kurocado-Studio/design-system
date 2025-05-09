@@ -6,8 +6,8 @@ import {
   type TypographyComponentLayoutOptions,
   composeAnimationProps,
   modelTypography,
-} from 'src/lib';
-import { MotionElement } from 'src/react/components/motion';
+} from '../../../lib';
+import { MotionElement } from '../motion';
 
 export type TypographyProps = React.PropsWithChildren<
   TypographyComponentLayoutOptions & { className?: string }
