@@ -13,7 +13,7 @@ export function composeTheme(
   const CardComponent = composeCard({
     tailwindTheme,
     tokensPayload,
-    flatTokens: flattenTokens(get(tokensPayload, ['component', 'card'])),
+    flatTokens: flattenTokens(get(tokensPayload, ['component', 'Card'])),
   });
 
   const components: Array<Theme> = [CardComponent];
