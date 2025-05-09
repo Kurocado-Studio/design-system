@@ -1,28 +1,25 @@
-import { useButton } from '@react-aria/button';
-import { type HTMLMotionProps } from 'framer-motion';
 import { get } from 'lodash-es';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { composeAnimationProps } from 'src/lib';
-import { buttonStyles } from 'src/lib/domain/components/Button/button.styles';
-import { cursorStyles } from 'src/lib/domain/components/common/cursor.styles';
-import { type ButtonProps as ButtonPropsBase } from 'src/lib/domain/types/button';
-import { MotionElement } from 'src/react/components/motion';
+import {
+  type A11yButtonProps as ButtonPropsBase,
+  buttonStyles,
+  composeAnimationProps,
+  createA11yButtonProps,
+  cursorStyles,
+} from '../../../lib';
+import { MotionElement } from '../motion';
 
 export type ButtonProps = React.PropsWithChildren<ButtonPropsBase>;
 
 export function Button(props: ButtonProps): React.ReactNode {
-  const ref = React.useRef(null);
-
-  const { buttonProps } = useButton(props, ref);
   return (
     <MotionElement
       as='button'
-      className={twMerge(buttonStyles(props), cursorStyles<ButtonProps>(props))}
-      ref={ref}
+      className={twMerge(buttonStyles(props), cursorStyles(props))}
       type={get(props, ['type'], 'button')}
-      {...(buttonProps as unknown as HTMLMotionProps<'button'>)}
+      {...createA11yButtonProps(props)}
       {...composeAnimationProps(props)}
     >
       {props.children}

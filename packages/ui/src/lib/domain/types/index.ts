@@ -1,11 +1,7 @@
 import { type motion } from 'framer-motion';
 import type React from 'react';
 
-export type * from './common';
 export type * from './motion.library';
-export type * from '../components/Card/types';
-export type * from '../components/Input/types';
-export type * from '../components/Grid/types';
 export type * from './storybook.library';
 
 export type Breakpoint = 'base' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';

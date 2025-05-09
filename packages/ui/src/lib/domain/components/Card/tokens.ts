@@ -1,4 +1,4 @@
-import { type CardComponentToken } from 'src/lib/domain/types';
+import { type CardComponentToken } from './types';
 
 export const tailwindCardComponentToken: CardComponentToken = {
   bg: 'bg-card-root-bg-default dark:bg-gray-900',

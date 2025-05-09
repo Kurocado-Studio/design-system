@@ -1,25 +1,22 @@
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-import { type ButtonVariantToken } from 'src/lib/domain/types/button';
-
 import { controlCommonStyles } from '../common';
+import { type ButtonVariantToken } from './types';
 
 const primary: ButtonVariantToken = {
-  bg: 'bg-[GreenYellow]',
-  text: [...['text-gray-800 font-display'], ...[`dark:text-gray-300`]].join(
-    ' ',
-  ),
-  hover: 'hover:bg-[Black] hover:text-[GreenYellow]',
+  bg: 'bg-[GreenYellow] dark:bg-[Black]',
+  text: 'text-gray-800 dark:text-[GreenYellow]',
+  hover:
+    'hover:bg-[Black] dark:hover:bg-[GreenYellow] hover:text-[GreenYellow] dark:hover:text-[Black]',
   pressed: 'pressed:text-[GreenYellow]/50',
 };
 
 const secondary: ButtonVariantToken = {
-  text: [...['text-gray-800 '], ...[`dark:text-gray-300`]].join(),
+  text: 'text-gray-800 dark:text-gray-300',
   bg: 'bg-gray-100',
   hover: 'hover:bg-gray-200',
   pressed: 'pressed:bg-gray-300',
-  // Optional dark mode tokens
   darkText: 'dark:text-gray-100',
   darkBg: 'dark:bg-gray-600',
   darkHover: 'dark:hover:bg-gray-500',
@@ -80,9 +77,9 @@ const iconGhost: ButtonVariantToken = {
   pressed: 'pressed:bg-black/10',
 };
 
-export const buttonStyles = tv({
+const baseButtonStyles = tv({
   extend: controlCommonStyles,
-  base: 'px-5 py-2 text-sm text-center rounded-lg',
+  base: 'px-5 py-2 font-display text-sm text-center rounded-md',
   variants: {
     variant: {
       primary: twMerge(Object.values(primary)),
@@ -93,6 +90,10 @@ export const buttonStyles = tv({
     },
     ghost: {
       true: '',
+      false: '',
+    },
+    fullWidth: {
+      true: 'w-full justify-center',
       false: '',
     },
   },
@@ -128,3 +129,6 @@ export const buttonStyles = tv({
     ghost: false,
   },
 });
+
+export const buttonStyles = (payload: unknown): string =>
+  baseButtonStyles(payload as Record<string, unknown>);
