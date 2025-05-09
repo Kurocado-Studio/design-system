@@ -5,6 +5,7 @@ import { type CommonHTMLElementProps } from '../common';
 export interface A11yButtonOptions extends MotionProps {
   onClick?: (e: MouseEvent | KeyboardEvent) => void;
   disabled?: boolean;
+  id?: string;
   role?: HTMLElementTagNameMap['button']['role'];
 }
 

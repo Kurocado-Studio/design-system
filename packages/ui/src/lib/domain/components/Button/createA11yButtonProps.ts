@@ -10,6 +10,7 @@ export type A11yButtonProps = {
   variant?: ButtonVariants;
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
+  id?: string;
 };
 
 export function createA11yButtonProps({
