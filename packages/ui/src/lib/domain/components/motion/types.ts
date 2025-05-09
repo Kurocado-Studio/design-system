@@ -1,4 +1,5 @@
-import type { AnimationProps, CommonHTMLElementProps } from '../../types';
+import type { AnimationProps } from '../../types';
+import { type CommonHTMLElementProps } from '../common';
 
 export type MotionComponentLayoutOptions<
   T extends HTMLElement = HTMLDivElement,

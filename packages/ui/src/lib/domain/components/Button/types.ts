@@ -1,4 +1,13 @@
-import type { CommonHTMLElementProps } from './index';
+import { type MotionProps } from 'framer-motion';
+
+import { type CommonHTMLElementProps } from '../common';
+
+export interface A11yButtonOptions extends MotionProps {
+  onClick?: (e: MouseEvent | KeyboardEvent) => void;
+  disabled?: boolean;
+  id?: string;
+  role?: HTMLElementTagNameMap['button']['role'];
+}
 
 /**
  * Represents a token configuration for a button variant, defining styles for various states and themes.
@@ -63,10 +72,8 @@ export type ButtonVariants =
  * - `variant`: Specifies the button's style. Can be `'primary'`, `'secondary'`, `'destructive'`, `'success'`, or `'icon'`. Optional.
  * - `children`: Defines the content to be displayed inside the button. Optional.
  */
-export type ButtonProps = CommonHTMLElementProps<
-  HTMLButtonElement,
-  'button'
-> & {
+export interface ButtonProps
+  extends CommonHTMLElementProps<HTMLButtonElement, 'button'> {
   variant?: ButtonVariants;
   ghost?: boolean;
-} & {};
+}

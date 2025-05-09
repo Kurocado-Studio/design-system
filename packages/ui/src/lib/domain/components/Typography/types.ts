@@ -1,7 +1,6 @@
 import { type VariantProps } from 'tailwind-variants';
 
-import { type CommonHTMLElementProps } from 'src/lib/domain/types';
-
+import { type CommonHTMLElementProps } from '../common';
 import {
   type alignStyles,
   type leadingStyles,

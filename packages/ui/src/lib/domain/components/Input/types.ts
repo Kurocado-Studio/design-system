@@ -1,3 +1,3 @@
-import { type CommonHTMLElementProps } from 'src/lib';
+import { type CommonHTMLElementProps } from '../common';
 
 export type InputProps = CommonHTMLElementProps<HTMLInputElement, 'input'>;

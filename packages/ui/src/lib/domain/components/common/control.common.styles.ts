@@ -1,5 +1,6 @@
 import { tv } from 'tailwind-variants';
 
+import { tailwindCardComponentToken } from '../Card';
 import { focusRingStyles } from './focusRing.styles';
 
 /**
@@ -11,12 +12,14 @@ import { focusRingStyles } from './focusRing.styles';
 export const controlCommonStyles = tv({
   extend: focusRingStyles,
   base: [
+    tailwindCardComponentToken.borderRadius,
     'rounded-full',
     'inline-flex items-center gap-2',
     'font-medium leading-5 text-sm',
     'rounded-md border border-gray-300 dark:border-gray-500',
     'bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300',
     'outline-none transition-colors duration-150',
+    'pt-4',
   ],
   variants: {
     size: {

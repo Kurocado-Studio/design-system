@@ -1,4 +1,4 @@
-import { type MotionProps } from './motion.library';
+import { type MotionProps } from '../../types/motion.library';
 
 export type CommonHTMLElementProps<
   T extends HTMLElement,
