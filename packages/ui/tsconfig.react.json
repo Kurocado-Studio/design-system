@@ -4,6 +4,7 @@
   "include": ["./src/react/exports.ts"],
   "compilerOptions": {
     "declaration": true,
+    "esModuleInterop": true,
     "emitDeclarationOnly": true,
     "outDir": "dist"
   }
