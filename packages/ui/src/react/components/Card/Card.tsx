@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { type PropsWithChildren, type ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import {
-  type CardComponentProps as CardPropsType,
+  type CardComponentProps,
   cardBodyClasses,
   cardComponentWrapperClasses,
   cardFooterClasses,
@@ -10,73 +10,44 @@ import {
 } from '../../../lib';
 import { MotionElement } from '../motion';
 
-export interface CardProps extends React.PropsWithChildren<CardPropsType> {}
+export interface CardProps extends PropsWithChildren<CardComponentProps> {}
 
-function CardHeader({
-  children,
-  className,
-  ...rest
-}: CardProps): React.ReactNode {
+function CardHeader(props: CardProps): ReactNode {
   return (
     <MotionElement
-      className={twMerge(cardHeaderClasses(), className)}
-      {...rest}
-    >
-      {children}
-    </MotionElement>
+      className={twMerge(cardHeaderClasses(), props.className)}
+      {...props}
+    />
   );
 }
 
-function CardFooter({
-  children,
-  className,
-  ...rest
-}: CardProps): React.ReactNode {
+function CardFooter(props: CardProps): ReactNode {
   return (
     <MotionElement
-      className={twMerge(cardFooterClasses(), className)}
-      {...rest}
-    >
-      {children}
-    </MotionElement>
+      className={twMerge(cardFooterClasses(), props.className)}
+      {...props}
+    />
   );
 }
 
-function CardBody({
-  children,
-  className,
-  ...rest
-}: CardProps): React.ReactNode {
+function CardBody(props: CardProps): ReactNode {
   return (
-    <MotionElement className={twMerge(cardBodyClasses(), className)} {...rest}>
-      {children}
-    </MotionElement>
+    <MotionElement
+      className={twMerge(cardBodyClasses(), props.className)}
+      {...props}
+    />
   );
 }
 
-export function Card({
-  children,
-  className,
-  ...rest
-}: CardProps): React.ReactNode {
+export function Card(props: CardProps): ReactNode {
   return (
     <MotionElement
-      className={twMerge(cardComponentWrapperClasses(), className)}
-      {...rest}
-    >
-      {children}
-    </MotionElement>
+      className={twMerge(cardComponentWrapperClasses(), props.className)}
+      {...props}
+    />
   );
 }
 
 Card.Header = CardHeader;
-// @ts-expect-error on displayName
-Card.Header.displayName = 'Card.Header';
-
 Card.Body = CardBody;
-// @ts-expect-error on displayName
-Card.Body.displayName = 'Card.Body';
-
 Card.Footer = CardFooter;
-// @ts-expect-error on displayName
-Card.Footer.displayName = 'Card.Footer';
