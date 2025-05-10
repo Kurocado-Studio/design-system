@@ -9,6 +9,9 @@ import { computed, useAttrs } from 'vue';
 
 import { cardHeaderClasses } from '../../../lib';
 
+const props = defineProps();
+
+console.log({ props });
 const cardPropsAttributes = useAttrs();
 
 const mergedClass = computed(() => {

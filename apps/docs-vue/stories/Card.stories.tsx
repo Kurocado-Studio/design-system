@@ -1,6 +1,5 @@
 /* eslint import/no-default-export: 0 */
 import { Card, CardBody, type CardProps, Input } from '@kurocado-studio/ui/vue';
-import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta = {
@@ -8,9 +7,6 @@ const meta = {
   component: Card,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    onClick: fn(),
-  },
 } satisfies Meta<CardProps>;
 
 export default meta;

@@ -8,7 +8,7 @@
     "build": "storybook build",
     "clean": "rm -rf .turbo node_modules",
     "dev": "storybook dev -p 6009",
-    "lint": "eslint ./stories/*.stories.ts --max-warnings 0 --no-warn-ignored",
+    "lint": "eslint \"stories/**/*.stories.@(ts|tsx)\" --max-warnings 0 --no-warn-ignored",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
     "preview-storybook": "serve storybook-static",
@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@kurocado-studio/ui": "workspace:*",
+    "lodash-es": "^4.17.21",
     "tailwindcss": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "vue": "^3.5.13"

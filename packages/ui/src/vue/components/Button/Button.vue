@@ -11,19 +11,15 @@
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { HTMLAttributes, computed, useAttrs } from 'vue';
+import { computed, useAttrs } from 'vue';
 
 import {
-  type A11yButtonProps,
   buttonStyles,
   composeAnimationProps,
   createA11yButtonProps,
   cursorStyles,
 } from '../../../lib';
-
-export type ButtonProps = A11yButtonProps & {
-  class?: HTMLAttributes['class'];
-};
+import { ButtonProps } from './types';
 
 const buttonPropsAttributes = useAttrs() as ButtonProps;
 

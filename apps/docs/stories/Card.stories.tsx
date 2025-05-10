@@ -42,6 +42,8 @@ export const WithFramerMotionProps: StoryObj<CardProps> = {
       </Card.Body>
     ),
     initial: { opacity: 0 },
+    // TODO: Fix type mismatch between Motion and Vue
+    // @ts-expect-error
     animate: { opacity: 1 },
     transition: { duration: 1 },
   },

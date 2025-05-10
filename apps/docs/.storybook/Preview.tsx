@@ -1,9 +1,10 @@
 import { ThemeProvider } from '@kurocado-studio/ui/react';
+import designTokens from '@kurocado-studio/ui/tokens.json';
 import '@kurocado-studio/ui/typography.css';
 import { themes } from '@storybook/theming';
-import React, { memo, useEffect } from 'react';
+import { get } from 'lodash-es';
+import React, { useEffect } from 'react';
 
-import designTokens from '../../../packages/ui/src/lib/domain/tokens/tokens.json';
 import '../tailwind.css';
 
 const LIGHT_THEME = 'Light setup';
@@ -43,16 +44,16 @@ export const parameters = {
   },
   controls: {
     matchers: {
-      color: /(background|color)$/i,
+      color: /(?<temp1>background|color)$/i,
       date: /Date$/,
     },
   },
 };
 
 export const decorators = [
-  (Story, context) => {
-    const Decorator = () => {
-      const selectedTheme = context.globals.theme === LIGHT_THEME;
+  (Story: () => React.ReactNode, context: Record<string, unknown>) => {
+    function Decorator(): React.ReactNode {
+      const selectedTheme = get(context, ['globals', 'theme']) === LIGHT_THEME;
 
       useEffect(() => {
         document.documentElement.classList.toggle('dark', !selectedTheme);
@@ -63,12 +64,12 @@ export const decorators = [
           <Story />
         </ThemeProvider>
       );
-    };
+    }
 
     return <Decorator />;
   },
 ];
 
 export const tags = ['autodocs'];
-
+// eslint-disable-next-line import/no-default-export
 export default preview;

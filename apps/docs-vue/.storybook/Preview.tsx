@@ -1,8 +1,9 @@
+import designTokens from '@kurocado-studio/ui/tokens.json';
 import '@kurocado-studio/ui/typography.css';
 import { ThemeProvider } from '@kurocado-studio/ui/vue';
 import type { Preview } from '@storybook/vue3';
+import { get } from 'lodash-es';
 
-import designTokens from '../../../packages/ui/src/lib/domain/tokens/tokens.json';
 import '../tailwind.css';
 
 const LIGHT_THEME = 'Light setup';
@@ -11,7 +12,7 @@ const preview: Preview = {
   parameters: {
     controls: {
       matchers: {
-        color: /(background|color)$/i,
+        color: /(?<temp1>background|color)$/i,
         date: /Date$/i,
       },
     },
@@ -19,8 +20,8 @@ const preview: Preview = {
 };
 
 export const decorators = [
-  (storyFn, context) => {
-    const selectedTheme = context.globals.theme === LIGHT_THEME;
+  (storyFn: () => unknown, context: Record<string, unknown>) => {
+    const selectedTheme = get(context, ['globals', 'theme']) === LIGHT_THEME;
 
     if (typeof window !== 'undefined') {
       document.documentElement.classList.toggle('dark', !selectedTheme);
@@ -40,4 +41,5 @@ export const decorators = [
   },
 ];
 
+// eslint-disable-next-line import/no-default-export
 export default preview;

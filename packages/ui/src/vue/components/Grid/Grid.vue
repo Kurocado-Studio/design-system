@@ -8,20 +8,12 @@
 import { PropertyPath, get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { HTMLAttributes, computed, defineProps } from 'vue';
+import { computed, defineProps } from 'vue';
 
-import {
-  type GridComponentLayoutOptions,
-  composeAnimationProps,
-  modelGridLayout,
-} from '../../../lib';
+import { composeAnimationProps, modelGridLayout } from '../../../lib';
+import { GridProps } from './types';
 
 const props = defineProps<GridProps>();
-
-export interface GridProps extends GridComponentLayoutOptions {
-  tag?: keyof HTMLElementTagNameMap;
-  class?: HTMLAttributes['class'];
-}
 
 const MotionElement = get(motion, [props.tag] as PropertyPath);
 

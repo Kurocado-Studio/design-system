@@ -10,16 +10,9 @@ import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
 import { computed, useAttrs } from 'vue';
 
-import {
-  type TypographyLayoutOptions,
-  composeAnimationProps,
-  modelTypography,
-} from '../../../lib';
+import { composeAnimationProps, modelTypography } from '../../../lib';
+import { TypographyProps } from './types';
 
-export interface TypographyProps extends TypographyLayoutOptions {
-  tag?: keyof HTMLElementTagNameMap;
-  class?: string;
-}
 const inputPropsAttributes = useAttrs() as TypographyProps;
 
 const tag = computed(() => get(inputPropsAttributes, ['tag'], 'p'));

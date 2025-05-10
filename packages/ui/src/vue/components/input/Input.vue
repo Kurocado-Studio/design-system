@@ -6,7 +6,7 @@
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { InputHTMLAttributes, computed, defineProps, useAttrs } from 'vue';
+import { InputHTMLAttributes, computed, useAttrs } from 'vue';
 
 import { cursorStyles, inputStyles } from '../../../lib';
 

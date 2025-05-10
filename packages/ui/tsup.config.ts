@@ -39,6 +39,7 @@ export default defineConfig({
     });
     execSync('copyfiles tailwind.preset.mjs dist', { stdio });
     execSync('tsc -p tsconfig.react.json', { stdio });
+    execSync('tsc -p tsconfig.types.json', { stdio });
     execSync('vue-tsc -p tsconfig.vue.json', { stdio });
   },
 });

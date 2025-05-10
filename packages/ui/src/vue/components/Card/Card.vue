@@ -8,8 +8,9 @@ import { twMerge } from 'tailwind-merge';
 import { computed, useAttrs } from 'vue';
 
 import { cardComponentWrapperClasses } from '../../../lib';
+import { CardProps } from './types';
 
-const cardPropsAttributes = useAttrs();
+const cardPropsAttributes = useAttrs() as CardProps;
 
 const mergedClass = computed(() => {
   return twMerge(

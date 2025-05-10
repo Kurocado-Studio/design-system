@@ -12,7 +12,6 @@ const meta = {
       options: ['primary', 'secondary', 'destructive', 'success', 'icon'],
     },
     ghost: { control: { type: 'boolean' } },
-    children: { control: 'text' },
   },
 } satisfies Meta<ButtonProps>;
 
@@ -20,7 +19,7 @@ export default meta;
 type Story = StoryObj<ButtonProps>;
 
 const renderButton =
-  (text: string): ((args: unknown) => unknown) =>
+  (text: string): Story['render'] =>
   (args: unknown) => ({
     components: { Button },
     setup() {

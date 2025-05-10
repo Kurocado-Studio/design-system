@@ -1,6 +1,6 @@
 /* eslint import/no-default-export: 0 */
 import { Card, CardBody, Grid, type GridProps } from '@kurocado-studio/ui/vue';
-import type { StoryObj } from '@storybook/vue3';
+import { type StoryObj } from '@storybook/vue3';
 
 export default {
   title: 'Layout/Grid',
@@ -55,8 +55,8 @@ type Story = StoryObj<GridProps>;
 
 // This will render the grid with the specified number of cards
 const renderGrid =
-  (boxes: number): ((args: unknown) => unknown) =>
-  (args: unknown): unknown => ({
+  (boxes: number): Story['render'] =>
+  (args: unknown) => ({
     components: { Grid, Card, CardBody },
     setup() {
       // Create an array of boxes to loop through in the template

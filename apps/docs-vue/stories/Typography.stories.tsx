@@ -64,10 +64,6 @@ const meta: Meta<TypographyProps> = {
       control: 'text',
       description: 'Additional CSS classes',
     },
-    children: {
-      control: 'text',
-      description: 'Text content',
-    },
   },
   args: {
     size: 'base',
@@ -75,7 +71,6 @@ const meta: Meta<TypographyProps> = {
     leading: 'normal',
     align: 'left',
     italic: false,
-    children: 'The quick brown fox jumps over the lazy dog',
   },
 };
 export default meta;
@@ -83,8 +78,8 @@ export default meta;
 type Story = StoryObj<TypographyProps>;
 
 const renderTypography =
-  (text: string): ((args: unknown) => unknown) =>
-  (args: unknown): unknown => ({
+  (text: string): Story['render'] =>
+  (args: unknown) => ({
     components: { Typography },
     setup() {
       return { args };
@@ -116,10 +111,10 @@ export const BodyDefault: Story = {
     size: 'base',
     weight: 'normal',
     leading: 'relaxed',
-    render: renderTypography(
-      `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.`,
-    ),
   },
+  render: renderTypography(
+    `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.`,
+  ),
 };
 
 export const BodySmall: Story = {
@@ -133,7 +128,7 @@ export const BodySmall: Story = {
 
 export const Label: Story = {
   args: {
-    size: 'md',
+    size: 'base',
     weight: 'bold',
     leading: 'tight',
     class: 'uppercase tracking-wide',

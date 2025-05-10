@@ -8,6 +8,8 @@ export type A11yButtonProps = {
   onClick?: A11yButtonOptions['onClick'];
   onKeyDown?: HTMLElementTagNameMap['button']['onkeydown'];
   variant?: ButtonVariants;
+  ghost?: boolean;
+  fullWidth?: boolean;
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
   id?: string;

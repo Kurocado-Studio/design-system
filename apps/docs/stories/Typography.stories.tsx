@@ -93,16 +93,6 @@ export const CaptionSemi: Story = {
   },
 };
 
-export const Heading1: Story = {
-  args: {
-    size: '4xl',
-    weight: 'bold',
-    leading: 'snug',
-    tag: 'h1',
-    children: 'Heading Level 1',
-  },
-};
-
 export const BodyDefault: Story = {
   args: {
     size: 'base',
