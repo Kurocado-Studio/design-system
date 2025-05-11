@@ -7,43 +7,57 @@ import {
   cardComponentWrapperClasses,
   cardFooterClasses,
   cardHeaderClasses,
+  composeAnimationProps,
 } from '../../../lib';
 import { MotionElement } from '../motion';
 
-export interface CardProps extends PropsWithChildren<CardComponentProps> {}
+export type CardProps<T extends keyof HTMLElementTagNameMap> =
+  PropsWithChildren<CardComponentProps<HTMLElementTagNameMap[T], T>>;
 
-function CardHeader(props: CardProps): ReactNode {
+function CardHeader<T extends keyof HTMLElementTagNameMap>(
+  props: CardProps<T>,
+): ReactNode {
   return (
     <MotionElement
+      {...props}
+      {...composeAnimationProps(props)}
       className={twMerge(cardHeaderClasses(), props.className)}
-      {...props}
     />
   );
 }
 
-function CardFooter(props: CardProps): ReactNode {
+function CardFooter<T extends keyof HTMLElementTagNameMap>(
+  props: CardProps<T>,
+): ReactNode {
   return (
     <MotionElement
+      {...props}
+      {...composeAnimationProps(props)}
       className={twMerge(cardFooterClasses(), props.className)}
-      {...props}
     />
   );
 }
 
-function CardBody(props: CardProps): ReactNode {
+function CardBody<T extends keyof HTMLElementTagNameMap>(
+  props: CardProps<T>,
+): ReactNode {
   return (
     <MotionElement
+      {...props}
+      {...composeAnimationProps(props)}
       className={twMerge(cardBodyClasses(), props.className)}
-      {...props}
     />
   );
 }
 
-export function Card(props: CardProps): ReactNode {
+export function Card<T extends keyof HTMLElementTagNameMap>(
+  props: CardProps<T>,
+): ReactNode {
   return (
     <MotionElement
-      className={twMerge(cardComponentWrapperClasses(), props.className)}
       {...props}
+      {...composeAnimationProps(props)}
+      className={twMerge(cardComponentWrapperClasses(), props.className)}
     />
   );
 }
