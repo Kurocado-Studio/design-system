@@ -1,6 +1,6 @@
 /* eslint-disable import/order */
 /**
- * TODO: fix mismatch between ESLint sort order still
+ * TODO: fix mismatch between ESLint sort order and Prettier
  */
 import type { Variants } from 'framer-motion';
 import { AnimatePresence, useReducedMotion } from 'framer-motion';
