@@ -1,8 +1,8 @@
 /* eslint import/no-default-export: 0 */
 import {
   FadeIn,
-  type FadeInProps,
   FadeInStaggerGroup,
+  type FadeInStaggerGroupProps,
   Grid,
   Typography,
 } from '@kurocado-studio/ui/react';
@@ -23,10 +23,10 @@ const meta: Meta = {
 };
 
 export default meta;
-type Story = StoryObj<typeof FadeInStaggerGroup>;
+type Story = StoryObj<FadeInStaggerGroupProps>;
 
 export const Grouped: Story = {
-  render: (args: FadeInProps) => (
+  render: (args: FadeInStaggerGroupProps) => (
     <FadeInStaggerGroup
       {...args}
       tag={Grid}

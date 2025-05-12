@@ -10,14 +10,16 @@ import {
 export type FadeInStaggerGroupProps<T extends React.ElementType = 'div'> =
   MotionLayoutOptions<T extends keyof HTMLElementTagNameMap ? T : never> & {
     staggerSpeed?: number;
+    tag?: T;
   } & React.ComponentProps<T>;
 
 export function FadeInStaggerGroup<T extends React.ElementType>({
   staggerSpeed,
+  tag,
   ...rest
 }: PropsWithChildren<FadeInStaggerGroupProps<T>>): ReactNode {
   const staggerContainerProps = createStaggerContainerProps({ staggerSpeed });
-  const { as, tag, ...restProps } = rest;
+  const { as, ...restProps } = rest;
 
   const Component: FC =
     typeof tag === 'function' ? tag : get(motion, [as ?? 'div']);
