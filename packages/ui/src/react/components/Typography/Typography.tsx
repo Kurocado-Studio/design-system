@@ -18,8 +18,9 @@ export function Typography(props: TypographyProps): React.ReactNode {
 
   return (
     <MotionElement
-      as={get(rest, ['tag'], 'p')}
+      as={get(rest, ['as'], 'p')}
       className={twMerge(modelTypography(props), className)}
+      {...rest}
       {...composeAnimationProps(rest)}
     >
       {children}

@@ -17,7 +17,7 @@ export function Grid(props: GridProps): React.ReactNode {
 
   return (
     <MotionElement
-      as={rest.tag}
+      as={rest.as}
       className={twMerge(modelGridLayout(props), className)}
       {...composeAnimationProps(rest)}
     >

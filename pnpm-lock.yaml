@@ -12,10 +12,10 @@ importers:
         specifier: ^2.5.2
         version: 2.5.2(dal5hcmxb3464kzncygsyaxwgm)
       commitlint:
-        specifier: ^19.8.0
+        specifier: ^19.8.1
         version: 19.8.1(@types/node@22.15.17)(typescript@5.8.3)
       eslint:
-        specifier: '9.26'
+        specifier: ~9.26.0
         version: 9.26.0(jiti@2.4.2)
       husky:
         specifier: ^9.1.7
@@ -27,7 +27,7 @@ importers:
         specifier: 3.5.3
         version: 3.5.3
       turbo:
-        specifier: ^2.5.0
+        specifier: ^2.5.3
         version: 2.5.3
 
   apps/docs:
@@ -36,7 +36,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       isbot:
-        specifier: ^4
+        specifier: ^4.4.0
         version: 4.4.0
       lucide-react:
         specifier: ^0.292.0
@@ -45,13 +45,13 @@ importers:
         specifier: ^8.5.3
         version: 8.5.3
       react:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
       tailwindcss:
-        specifier: ^3.4.0
+        specifier: ^3.4.17
         version: 3.4.17
       tailwindcss-animate:
         specifier: ^1.0.7
@@ -64,52 +64,52 @@ importers:
         specifier: workspace:*
         version: link:../../internal/config
       '@storybook/addon-actions':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(storybook@8.6.12(prettier@3.5.3))
       '@storybook/addon-docs':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(@types/react@19.1.3)(storybook@8.6.12(prettier@3.5.3))
       '@storybook/addon-essentials':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(@types/react@19.1.3)(storybook@8.6.12(prettier@3.5.3))
       '@storybook/addon-interactions':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(storybook@8.6.12(prettier@3.5.3))
       '@storybook/addon-links':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(react@19.1.0)(storybook@8.6.12(prettier@3.5.3))
       '@storybook/addon-onboarding':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(storybook@8.6.12(prettier@3.5.3))
       '@storybook/addon-themes':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(storybook@8.6.12(prettier@3.5.3))
       '@storybook/blocks':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@8.6.12(prettier@3.5.3))
       '@storybook/react':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(@storybook/test@8.6.12(storybook@8.6.12(prettier@3.5.3)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@8.6.12(prettier@3.5.3))(typescript@5.8.3)
       '@storybook/react-vite':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(@storybook/test@8.6.12(storybook@8.6.12(prettier@3.5.3)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(rollup@4.40.2)(storybook@8.6.12(prettier@3.5.3))(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(yaml@2.7.1))
       '@storybook/test':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(storybook@8.6.12(prettier@3.5.3))
       '@storybook/theming':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(storybook@8.6.12(prettier@3.5.3))
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
       '@types/node':
-        specifier: ^22.13.14
+        specifier: ^22.15.17
         version: 22.15.17
       '@types/react':
         specifier: 19.1.3
         version: 19.1.3
       '@vitejs/plugin-react':
-        specifier: ^4.4.0
+        specifier: ^4.4.1
         version: 4.4.1(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(yaml@2.7.1))
       autoprefixer:
         specifier: ^10.4.21
@@ -124,10 +124,10 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(semantic-release@24.2.3(typescript@5.8.3))
       serve:
-        specifier: ^14.2.1
+        specifier: ^14.2.4
         version: 14.2.4
       storybook:
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(prettier@3.5.3)
       typescript:
         specifier: 5.8.3
@@ -142,7 +142,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       tailwindcss:
-        specifier: ^3.4.0
+        specifier: ^3.4.17
         version: 3.4.17
       tailwindcss-animate:
         specifier: ^1.0.7
@@ -152,7 +152,7 @@ importers:
         version: 3.5.13(typescript@5.8.3)
     devDependencies:
       '@chromatic-com/storybook':
-        specifier: ^3
+        specifier: ^3.2.6
         version: 3.2.6(react@19.1.0)(storybook@8.6.12(prettier@3.5.3))
       '@internal/config':
         specifier: workspace:*
@@ -194,7 +194,7 @@ importers:
         specifier: ^1.52.0
         version: 1.52.0
       postcss:
-        specifier: ^8.4.31
+        specifier: ^8.5.3
         version: 8.5.3
       semantic-release:
         specifier: ^24.2.3
@@ -206,7 +206,7 @@ importers:
         specifier: ^8.6.12
         version: 8.6.12(prettier@3.5.3)
       typescript:
-        specifier: ^5.7.2
+        specifier: ^5.8.3
         version: 5.8.3
       vite:
         specifier: ^6.3.5
@@ -215,14 +215,14 @@ importers:
         specifier: ^3.1.3
         version: 3.1.3(@types/debug@4.1.12)(@types/node@22.15.17)(@vitest/browser@3.1.3)(jiti@2.4.2)(jsdom@26.1.0)(yaml@2.7.1)
       vue-tsc:
-        specifier: ^2.1.10
+        specifier: ^2.2.10
         version: 2.2.10(typescript@5.8.3)
 
   internal/config:
     devDependencies:
       '@kurocado-studio/qa':
         specifier: 2.0.1
-        version: 2.0.1(3tg66tiixbmn2wduorq772eowi)
+        version: 2.0.1(yquo4lncxdjg5kbohyx4qndk3e)
       '@kurocado-studio/styleguide':
         specifier: ^2.5.2
         version: 2.5.2(dal5hcmxb3464kzncygsyaxwgm)
@@ -233,7 +233,7 @@ importers:
         specifier: ^4.17.12
         version: 4.17.12
       '@types/node':
-        specifier: ^22.13.14
+        specifier: ^22.15.17
         version: 22.15.17
       copyfiles:
         specifier: ^2.4.1
@@ -245,7 +245,7 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(semantic-release@24.2.3(typescript@5.8.3))
       tsup:
-        specifier: ^8.0.2
+        specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.7(@types/node@22.15.17))(@swc/core@1.11.24(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.3)(typescript@5.8.3)(yaml@2.7.1)
 
   packages/ui:
@@ -254,23 +254,23 @@ importers:
         specifier: 1.0.0
         version: 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@react-aria/button':
-        specifier: ^3.12.1
+        specifier: ^3.13.0
         version: 3.13.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@react-aria/textfield':
-        specifier: ^3.17.1
+        specifier: ^3.17.2
         version: 3.17.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@vue/runtime-dom':
         specifier: ^3.5.13
         version: 3.5.13
       framer-motion:
         specifier: ^12.6.2
-        version: 12.10.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 12.11.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
       motion:
-        specifier: ^12.10.0
-        version: 12.10.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^12.11.0
+        version: 12.11.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       motion-v:
         specifier: ^1.0.2
         version: 1.0.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(vue@3.5.13(typescript@5.8.3))
@@ -281,8 +281,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       tailwind-merge:
-        specifier: ^3.2.0
-        version: 3.2.0
+        specifier: ^3.3.0
+        version: 3.3.0
       tailwind-variants:
         specifier: ^1.0.0
         version: 1.0.0(tailwindcss@3.4.17)
@@ -297,7 +297,7 @@ importers:
         specifier: workspace:*
         version: link:../../internal/config
       '@storybook/react':
-        specifier: ^8.6.11
+        specifier: ^8.6.12
         version: 8.6.12(@storybook/test@8.6.12(storybook@8.6.12(prettier@3.5.3)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@8.6.12(prettier@3.5.3))(typescript@5.8.3)
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -306,16 +306,16 @@ importers:
         specifier: ^4.17.12
         version: 4.17.12
       '@types/node':
-        specifier: ^22.13.14
+        specifier: ^22.15.17
         version: 22.15.17
       '@types/react':
         specifier: ^19.1.3
         version: 19.1.3
       '@types/react-dom':
-        specifier: ^19.1.3
-        version: 19.1.3(@types/react@19.1.3)
+        specifier: ^19.1.4
+        version: 19.1.4(@types/react@19.1.3)
       '@vitejs/plugin-react':
-        specifier: ^4.4.0
+        specifier: ^4.4.1
         version: 4.4.1(vite@6.3.5(@types/node@22.15.17)(jiti@2.4.2)(yaml@2.7.1))
       '@vitejs/plugin-vue':
         specifier: ^5.2.4
@@ -333,7 +333,7 @@ importers:
         specifier: ^9.26.0
         version: 9.26.0(jiti@2.4.2)
       postcss:
-        specifier: ^8.4.31
+        specifier: ^8.5.3
         version: 8.5.3
       prettier:
         specifier: 3.5.3
@@ -345,7 +345,7 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(semantic-release@24.2.3(typescript@5.8.3))
       tsup:
-        specifier: ^8.0.2
+        specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.7(@types/node@22.15.17))(@swc/core@1.11.24(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.3)(typescript@5.8.3)(yaml@2.7.1)
       typescript:
         specifier: 5.8.3
@@ -1363,8 +1363,8 @@ packages:
   '@microsoft/tsdoc@0.15.1':
     resolution: {integrity: sha512-4aErSrCR/On/e5G2hDP0wjooqDdauzEbIq8hIkIe5pXV0rtWJZvdCEKL0ykZxex+IxIwBp0eGeV48hQN07dXtw==}
 
-  '@modelcontextprotocol/sdk@1.11.1':
-    resolution: {integrity: sha512-9LfmxKTb1v+vUS1/emSk1f5ePmTLkb9Le9AxOB5T0XM59EUumwcS45z05h7aiZx3GI0Bl7mjb3FMEglYj+acuQ==}
+  '@modelcontextprotocol/sdk@1.11.2':
+    resolution: {integrity: sha512-H9vwztj5OAqHg9GockCQC06k1natgcxWQSRpQcPJf6i5+MWBzfKkRtxGbjQf0X2ihii0ffLZCRGbYV2f2bjNCQ==}
     engines: {node: '>=18'}
 
   '@napi-rs/wasm-runtime@0.2.9':
@@ -2851,8 +2851,8 @@ packages:
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
 
-  '@types/react-dom@19.1.3':
-    resolution: {integrity: sha512-rJXC08OG0h3W6wDMFxQrZF00Kq6qQvw0djHRdzl3U5DnIERz0MRce3WVc7IS6JYBwtaP/DwYtRRjVlvivNveKg==}
+  '@types/react-dom@19.1.4':
+    resolution: {integrity: sha512-WxYAszDYgsMV31OVyoG4jbAgJI1Gw0Xq9V19zwhy6+hUUJlJIdZ3r/cbdmTqFv++SktQkZ/X+46yGFxp5XJBEg==}
     peerDependencies:
       '@types/react': ^19.0.0
 
@@ -2915,6 +2915,10 @@ packages:
     resolution: {integrity: sha512-jc/4IxGNedXkmG4mx4nJTILb6TMjL66D41vyeaPWvDUmeYQzF3lKtN15WsAeTr65ce4mPxwopPSo1yUUAWw0hQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@typescript-eslint/scope-manager@8.32.1':
+    resolution: {integrity: sha512-7IsIaIDeZn7kffk7qXC3o6Z4UblZJKV3UBpkvRNpr5NSyLji7tvTcvmnMNYuYLyh26mN8W723xpo3i4MlD33vA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
   '@typescript-eslint/type-utils@8.32.0':
     resolution: {integrity: sha512-t2vouuYQKEKSLtJaa5bB4jHeha2HJczQ6E5IXPDPgIty9EqcJxpr1QHQ86YyIPwDwxvUmLfP2YADQ5ZY4qddZg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -2928,6 +2932,10 @@ packages:
 
   '@typescript-eslint/types@8.32.0':
     resolution: {integrity: sha512-O5Id6tGadAZEMThM6L9HmVf5hQUXNSxLVKeGJYWNhhVseps/0LddMkp7//VDkzwJ69lPL0UmZdcZwggj9akJaA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@typescript-eslint/types@8.32.1':
+    resolution: {integrity: sha512-YmybwXUJcgGqgAp6bEsgpPXEg6dcCyPyCSr0CAAueacR/CCBi25G3V8gGQ2kRzQRBNol7VQknxMs9HvVa9Rvfg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@typescript-eslint/typescript-estree@7.18.0':
@@ -2964,6 +2972,10 @@ packages:
 
   '@typescript-eslint/visitor-keys@8.32.0':
     resolution: {integrity: sha512-1rYQTCLFFzOI5Nl0c8LUpJT8HxpwVRn9E4CkMsYfuN6ctmQqExjSTzzSk0Tz2apmXy7WU6/6fyaZVVA/thPN+w==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@typescript-eslint/visitor-keys@8.32.1':
+    resolution: {integrity: sha512-ar0tjQfObzhSaW3C3QNmTc5ofj0hDoNQ5XWrCy6zDyabdr0TWhCkClp+rywGNj/odAFBVzzJrK4tEq5M4Hmu4w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@unrs/resolver-binding-darwin-arm64@1.7.2':
@@ -4149,8 +4161,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.151:
-    resolution: {integrity: sha512-Rl6uugut2l9sLojjS4H4SAr3A4IgACMLgpuEMPYCVcKydzfyPrn5absNRju38IhQOf/NwjJY8OGWjlteqYeBCA==}
+  electron-to-chromium@1.5.152:
+    resolution: {integrity: sha512-xBOfg/EBaIlVsHipHl2VdTPJRSvErNUaqW8ejTq5OlOlIYx1wOllCHsAvAIrr55jD1IYEfdR86miUEt8H5IeJg==}
 
   emoji-regex@10.4.0:
     resolution: {integrity: sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw==}
@@ -4713,8 +4725,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@12.10.5:
-    resolution: {integrity: sha512-p6VF1YkwWvNDFzg5IQ5lqPx11Td4TQ6LqDnshV7sWj0Nrp4dwz2/aEzmgh9WA9ridcTIJ625Fr0oiuhgqIoFwQ==}
+  framer-motion@12.11.0:
+    resolution: {integrity: sha512-BaBPmkhaC2l0n619Kt1nQaxSdUdyyz5V1Z7EKJ1CcraOTZitgVx0RTbL8lmg2XesaFi6o8MPBIhkWDIvzDpGaQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -6011,8 +6023,8 @@ packages:
   modern-ahocorasick@1.1.0:
     resolution: {integrity: sha512-sEKPVl2rM+MNVkGQt3ChdmD8YsigmXdn5NifZn6jiwn9LRJpWm8F3guhaqrJT/JOat6pwpbXEk6kv+b9DMIjsQ==}
 
-  motion-dom@12.10.5:
-    resolution: {integrity: sha512-F7XKmhxXEH/y3aWWf0N2w69wNSN+6PcJ1seqR1WolClmXpPhj+xwzs9j5CpsMFzeHR1D7irl3JcWMToPRwX6Hg==}
+  motion-dom@12.11.0:
+    resolution: {integrity: sha512-CItkGYJenn5ZsbzTX0D9mE0UWdjdd9r535FrxEXhzR8Kwa9I2dLr1uhEJgQPWbgaIJ6i0sNFnf2T9NvVDWQVBw==}
 
   motion-utils@12.9.4:
     resolution: {integrity: sha512-BW3I65zeM76CMsfh3kHid9ansEJk9Qvl+K5cu4DVHKGsI52n76OJ4z2CUJUV+Mn3uEP9k1JJA3tClG0ggSrRcg==}
@@ -6022,8 +6034,8 @@ packages:
     peerDependencies:
       vue: '>=3.0.0'
 
-  motion@12.10.5:
-    resolution: {integrity: sha512-vRzav5F6STetDXx1gpduztcChF7St+HM6gmHhBjaCc7qHC+fBoeMtO2npSt2YXRJKhwQggTTVx2fHP6RL2QxMA==}
+  motion@12.11.0:
+    resolution: {integrity: sha512-1DIh+uBh2Ledv8VlJfveLuE+6tTAkLqRxhBHQSH6Ct8PxcZpUWY7z9E34L3LvnGbXp8u97hGSjeDsmvmVrjOeQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -7208,8 +7220,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.7.1:
-    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
+  semver@7.7.2:
+    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -7557,8 +7569,8 @@ packages:
   tailwind-merge@3.0.2:
     resolution: {integrity: sha512-l7z+OYZ7mu3DTqrL88RiKrKIqO3NcpEO8V/Od04bNpvk0kiIFndGEoqfuzvj4yuhRkHKjRkII2z+KS2HfPcSxw==}
 
-  tailwind-merge@3.2.0:
-    resolution: {integrity: sha512-FQT/OVqCD+7edmmJpsgCsY820RTD5AkBryuG5IUqR5YQZSdj5xlH5nLgH7YPths7WsLPSpSBNneJdM8aS8aeFA==}
+  tailwind-merge@3.3.0:
+    resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
 
   tailwind-variants@1.0.0:
     resolution: {integrity: sha512-2WSbv4ulEEyuBKomOunut65D8UZwxrHoRfYnxGcQNnHqlSCp2+B7Yz2W+yrNDrxRodOXtGD/1oCcKGNBnUqMqA==}
@@ -7964,8 +7976,8 @@ packages:
   universal-user-agent@6.0.1:
     resolution: {integrity: sha512-yCzhz6FN2wU1NiiQRogkTQszlQSlpWaw8SvVegAc+bDxbzHgh1vX8uIe8OYyMH6DwH+sdTJsgMl36+mSMdRJIQ==}
 
-  universal-user-agent@7.0.2:
-    resolution: {integrity: sha512-0JCqzSKnStlRRQfCdowvqy3cy0Dvtlb8xecj/H8JFZuCze4rwjPZQOgvFvn0Ws/usCHQFGpyr+pB9adaGwXn4Q==}
+  universal-user-agent@7.0.3:
+    resolution: {integrity: sha512-TmnEAEAsBJVZM/AADELsK76llnwcf9vMKuPz8JflO1frO8Lchitr0fNaN9d+Ap0BjKtqWqd/J17qeDnXh8CL2A==}
 
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
@@ -7990,8 +8002,8 @@ packages:
     resolution: {integrity: sha512-4/u/j4FrCKdi17jaxuJA0jClGxB1AvU2hw/IuayPc4ay1XGaJs/rbb4v5WKwAjNifjmXK9PIFyuPiaK8azyR9w==}
     engines: {node: '>=14.0.0'}
 
-  unplugin@2.3.2:
-    resolution: {integrity: sha512-3n7YA46rROb3zSj8fFxtxC/PqoyvYQ0llwz9wtUPUutr9ig09C8gGo5CWCwHrUzlqC1LLR43kxp5vEIyH1ac1w==}
+  unplugin@2.3.3:
+    resolution: {integrity: sha512-DN4DgiS13HFrAapoRmmoa9B35QzmQVRH2k58HelO28htXVNEEFZ8CGlZL0aRHXOXtz9McwY6lqaZjcc15uWMow==}
     engines: {node: '>=18.12.0'}
 
   unrs-resolver@1.7.2:
@@ -8800,7 +8812,7 @@ snapshots:
   '@commitlint/is-ignored@19.8.1':
     dependencies:
       '@commitlint/types': 19.8.1
-      semver: 7.7.1
+      semver: 7.7.2
 
   '@commitlint/lint@19.8.1':
     dependencies:
@@ -9298,14 +9310,14 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
       zod: 3.24.4
 
-  '@kurocado-studio/qa@2.0.1(3tg66tiixbmn2wduorq772eowi)':
+  '@kurocado-studio/qa@2.0.1(yquo4lncxdjg5kbohyx4qndk3e)':
     dependencies:
       '@eslint/js': 9.26.0
       '@faker-js/faker': 9.7.0
       '@remix-run/node': 2.16.6(typescript@5.8.3)
       '@remix-run/testing': 2.16.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)
       '@testing-library/jest-dom': 6.6.3
-      '@testing-library/react': 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.3(@types/react@19.1.3))(@types/react@19.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@testing-library/react': 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.4(@types/react@19.1.3))(@types/react@19.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
       '@trivago/prettier-plugin-sort-imports': 5.2.2(@vue/compiler-sfc@3.5.13)(prettier@3.5.3)
       '@types/express': 5.0.1
@@ -9455,7 +9467,7 @@ snapshots:
 
   '@microsoft/tsdoc@0.15.1': {}
 
-  '@modelcontextprotocol/sdk@1.11.1':
+  '@modelcontextprotocol/sdk@1.11.2':
     dependencies:
       content-type: 1.0.5
       cors: 2.8.5
@@ -9497,7 +9509,7 @@ snapshots:
 
   '@npmcli/fs@3.1.1':
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.2
 
   '@npmcli/git@4.1.0':
     dependencies:
@@ -9507,7 +9519,7 @@ snapshots:
       proc-log: 3.0.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.7.1
+      semver: 7.7.2
       which: 3.0.1
     transitivePeerDependencies:
       - bluebird
@@ -9520,7 +9532,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 5.0.0
       proc-log: 3.0.0
-      semver: 7.7.1
+      semver: 7.7.2
     transitivePeerDependencies:
       - bluebird
 
@@ -9568,12 +9580,12 @@ snapshots:
       '@octokit/request-error': 6.1.8
       '@octokit/types': 14.0.0
       before-after-hook: 3.0.2
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/endpoint@10.1.4':
     dependencies:
       '@octokit/types': 14.0.0
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/endpoint@6.0.12':
     dependencies:
@@ -9607,7 +9619,7 @@ snapshots:
     dependencies:
       '@octokit/request': 9.2.3
       '@octokit/types': 14.0.0
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/openapi-types@12.11.0': {}
 
@@ -9710,7 +9722,7 @@ snapshots:
       '@octokit/request-error': 6.1.8
       '@octokit/types': 14.0.0
       fast-content-type-parse: 2.0.1
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/rest@18.12.0':
     dependencies:
@@ -10767,7 +10779,7 @@ snapshots:
       react-refresh: 0.14.2
       remark-frontmatter: 4.0.1
       remark-mdx-frontmatter: 1.1.1
-      semver: 7.7.1
+      semver: 7.7.2
       set-cookie-parser: 2.7.1
       tar-fs: 2.1.2
       tsconfig-paths: 4.2.0
@@ -11082,7 +11094,7 @@ snapshots:
       read-pkg: 9.0.1
       registry-auth-token: 5.1.0
       semantic-release: 24.2.3(typescript@5.8.3)
-      semver: 7.7.1
+      semver: 7.7.2
       tempy: 3.1.0
 
   '@semantic-release/release-notes-generator@14.0.3(semantic-release@24.2.3(typescript@5.8.3))':
@@ -11244,7 +11256,7 @@ snapshots:
       jsdoc-type-pratt-parser: 4.1.0
       process: 0.11.10
       recast: 0.23.11
-      semver: 7.7.1
+      semver: 7.7.2
       util: 0.12.5
       ws: 8.18.2
     optionalDependencies:
@@ -11473,7 +11485,7 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.3(@types/react@19.1.3))(@types/react@19.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.4(@types/react@19.1.3))(@types/react@19.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@babel/runtime': 7.27.1
       '@testing-library/dom': 10.4.0
@@ -11481,7 +11493,7 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
     optionalDependencies:
       '@types/react': 19.1.3
-      '@types/react-dom': 19.1.3(@types/react@19.1.3)
+      '@types/react-dom': 19.1.4(@types/react@19.1.3)
 
   '@testing-library/user-event@14.5.2(@testing-library/dom@10.4.0)':
     dependencies:
@@ -11639,7 +11651,7 @@ snapshots:
 
   '@types/range-parser@1.2.7': {}
 
-  '@types/react-dom@19.1.3(@types/react@19.1.3)':
+  '@types/react-dom@19.1.4(@types/react@19.1.3)':
     dependencies:
       '@types/react': 19.1.3
 
@@ -11725,6 +11737,11 @@ snapshots:
       '@typescript-eslint/types': 8.32.0
       '@typescript-eslint/visitor-keys': 8.32.0
 
+  '@typescript-eslint/scope-manager@8.32.1':
+    dependencies:
+      '@typescript-eslint/types': 8.32.1
+      '@typescript-eslint/visitor-keys': 8.32.1
+
   '@typescript-eslint/type-utils@8.32.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)':
     dependencies:
       '@typescript-eslint/typescript-estree': 8.32.0(typescript@5.8.3)
@@ -11740,6 +11757,8 @@ snapshots:
 
   '@typescript-eslint/types@8.32.0': {}
 
+  '@typescript-eslint/types@8.32.1': {}
+
   '@typescript-eslint/typescript-estree@7.18.0(typescript@5.8.3)':
     dependencies:
       '@typescript-eslint/types': 7.18.0
@@ -11748,7 +11767,7 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.5
-      semver: 7.7.1
+      semver: 7.7.2
       ts-api-utils: 1.4.3(typescript@5.8.3)
     optionalDependencies:
       typescript: 5.8.3
@@ -11763,7 +11782,7 @@ snapshots:
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
-      semver: 7.7.1
+      semver: 7.7.2
       ts-api-utils: 2.1.0(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -11799,6 +11818,11 @@ snapshots:
   '@typescript-eslint/visitor-keys@8.32.0':
     dependencies:
       '@typescript-eslint/types': 8.32.0
+      eslint-visitor-keys: 4.2.0
+
+  '@typescript-eslint/visitor-keys@8.32.1':
+    dependencies:
+      '@typescript-eslint/types': 8.32.1
       eslint-visitor-keys: 4.2.0
 
   '@unrs/resolver-binding-darwin-arm64@1.7.2':
@@ -12489,7 +12513,7 @@ snapshots:
   browserslist@4.24.5:
     dependencies:
       caniuse-lite: 1.0.30001717
-      electron-to-chromium: 1.5.151
+      electron-to-chromium: 1.5.152
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.5)
 
@@ -12818,7 +12842,7 @@ snapshots:
       conventional-commits-filter: 5.0.0
       handlebars: 4.7.8
       meow: 13.2.0
-      semver: 7.7.1
+      semver: 7.7.2
 
   conventional-commits-filter@5.0.0: {}
 
@@ -13071,7 +13095,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.151: {}
+  electron-to-chromium@1.5.152: {}
 
   emoji-regex@10.4.0: {}
 
@@ -13452,7 +13476,7 @@ snapshots:
 
   eslint-plugin-testing-library@7.1.1(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3):
     dependencies:
-      '@typescript-eslint/scope-manager': 8.32.0
+      '@typescript-eslint/scope-manager': 8.32.1
       '@typescript-eslint/utils': 8.32.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.26.0(jiti@2.4.2)
     transitivePeerDependencies:
@@ -13482,7 +13506,7 @@ snapshots:
       read-package-up: 11.0.0
       regexp-tree: 0.1.27
       regjsparser: 0.12.0
-      semver: 7.7.1
+      semver: 7.7.2
       strip-indent: 4.0.0
 
   eslint-plugin-vitest@0.5.4(@typescript-eslint/eslint-plugin@8.32.0(@typescript-eslint/parser@8.32.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.1.3):
@@ -13525,7 +13549,7 @@ snapshots:
       '@humanfs/node': 0.16.6
       '@humanwhocodes/module-importer': 1.0.1
       '@humanwhocodes/retry': 0.4.3
-      '@modelcontextprotocol/sdk': 1.11.1
+      '@modelcontextprotocol/sdk': 1.11.2
       '@types/estree': 1.0.7
       '@types/json-schema': 7.0.15
       ajv: 6.12.6
@@ -13901,9 +13925,9 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@12.10.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  framer-motion@12.11.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      motion-dom: 12.10.5
+      motion-dom: 12.11.0
       motion-utils: 12.9.4
       tslib: 2.8.1
     optionalDependencies:
@@ -13912,7 +13936,7 @@ snapshots:
 
   framer-motion@12.5.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      motion-dom: 12.10.5
+      motion-dom: 12.11.0
       motion-utils: 12.9.4
       tslib: 2.8.1
     optionalDependencies:
@@ -14362,7 +14386,7 @@ snapshots:
 
   is-bun-module@2.0.0:
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.2
 
   is-callable@1.2.7: {}
 
@@ -14884,7 +14908,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.2
 
   map-or-similar@1.5.0: {}
 
@@ -15342,7 +15366,7 @@ snapshots:
 
   modern-ahocorasick@1.1.0: {}
 
-  motion-dom@12.10.5:
+  motion-dom@12.11.0:
     dependencies:
       motion-utils: 12.9.4
 
@@ -15353,7 +15377,7 @@ snapshots:
       '@vueuse/core': 10.11.1(vue@3.5.13(typescript@5.8.3))
       framer-motion: 12.5.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       hey-listen: 1.0.8
-      motion-dom: 12.10.5
+      motion-dom: 12.11.0
       vue: 3.5.13(typescript@5.8.3)
     transitivePeerDependencies:
       - '@emotion/is-prop-valid'
@@ -15361,9 +15385,9 @@ snapshots:
       - react
       - react-dom
 
-  motion@12.10.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  motion@12.11.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      framer-motion: 12.10.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      framer-motion: 12.11.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       tslib: 2.8.1
     optionalDependencies:
       react: 19.1.0
@@ -15430,13 +15454,13 @@ snapshots:
     dependencies:
       hosted-git-info: 6.1.3
       is-core-module: 2.16.1
-      semver: 7.7.1
+      semver: 7.7.2
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.1
+      semver: 7.7.2
       validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
@@ -15447,7 +15471,7 @@ snapshots:
 
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.2
 
   npm-normalize-package-bin@3.0.1: {}
 
@@ -15455,7 +15479,7 @@ snapshots:
     dependencies:
       hosted-git-info: 6.1.3
       proc-log: 3.0.0
-      semver: 7.7.1
+      semver: 7.7.2
       validate-npm-package-name: 5.0.1
 
   npm-pick-manifest@8.0.2:
@@ -15463,7 +15487,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 10.1.0
-      semver: 7.7.1
+      semver: 7.7.2
 
   npm-run-path@4.0.1:
     dependencies:
@@ -16541,7 +16565,7 @@ snapshots:
       p-reduce: 3.0.0
       read-package-up: 11.0.0
       resolve-from: 5.0.0
-      semver: 7.7.1
+      semver: 7.7.2
       semver-diff: 4.0.0
       signale: 1.4.0
       yargs: 17.7.2
@@ -16551,7 +16575,7 @@ snapshots:
 
   semver-diff@4.0.0:
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.2
 
   semver-regex@4.0.5: {}
 
@@ -16563,7 +16587,7 @@ snapshots:
     dependencies:
       lru-cache: 6.0.0
 
-  semver@7.7.1: {}
+  semver@7.7.2: {}
 
   send@0.19.0:
     dependencies:
@@ -16749,7 +16773,7 @@ snapshots:
       detect-newline: 4.0.1
       git-hooks-list: 4.1.1
       is-plain-obj: 4.1.0
-      semver: 7.7.1
+      semver: 7.7.2
       sort-object-keys: 1.1.3
       tinyglobby: 0.2.13
 
@@ -17012,7 +17036,7 @@ snapshots:
 
   tailwind-merge@3.0.2: {}
 
-  tailwind-merge@3.2.0: {}
+  tailwind-merge@3.3.0: {}
 
   tailwind-variants@1.0.0(tailwindcss@3.4.17):
     dependencies:
@@ -17434,7 +17458,7 @@ snapshots:
 
   universal-user-agent@6.0.1: {}
 
-  universal-user-agent@7.0.2: {}
+  universal-user-agent@7.0.3: {}
 
   universalify@2.0.1: {}
 
@@ -17453,7 +17477,7 @@ snapshots:
     dependencies:
       '@vue/reactivity': 3.5.13
       debug: 4.4.0
-      unplugin: 2.3.2
+      unplugin: 2.3.3
       vite: 6.3.5(@types/node@22.15.17)(jiti@2.4.2)(yaml@2.7.1)
       vue: 3.5.13(typescript@5.8.3)
     transitivePeerDependencies:
@@ -17475,7 +17499,7 @@ snapshots:
       acorn: 8.14.1
       webpack-virtual-modules: 0.6.2
 
-  unplugin@2.3.2:
+  unplugin@2.3.3:
     dependencies:
       acorn: 8.14.1
       picomatch: 4.0.2
@@ -17774,7 +17798,7 @@ snapshots:
   vscode-languageclient@7.0.0:
     dependencies:
       minimatch: 3.1.2
-      semver: 7.7.1
+      semver: 7.7.2
       vscode-languageserver-protocol: 3.16.0
 
   vscode-languageserver-protocol@3.16.0:
