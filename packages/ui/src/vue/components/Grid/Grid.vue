@@ -19,11 +19,11 @@ import {
 const props = defineProps<GridProps>();
 
 export interface GridProps extends GridComponentLayoutOptions {
-  tag?: keyof HTMLElementTagNameMap;
+  as?: keyof HTMLElementTagNameMap;
   class?: HTMLAttributes['class'];
 }
 
-const MotionElement = get(motion, [props.tag] as PropertyPath);
+const MotionElement = get(motion, [props.as] as PropertyPath);
 
 const mergedClass = computed(() =>
   twMerge(modelGridLayout(props), props.class),

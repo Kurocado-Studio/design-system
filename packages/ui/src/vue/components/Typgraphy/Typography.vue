@@ -17,14 +17,14 @@ import {
 } from '../../../lib';
 
 export interface TypographyProps extends TypographyLayoutOptions {
-  tag?: keyof HTMLElementTagNameMap;
+  as?: keyof HTMLElementTagNameMap;
   class?: string;
 }
 const inputPropsAttributes = useAttrs() as TypographyProps;
 
-const tag = computed(() => get(inputPropsAttributes, ['tag'], 'p'));
+const as = computed(() => get(inputPropsAttributes, ['as'], 'p'));
 
-const MotionElement = get(motion, [tag.value]);
+const MotionElement = get(motion, [as.value]);
 
 const mergedClass = computed(() =>
   twMerge(modelTypography(inputPropsAttributes), inputPropsAttributes.class),

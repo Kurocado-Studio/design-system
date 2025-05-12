@@ -7,4 +7,4 @@ export * from './components/Grid';
 export * from './components/Input';
 export * from './components/Typography';
 export * from './provider';
-export type * from './components/motion';
+export * from './components/motion';

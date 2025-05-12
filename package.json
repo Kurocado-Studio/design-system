@@ -23,12 +23,12 @@
   },
   "devDependencies": {
     "@kurocado-studio/styleguide": "^2.5.2",
-    "commitlint": "^19.8.0",
-    "eslint": "9.26",
+    "commitlint": "^19.8.1",
+    "eslint": "~9.26.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
     "prettier": "3.5.3",
-    "turbo": "^2.5.0"
+    "turbo": "^2.5.3"
   },
   "lint-staged": {
     "*.{ts,tsx,json,yml,css,md}": [

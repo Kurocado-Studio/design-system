@@ -56,9 +56,9 @@ const meta: Meta<TypographyProps> = {
       control: 'boolean',
       description: 'Toggle italic style',
     },
-    tag: {
+    as: {
       control: 'text',
-      description: 'HTML tag to render',
+      description: 'HTML as to render',
     },
     class: {
       control: 'text',
@@ -106,7 +106,7 @@ export const Heading1: Story = {
     size: '4xl',
     weight: 'bold',
     leading: 'snug',
-    tag: 'h1',
+    as: 'h1',
   },
   render: renderTypography('Heading Level 1'),
 };

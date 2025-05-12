@@ -4,7 +4,7 @@ export type CommonHTMLElementProps<
   T extends HTMLElement,
   K extends keyof HTMLElementTagNameMap = 'div',
 > = {
-  tag?: K;
+  as?: K;
   loading?: boolean;
   disabled?: boolean;
   invalid?: boolean;
