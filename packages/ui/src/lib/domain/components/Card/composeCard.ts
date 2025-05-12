@@ -1,6 +1,9 @@
+/* eslint-disable import/order */
+/**
+ * TODO: fix mismatch between ESLint sort order still
+ */
 import { set } from 'lodash-es';
 
-import { cardVariantToken } from './tokens';
 import {
   resolveAliasColor,
   resolveAliasDimensions,
@@ -9,6 +12,7 @@ import {
 } from '../../primitives';
 import { type FlatToken } from '../../tokens/flattenTokens';
 import { type Theme } from '../../types';
+import { cardVariantToken } from './tokens';
 
 export interface ComposeCardOptions {
   flatTokens: Array<FlatToken>;
