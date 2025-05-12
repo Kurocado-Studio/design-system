@@ -1,7 +1,7 @@
 <template>
-  <MotionElement :class="mergedClass" v-bind="typographyProps">
+  <component :is="MotionElement" v-bind="typographyProps">
     <slot />
-  </MotionElement>
+  </component>
 </template>
 
 <script lang="ts" setup>
@@ -31,7 +31,7 @@ const mergedClass = computed(() =>
 );
 
 const typographyProps = computed(() => ({
-  ...props,
   ...composeAnimationProps(props),
+  class: mergedClass.value,
 }));
 </script>
