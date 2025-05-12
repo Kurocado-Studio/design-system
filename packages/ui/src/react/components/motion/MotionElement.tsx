@@ -5,6 +5,7 @@ import { type HTMLIntrinsicElements } from '../../../lib';
 
 export interface MotionElementProps<T extends HTMLElement> extends MotionProps {
   as?: HTMLIntrinsicElements;
+  classNme?: string;
   ref?: React.Ref<T | null>;
 }
 
