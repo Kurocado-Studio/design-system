@@ -1,11 +1,11 @@
 import { ThemeProvider } from '@kurocado-studio/ui/react';
-import designTokens from '@kurocado-studio/ui/tokens.json';
 import '@kurocado-studio/ui/typography.css';
 import { themes } from '@storybook/theming';
 import { get } from 'lodash-es';
 import React, { useEffect } from 'react';
 
 import '../tailwind.css';
+import designTokens from './tokens.json';
 
 const LIGHT_THEME = 'Light setup';
 const DARK_THEME = 'Dark setup';
