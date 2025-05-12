@@ -1,5 +1,10 @@
+/* eslint-disable import/order */
+/**
+ * TODO: fix mismatch between ESLint sort order still
+ */
 import { get } from 'lodash-es';
 
+import { type MotionProps, type Variants } from '../../types/index';
 import {
   DEFAULT_FADE_IN_SPEED,
   DEFAULT_STAGGER_SPEED,
@@ -8,7 +13,6 @@ import {
 } from './constants';
 import { FadeInDirection } from './enums';
 import { type FadePropsOptions } from './types';
-import { type MotionProps, type Variants } from '../../types/index';
 
 export function createFadeProps<T extends keyof HTMLElementTagNameMap>(
   payload: Partial<FadePropsOptions<T>>,
