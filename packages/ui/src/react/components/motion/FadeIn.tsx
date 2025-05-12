@@ -14,7 +14,7 @@ export type FadeInProps<T extends React.ElementType = 'div'> = Omit<
 export function FadeIn<T extends React.ElementType>(
   props: FadeInProps<T>,
 ): React.ReactNode {
-  const { as, tag, ...restProps } = props;
+  const { as, tag } = props;
   const shouldReduceMotion = useReducedMotion();
 
   const Component: FC =
@@ -26,7 +26,7 @@ export function FadeIn<T extends React.ElementType>(
         as={as}
         {...props}
         {...createFadeProps({
-          ...restProps,
+          ...props,
           shouldReduceMotion,
         })}
       />
