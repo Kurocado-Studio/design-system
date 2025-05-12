@@ -31,7 +31,6 @@ const renderButton =
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    ghost: false,
   },
   render: renderButton('Primary Button'),
 };
@@ -39,7 +38,6 @@ export const Primary: Story = {
 export const PrimaryFullWidth: Story = {
   args: {
     variant: 'primary',
-    ghost: false,
     fullWidth: true,
   },
   render: renderButton('Primary Button Full Width'),

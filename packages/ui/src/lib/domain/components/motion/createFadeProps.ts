@@ -11,7 +11,7 @@ import { type FadePropsOptions } from './types';
 import { type MotionProps, type Variants } from '../../types/index';
 
 export function createFadeProps<T extends keyof HTMLElementTagNameMap>(
-  payload: FadePropsOptions<T>,
+  payload: Partial<FadePropsOptions<T>>,
 ): Partial<MotionProps> {
   const { shouldReduceMotion, isInStaggerGroup } = payload;
 

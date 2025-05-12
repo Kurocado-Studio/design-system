@@ -5,19 +5,17 @@
 <script lang="ts" setup>
 import { get } from 'lodash-es';
 import { twMerge } from 'tailwind-merge';
-import { computed, useAttrs } from 'vue';
+import { computed } from 'vue';
 
 import { cardHeaderClasses } from '../../../lib';
+import { CardProps } from './types';
 
-const props = defineProps();
-
-console.log({ props });
-const cardPropsAttributes = useAttrs();
+const props = defineProps<CardProps>();
 
 const mergedClass = computed(() => {
   return twMerge(
     cardHeaderClasses(),
-    get(cardPropsAttributes, ['value']) as string | undefined,
+    get(props, ['value']) as string | undefined,
   );
 });
 </script>

@@ -1,7 +1,7 @@
 <template>
   <MotionElement
     :class="mergedClass"
-    v-bind="buttonProps as Record<string, unknown>"
+    v-bind="composedButtonProps as Record<string, unknown>"
   >
     <slot />
   </MotionElement>
@@ -11,7 +11,7 @@
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { computed, useAttrs } from 'vue';
+import { computed } from 'vue';
 
 import {
   buttonStyles,
@@ -21,20 +21,16 @@ import {
 } from '../../../lib';
 import { ButtonProps } from './types';
 
-const buttonPropsAttributes = useAttrs() as ButtonProps;
+const props = defineProps<ButtonProps>();
 
 const MotionElement = get(motion, ['button']);
 
 const mergedClass = computed(() =>
-  twMerge(
-    buttonStyles(buttonPropsAttributes),
-    cursorStyles(buttonPropsAttributes),
-    buttonPropsAttributes.class,
-  ),
+  twMerge(buttonStyles(props), cursorStyles(props), props.class),
 );
 
-const buttonProps = computed(() => ({
-  ...createA11yButtonProps(buttonPropsAttributes),
-  ...composeAnimationProps(buttonPropsAttributes),
+const composedButtonProps = computed(() => ({
+  ...createA11yButtonProps(props),
+  ...composeAnimationProps(props),
 }));
 </script>

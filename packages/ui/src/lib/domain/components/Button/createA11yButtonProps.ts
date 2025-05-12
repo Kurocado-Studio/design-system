@@ -1,6 +1,3 @@
-/**
- * TODO: fix mismatch between ESLint sort order still
- */
 import { type A11yButtonOptions, type ButtonVariants } from './types';
 
 export type A11yButtonProps = {

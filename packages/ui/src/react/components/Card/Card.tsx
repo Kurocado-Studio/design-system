@@ -11,12 +11,15 @@ import {
 } from '../../../lib';
 import { MotionElement } from '../motion';
 
-export type CardProps<T extends keyof HTMLElementTagNameMap = 'div'> =
-  PropsWithChildren<CardComponentProps<HTMLElementTagNameMap[T], T>>;
+export type CardProps<
+  T extends HTMLElement = HTMLDivElement,
+  K extends keyof HTMLElementTagNameMap = 'div',
+> = PropsWithChildren<CardComponentProps<T, K>>;
 
-function CardHeader<T extends keyof HTMLElementTagNameMap>(
-  props: CardProps<T>,
-): ReactNode {
+function CardHeader<
+  T extends HTMLElement = HTMLDivElement,
+  K extends keyof HTMLElementTagNameMap = 'div',
+>(props: CardProps<T, K>): ReactNode {
   return (
     <MotionElement
       {...props}
@@ -26,9 +29,10 @@ function CardHeader<T extends keyof HTMLElementTagNameMap>(
   );
 }
 
-function CardFooter<T extends keyof HTMLElementTagNameMap>(
-  props: CardProps<T>,
-): ReactNode {
+function CardFooter<
+  T extends HTMLElement = HTMLDivElement,
+  K extends keyof HTMLElementTagNameMap = 'div',
+>(props: CardProps<T, K>): ReactNode {
   return (
     <MotionElement
       {...props}
@@ -38,9 +42,10 @@ function CardFooter<T extends keyof HTMLElementTagNameMap>(
   );
 }
 
-function CardBody<T extends keyof HTMLElementTagNameMap>(
-  props: CardProps<T>,
-): ReactNode {
+function CardBody<
+  T extends HTMLElement = HTMLDivElement,
+  K extends keyof HTMLElementTagNameMap = 'div',
+>(props: CardProps<T, K>): ReactNode {
   return (
     <MotionElement
       {...props}
@@ -50,9 +55,10 @@ function CardBody<T extends keyof HTMLElementTagNameMap>(
   );
 }
 
-export function Card<T extends keyof HTMLElementTagNameMap>(
-  props: CardProps<T>,
-): ReactNode {
+export function Card<
+  T extends HTMLElement = HTMLDivElement,
+  K extends keyof HTMLElementTagNameMap = 'div',
+>(props: CardProps<T, K>): ReactNode {
   return (
     <MotionElement
       {...props}

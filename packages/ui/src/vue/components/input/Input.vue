@@ -1,5 +1,6 @@
 <template>
-  <MotionInput :class="mergedClass" v-bind="$attrs" />
+  <!--  @ts-ignore -->
+  <MotionInput v-bind="inputProps" />
 </template>
 
 <script lang="ts" setup>
@@ -10,17 +11,25 @@ import { InputHTMLAttributes, computed, useAttrs } from 'vue';
 
 import { cursorStyles, inputStyles } from '../../../lib';
 
-defineProps</* @vue-ignore */ InputHTMLAttributes>();
+const attrs = useAttrs();
+
+const props = defineProps</* @vue-ignore */ InputHTMLAttributes>();
 
 const MotionInput = get(motion, ['input']);
 
-const inputPropsAttributes = useAttrs();
-
 const mergedClass = computed(() =>
   twMerge(
-    inputStyles(inputPropsAttributes),
-    cursorStyles(inputPropsAttributes),
-    get(inputPropsAttributes, ['class']) as string | undefined,
+    inputStyles(props),
+    cursorStyles(props),
+    get(props, ['class']) as string | undefined,
   ),
 );
+
+const inputProps = computed(() => {
+  const { style, ...rest } = attrs;
+  return {
+    ...rest,
+    class: mergedClass.value,
+  };
+});
 </script>

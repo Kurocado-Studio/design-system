@@ -1,3 +1,3 @@
 export * from './MotionElement';
 export * from './FadeIn';
-export * from './FadeInGroup';
+export * from './FadeInStaggerGroup';

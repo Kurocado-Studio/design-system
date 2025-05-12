@@ -1,4 +1,4 @@
-import { type CommonHTMLElementProps } from '../common';
+import { type ReactCommonHTMLElementProps } from '../common';
 
 export interface CardComponentToken {
   bg: string;
@@ -12,4 +12,4 @@ export interface CardComponentToken {
 export type CardComponentProps<
   T extends HTMLElement = HTMLDivElement,
   K extends keyof HTMLElementTagNameMap = 'div',
-> = CommonHTMLElementProps<T, K>;
+> = ReactCommonHTMLElementProps<T, K>;
