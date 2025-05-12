@@ -1,7 +1,7 @@
 import { type MotionProps } from '../../types/motion.library';
 
 export type CommonHTMLElementProps<
-  T extends HTMLElement,
+  T extends HTMLElement | { (payload: unknown): HTMLElement | null },
   K extends keyof HTMLElementTagNameMap = 'div',
 > = {
   tag?: K extends keyof HTMLElementTagNameMap ? K : never;
@@ -9,4 +9,4 @@ export type CommonHTMLElementProps<
   disabled?: boolean;
   invalid?: boolean;
 } & Omit<MotionProps, 'children'> &
-  Partial<Omit<T, 'children'>>;
+  Partial<Omit<T, 'children' | 'style'>>;

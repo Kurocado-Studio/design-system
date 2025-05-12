@@ -11,7 +11,7 @@ import {
 } from '../../../lib';
 import { MotionElement } from '../motion';
 
-export type CardProps<T extends keyof HTMLElementTagNameMap> =
+export type CardProps<T extends keyof HTMLElementTagNameMap = 'div'> =
   PropsWithChildren<CardComponentProps<HTMLElementTagNameMap[T], T>>;
 
 function CardHeader<T extends keyof HTMLElementTagNameMap>(

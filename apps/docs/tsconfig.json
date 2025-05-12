@@ -19,10 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "skipLibCheck": true,
-    "paths": {
-      "@kurocado-studio/ui": ["node_modules/@kurocado-studio/ui"]
-    }
+    "skipLibCheck": true
   },
   "include": ["./.storybook/**/*", "./stories/**/*"],
   "exclude": ["dist", "build", "node_modules"]

@@ -265,6 +265,9 @@ importers:
       '@react-aria/textfield':
         specifier: ^3.17.1
         version: 3.17.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@react-aria/utils':
+        specifier: ^3.28.2
+        version: 3.28.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@vue/runtime-dom':
         specifier: ^3.5.13
         version: 3.5.13

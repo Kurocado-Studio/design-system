@@ -1,4 +1,4 @@
-import type { ArgTypes, InputProps, Meta, StoryObj } from 'src/lib';
+import type { ArgTypes, InputProps, Meta, StoryObj } from '../lib';
 
 export interface InputStoriesGroup {
   inputMeta: Meta<InputProps>;

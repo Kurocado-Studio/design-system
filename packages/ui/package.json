@@ -72,6 +72,7 @@
     "@kurocado-studio/html-forms": "1.0.0",
     "@react-aria/button": "^3.12.1",
     "@react-aria/textfield": "^3.17.1",
+    "@react-aria/utils": "^3.28.2",
     "@vue/runtime-dom": "^3.5.13",
     "lodash-es": "^4.17.21",
     "motion": "^12.10.0",
