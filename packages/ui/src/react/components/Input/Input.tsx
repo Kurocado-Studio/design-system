@@ -2,12 +2,14 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import {
-  type InputProps,
+  type InputProps as InputBaseProps,
   composeAnimationProps,
   cursorStyles,
   inputStyles,
 } from '../../../lib';
 import { MotionElement } from '../motion';
+
+export type InputProps = InputBaseProps & { className?: string };
 
 export function Input(props: InputProps): React.ReactNode {
   return (

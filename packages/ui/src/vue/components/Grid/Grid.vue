@@ -8,7 +8,7 @@
 import { PropertyPath, get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { HTMLAttributes, computed, defineProps } from 'vue';
+import { HTMLAttributes, computed } from 'vue';
 
 import {
   type GridComponentLayoutOptions,

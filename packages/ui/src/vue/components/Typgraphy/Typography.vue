@@ -20,18 +20,18 @@ export interface TypographyProps extends TypographyLayoutOptions {
   as?: keyof HTMLElementTagNameMap;
   class?: string;
 }
-const inputPropsAttributes = useAttrs() as TypographyProps;
+const props = defineProps<TypographyProps>();
 
-const as = computed(() => get(inputPropsAttributes, ['as'], 'p'));
+const as = computed(() => get(props, ['as'], 'p'));
 
 const MotionElement = get(motion, [as.value]);
 
 const mergedClass = computed(() =>
-  twMerge(modelTypography(inputPropsAttributes), inputPropsAttributes.class),
+  twMerge(modelTypography(props), props.class),
 );
 
 const typographyProps = computed(() => ({
-  ...inputPropsAttributes,
-  ...composeAnimationProps(inputPropsAttributes),
+  ...props,
+  ...composeAnimationProps(props),
 }));
 </script>

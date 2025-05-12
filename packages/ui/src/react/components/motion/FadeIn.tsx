@@ -18,7 +18,8 @@ export function FadeIn<T extends React.ElementType>(
   const shouldReduceMotion = useReducedMotion();
 
   const Component: FC =
-    typeof tag === 'function' ? tag : get(motion, [as ?? 'div']);
+    // @ts-ignore mismatch between Motion and VueComponent
+    typeof tag === 'function' ? tag : get(motion, [as ?? 'div'], 'div');
 
   return (
     <AnimatePresence>
