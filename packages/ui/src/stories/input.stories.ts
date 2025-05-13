@@ -30,11 +30,6 @@ const inputArgTypes: ArgTypes<InputProps> = {
     description: 'HTML input type',
     table: { category: 'Props' },
   },
-  className: {
-    control: 'text',
-    description: 'Custom Tailwind CSS classes',
-    table: { category: 'Styling' },
-  },
 };
 
 const inputBaseArgs: InputProps = {
@@ -42,7 +37,6 @@ const inputBaseArgs: InputProps = {
   placeholder: 'Enter something...',
   disabled: false,
   type: 'text',
-  className: '',
 };
 
 const disabled: StoryObj<InputProps> = {
