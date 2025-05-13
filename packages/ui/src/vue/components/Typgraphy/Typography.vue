@@ -22,5 +22,4 @@ const typographyProps = computed(() => ({
   ...composeAnimationProps(props),
   class: twMerge(modelTypography(props), props.class),
 }));
-console.log({ typographyProps });
 </script>

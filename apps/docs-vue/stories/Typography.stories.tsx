@@ -64,10 +64,6 @@ const meta: Meta<TypographyProps> = {
       control: 'text',
       description: 'Additional CSS classes',
     },
-    children: {
-      control: 'text',
-      description: 'Text content',
-    },
   },
   args: {
     size: 'base',
@@ -91,15 +87,6 @@ const renderTypography =
     template: `<Typography v-bind="args">${text}</Typography>`,
   });
 
-export const CaptionSemi: Story = {
-  args: {
-    size: 'caption',
-    weight: 'semibold',
-    leading: 'tight',
-  },
-  render: renderTypography('This is a caption (semibold, tight)'),
-};
-
 export const Heading1: Story = {
   args: {
     size: '4xl',
@@ -108,57 +95,6 @@ export const Heading1: Story = {
     as: 'h1',
   },
   render: renderTypography('Heading Level 1'),
-};
-
-export const BodyDefault: Story = {
-  args: {
-    size: 'base',
-    weight: 'normal',
-    leading: 'relaxed',
-  },
-  render: renderTypography(
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.`,
-  ),
-};
-
-export const BodySmall: Story = {
-  args: {
-    size: 'sm',
-    weight: 'normal',
-    leading: 'relaxed',
-  },
-  render: renderTypography(`Small body text, good for fine print or captions.`),
-};
-
-export const Label: Story = {
-  args: {
-    size: 'base',
-    weight: 'bold',
-    leading: 'tight',
-    as: 'label',
-    class: 'uppercase tracking-wide',
-  },
-  render: renderTypography('Label Text'),
-};
-
-export const EmphasisItalic: Story = {
-  args: {
-    size: 'base',
-    weight: 'medium',
-    leading: 'normal',
-    italic: true,
-  },
-  render: renderTypography('This sentence is in italics for emphasis.'),
-};
-
-export const CenteredQuote: Story = {
-  args: {
-    size: 'lg',
-    weight: 'light',
-    leading: 'loose',
-    align: 'center',
-  },
-  render: renderTypography('To be, or not to be, that is the question.'),
 };
 
 export const ResponsiveDemo: Story = {
