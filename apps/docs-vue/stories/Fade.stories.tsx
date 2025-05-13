@@ -12,6 +12,7 @@ const meta: Meta<FadeInStaggerGroupProps> = {
   title: 'Components/Fade',
   component: FadeInStaggerGroup,
   subcomponents: { FadeIn },
+  tags: ['autodocs'],
   argTypes: {
     tag: {
       control: 'text',
