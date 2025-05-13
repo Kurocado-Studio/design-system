@@ -29,8 +29,8 @@ export const Standalone: StoryObj<FadeInStaggerGroupProps> = {
     },
     template: `
       <Grid>
-        <FadeIn fadeInDirection="DOWN" :tag="Typography">
-          <Typography as="h4">
+        <FadeIn fadeInDirection="DOWN">
+          <Typography as="h3">
             Standalone DOWN
           </Typography>
         </FadeIn>
