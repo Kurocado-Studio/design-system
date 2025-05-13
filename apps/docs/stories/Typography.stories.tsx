@@ -82,17 +82,6 @@ export default meta;
 
 type Story = StoryObj<TypographyProps>;
 
-export const Default: Story = {};
-
-export const CaptionSemi: Story = {
-  args: {
-    size: 'caption',
-    weight: 'semibold',
-    leading: 'tight',
-    children: 'This is a caption (semibold, tight)',
-  },
-};
-
 export const Heading1: Story = {
   args: {
     size: '4xl',
@@ -100,55 +89,6 @@ export const Heading1: Story = {
     leading: 'snug',
     as: 'h1',
     children: 'Heading Level 1',
-  },
-};
-
-export const BodyDefault: Story = {
-  args: {
-    size: 'base',
-    weight: 'normal',
-    leading: 'relaxed',
-    children: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.`,
-  },
-};
-
-export const BodySmall: Story = {
-  args: {
-    size: 'sm',
-    weight: 'normal',
-    leading: 'relaxed',
-    children: `Small body text, good for fine print or captions.`,
-  },
-};
-
-export const Label: Story = {
-  args: {
-    size: 'caption',
-    weight: 'bold',
-    leading: 'tight',
-    as: 'label',
-    className: 'uppercase tracking-wide',
-    children: 'Label Text',
-  },
-};
-
-export const EmphasisItalic: Story = {
-  args: {
-    size: 'base',
-    weight: 'medium',
-    leading: 'normal',
-    italic: true,
-    children: 'This sentence is in italics for emphasis.',
-  },
-};
-
-export const CenteredQuote: Story = {
-  args: {
-    size: 'lg',
-    weight: 'light',
-    leading: 'loose',
-    align: 'center',
-    children: `"To be, or not to be, that is the question."`,
   },
 };
 
