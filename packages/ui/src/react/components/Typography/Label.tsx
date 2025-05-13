@@ -14,7 +14,7 @@ export function Label(props: LabelProps): React.ReactNode {
       weight='bold'
       leading='tight'
       className={props.className}
-      {...(props as TypographyProps)}
+      {...(props as unknown as TypographyProps)}
     >
       {props.children}
     </Typography>
