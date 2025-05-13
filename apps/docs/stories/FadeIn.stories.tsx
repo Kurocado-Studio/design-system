@@ -61,9 +61,6 @@ export const Grouped: Story = {
       />
     </FadeInStaggerGroup>
   ),
-  args: {
-    tag: 'section',
-  },
 };
 
 export const Standalone: StoryObj = {

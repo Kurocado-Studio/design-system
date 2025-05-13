@@ -10,7 +10,9 @@ import {
 } from '../../../lib';
 import { MotionElement } from '../motion';
 
-export interface CardProps extends React.PropsWithChildren<CardPropsType> {}
+export interface CardProps extends React.PropsWithChildren<CardPropsType> {
+  className?: string;
+}
 
 function CardHeader({
   children,

@@ -126,6 +126,7 @@ export const Label: Story = {
     size: 'caption',
     weight: 'bold',
     leading: 'tight',
+    as: 'label',
     className: 'uppercase tracking-wide',
     children: 'Label Text',
   },

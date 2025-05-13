@@ -1,4 +1,3 @@
-import type { AnimationProps, MotionProps } from '../../types';
 import { type CommonHTMLElementProps } from '../common';
 import { type FadeInDirection } from './enums';
 
@@ -10,8 +9,8 @@ export type FadePropsOptions<T extends keyof HTMLElementTagNameMap = 'div'> = {
   shouldReduceMotion?: boolean | null;
   as?: T;
   transitionDuration?: number;
-  viewport?: MotionProps['viewport'];
-} & MotionLayoutOptions<T>;
+  viewport?: Record<string, unknown>;
+};
 
 export type MotionLayoutOptions<T extends keyof HTMLElementTagNameMap = 'div'> =
-  CommonHTMLElementProps<HTMLElementTagNameMap[T], T> & AnimationProps;
+  CommonHTMLElementProps<HTMLElementTagNameMap[T], T>;

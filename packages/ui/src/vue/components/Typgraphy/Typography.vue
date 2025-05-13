@@ -1,37 +1,26 @@
 <template>
-  <MotionElement :class="mergedClass" v-bind="typographyProps">
+  <!-- @vue-tsc-ignore -->
+  <component :is="MotionElement" v-bind="typographyProps">
     <slot />
-  </MotionElement>
+  </component>
 </template>
 
 <script lang="ts" setup>
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { computed, useAttrs } from 'vue';
+import { computed } from 'vue';
 
-import {
-  type TypographyLayoutOptions,
-  composeAnimationProps,
-  modelTypography,
-} from '../../../lib';
+import { composeAnimationProps, modelTypography } from '../../../lib';
+import { TypographyProps } from './types';
 
-export interface TypographyProps extends TypographyLayoutOptions {
-  as?: keyof HTMLElementTagNameMap;
-  class?: string;
-}
-const inputPropsAttributes = useAttrs() as TypographyProps;
+const props = defineProps<TypographyProps>();
 
-const as = computed(() => get(inputPropsAttributes, ['as'], 'p'));
-
-const MotionElement = get(motion, [as.value]);
-
-const mergedClass = computed(() =>
-  twMerge(modelTypography(inputPropsAttributes), inputPropsAttributes.class),
-);
+const MotionElement = get(motion, [props.as ?? 'p']);
 
 const typographyProps = computed(() => ({
-  ...inputPropsAttributes,
-  ...composeAnimationProps(inputPropsAttributes),
+  ...composeAnimationProps(props),
+  class: twMerge(modelTypography(props), props.class),
 }));
+console.log({ typographyProps });
 </script>

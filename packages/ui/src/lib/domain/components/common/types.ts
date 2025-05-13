@@ -4,9 +4,8 @@ export type CommonHTMLElementProps<
   T extends HTMLElement,
   K extends keyof HTMLElementTagNameMap = 'div',
 > = {
-  as?: K;
+  as?: K extends keyof HTMLElementTagNameMap ? K : T;
   loading?: boolean;
   disabled?: boolean;
   invalid?: boolean;
-} & MotionProps &
-  Partial<Omit<T, 'children'>>;
+} & MotionProps;

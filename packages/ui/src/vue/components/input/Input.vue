@@ -10,7 +10,7 @@ import { InputHTMLAttributes, computed, defineProps, useAttrs } from 'vue';
 
 import { cursorStyles, inputStyles } from '../../../lib';
 
-defineProps</* @vue-ignore */ InputHTMLAttributes>();
+defineProps</* @vue-ignore */ InputHTMLAttributes & { placeholder?: string }>();
 
 const MotionInput = get(motion, ['input']);
 
