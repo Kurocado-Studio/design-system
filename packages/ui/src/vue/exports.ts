@@ -1,5 +1,6 @@
 import ThemeProvider from './context/ThemeProvider.vue';
 
+export * from './components/Avatar';
 export * from './components/Card';
 export * from './components/input';
 export * from './components/Typgraphy';

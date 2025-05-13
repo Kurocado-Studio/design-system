@@ -1,8 +1,8 @@
-import type { MotionProps } from 'motion-v';
+import {
+  type AvatarProps as AvatarPropsBase,
+  type CommonControlStyles,
+} from '../../../lib';
 
-import { type AvatarProps as AvatarPropsBase } from '../../../lib';
-
-export type AvatarProps = MotionProps<'img'> &
-  AvatarPropsBase & {
-    class?: string;
-  };
+export type AvatarProps = AvatarPropsBase & {
+  class?: string;
+} & CommonControlStyles;

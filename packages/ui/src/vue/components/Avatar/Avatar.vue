@@ -1,5 +1,5 @@
 <template>
-  <MotionElement :class="mergedClass" v-bind="props">
+  <MotionElement v-bind="props as Record<string, unknown>" :class="mergedClass">
     <slot />
   </MotionElement>
 </template>
@@ -8,14 +8,18 @@
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { computed } from 'vue';
+import { computed, useAttrs } from 'vue';
 
 import { avatarStyles } from '../../../lib';
-import { AvatarProps } from './types';
+import type { AvatarProps } from './types';
 
-const props = defineProps<AvatarProps>();
+const props = defineProps</* @vue-ignore */ AvatarProps>();
 
 const MotionElement = get(motion, ['img']);
 
-const mergedClass = computed(() => twMerge(avatarStyles(props), props.class));
+const attributes = useAttrs();
+
+const mergedClass = computed(() =>
+  twMerge(avatarStyles({ ...props, ...attributes }), props.class as string),
+);
 </script>
