@@ -1,21 +1,19 @@
+/* eslint-disable import/order */
+/**
+ * TODO: fix mismatch between ESLint sort order still
+ */
 import React from 'react';
 
-import { Typography, type TypographyProps } from './Typography';
+import { type ComposeLabelOptions, composeLabel } from '../../../lib';
+import { Typography } from './Typography';
 
 export type LabelProps = React.PropsWithChildren<
-  Partial<HTMLLabelElement> & { className?: string }
+  ComposeLabelOptions & { className?: string }
 >;
 
 export function Label(props: LabelProps): React.ReactNode {
   return (
-    <Typography
-      as='label'
-      size='caption'
-      weight='bold'
-      leading='tight'
-      className={props.className}
-      {...(props as unknown as TypographyProps)}
-    >
+    <Typography {...composeLabel(props)} className={props.className}>
       {props.children}
     </Typography>
   );

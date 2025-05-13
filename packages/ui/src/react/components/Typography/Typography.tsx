@@ -9,13 +9,14 @@ import {
 } from '../../../lib';
 import { MotionElement } from '../motion';
 
+type Typography<T extends keyof HTMLElementTagNameMap> =
+  TypographyComponentLayoutOptions<HTMLElementTagNameMap[T], T> & {
+    className?: string;
+    as?: T;
+  };
+
 export type TypographyProps<T extends keyof HTMLElementTagNameMap = 'div'> =
-  React.PropsWithChildren<
-    TypographyComponentLayoutOptions<HTMLElementTagNameMap[T], T> & {
-      className?: string;
-      as?: T;
-    }
-  >;
+  React.PropsWithChildren<Typography<T>>;
 
 export function Typography<T extends keyof HTMLElementTagNameMap>(
   props: TypographyProps<T>,
