@@ -11,7 +11,6 @@ const meta = {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'destructive', 'success', 'icon'],
     },
-    ghost: { control: { type: 'boolean' } },
     children: { control: 'text' },
   },
 } satisfies Meta<ButtonProps>;
@@ -23,7 +22,6 @@ export const Primary: Story = {
   args: {
     children: 'Primary Button',
     variant: 'primary',
-    ghost: false,
   },
 };
 
@@ -31,7 +29,7 @@ export const PrimaryFullWidth: Story = {
   args: {
     children: 'Primary Button Full Width',
     variant: 'primary',
-    ghost: false,
+    // @ts-ignore
     fullWidth: true,
   },
 };

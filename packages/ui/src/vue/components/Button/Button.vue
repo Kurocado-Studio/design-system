@@ -25,20 +25,16 @@ export type ButtonProps = A11yButtonProps & {
   class?: HTMLAttributes['class'];
 };
 
-const buttonPropsAttributes = useAttrs() as ButtonProps;
+const props = defineProps<ButtonProps>();
 
 const MotionElement = get(motion, ['button']);
 
 const mergedClass = computed(() =>
-  twMerge(
-    buttonStyles(buttonPropsAttributes),
-    cursorStyles(buttonPropsAttributes),
-    buttonPropsAttributes.class,
-  ),
+  twMerge(buttonStyles(props), cursorStyles(props), props.class),
 );
 
 const buttonProps = computed(() => ({
-  ...createA11yButtonProps(buttonPropsAttributes),
-  ...composeAnimationProps(buttonPropsAttributes),
+  ...createA11yButtonProps(props),
+  ...composeAnimationProps(props),
 }));
 </script>

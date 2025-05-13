@@ -10,7 +10,7 @@ export default {
 export const Default = {
   component: Input,
   args: {
-    modelValue: 'Jane Doe',
+    value: 'Jane Doe',
   },
 };
 
