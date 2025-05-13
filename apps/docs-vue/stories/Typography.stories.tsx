@@ -135,6 +135,7 @@ export const Label: Story = {
     size: 'base',
     weight: 'bold',
     leading: 'tight',
+    as: 'label',
     class: 'uppercase tracking-wide',
   },
   render: renderTypography('Label Text'),
