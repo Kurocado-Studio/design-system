@@ -55,7 +55,7 @@ export const Standalone: StoryObj<FadeInStaggerGroupProps> = {
           Standalone DOWN
         </FadeIn>
         <FadeIn :fadeInSpeed="48" :transitionDuration="1">
-          <Typography as="p">
+          <Typography as="h4">
             Standalone Custom Speed
           </Typography>
         </FadeIn>
