@@ -5,5 +5,5 @@ export * from './components/Card/Card';
 export * from './components/Grid/Grid';
 export * from './components/Input/Input';
 export * from './components/motion';
-export * from './components/Typography/Typography';
+export * from './components/Typography';
 export * from './context/ThemeProvider';
