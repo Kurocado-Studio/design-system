@@ -1,5 +1,6 @@
 export type * from './types';
 
+export * from './components/Avatar';
 export * from './components/Button';
 export * from './components/Card';
 export * from './components/common';
