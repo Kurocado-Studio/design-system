@@ -1,5 +1,4 @@
 /* eslint import/no-default-export: 0 */
-import designTokens from '@kurocado-studio/ui/tokens.json';
 import '@kurocado-studio/ui/typography.css';
 import { ThemeProvider } from '@kurocado-studio/ui/vue';
 import { themes } from '@storybook/theming';
@@ -7,6 +6,7 @@ import type { Preview } from '@storybook/vue3';
 import { get } from 'lodash-es';
 
 import '../tailwind.css';
+import designTokens from './tokens.json';
 
 const LIGHT_THEME = 'Light setup';
 const DARK_THEME = 'Dark setup';
