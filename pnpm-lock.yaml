@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@kurocado-studio/styleguide':
         specifier: ^2.5.2
-        version: 2.5.2(vkuotjt2es3kl4o5yggq3tcl3y)
+        version: 2.5.2(2zzkg2zbtlaokuboao4odpgvqq)
       commitlint:
         specifier: ^19.8.1
         version: 19.8.1(@types/node@22.15.18)(typescript@5.8.3)
@@ -255,10 +255,10 @@ importers:
     devDependencies:
       '@kurocado-studio/qa':
         specifier: 2.0.1
-        version: 2.0.1(gsaq4x66jfypjqbg6emxeuwyqi)
+        version: 2.0.1(j7vlvxm6r6tkrfcptixcxgwmfy)
       '@kurocado-studio/styleguide':
         specifier: ^2.5.2
-        version: 2.5.2(vkuotjt2es3kl4o5yggq3tcl3y)
+        version: 2.5.2(2zzkg2zbtlaokuboao4odpgvqq)
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -9326,7 +9326,7 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
       zod: 3.24.4
 
-  '@kurocado-studio/qa@2.0.1(gsaq4x66jfypjqbg6emxeuwyqi)':
+  '@kurocado-studio/qa@2.0.1(j7vlvxm6r6tkrfcptixcxgwmfy)':
     dependencies:
       '@eslint/js': 9.26.0
       '@faker-js/faker': 9.7.0
@@ -9347,7 +9347,7 @@ snapshots:
       c8: 10.1.3
       dotenv: 16.5.0
       fast-text-encoding: 1.0.6
-      globals: 16.1.0
+      globals: 14.0.0
       jsdom: 26.1.0
       lodash-es: 4.17.21
       supertest: 7.1.1
@@ -9360,7 +9360,7 @@ snapshots:
       vitest: 3.1.3(@types/debug@4.1.12)(@types/node@22.15.18)(@vitest/browser@3.1.3)(jiti@2.4.2)(jsdom@26.1.0)(yaml@2.7.1)
       vitest-axe: 0.1.0(vitest@3.1.3)
 
-  '@kurocado-studio/styleguide@2.5.2(vkuotjt2es3kl4o5yggq3tcl3y)':
+  '@kurocado-studio/styleguide@2.5.2(2zzkg2zbtlaokuboao4odpgvqq)':
     dependencies:
       '@babel/eslint-parser': 7.27.1(@babel/core@7.27.1)(eslint@9.26.0(jiti@2.4.2))
       '@commitlint/cli': 19.8.1(@types/node@22.15.18)(typescript@5.8.3)
@@ -9395,7 +9395,7 @@ snapshots:
       eslint-plugin-tsdoc: 0.2.17
       eslint-plugin-unicorn: 58.0.0(eslint@9.26.0(jiti@2.4.2))
       eslint-plugin-vitest: 0.5.4(@typescript-eslint/eslint-plugin@8.32.1(@typescript-eslint/parser@8.32.1(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.1.3)
-      globals: 16.1.0
+      globals: 14.0.0
       husky: 9.1.7
       lint-staged: 15.5.2
       lodash-es: 4.17.21

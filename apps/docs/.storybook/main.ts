@@ -28,15 +28,6 @@ const config = {
       },
     },
   },
-  viteFinal: async (config: { server: { watch?: any } }) => {
-    config.server = config.server || {};
-    config.server.watch = {
-      ...config.server.watch,
-      usePolling: true,
-      interval: 100,
-    };
-    return config;
-  },
 };
 
 export default config;

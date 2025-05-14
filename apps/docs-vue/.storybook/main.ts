@@ -20,14 +20,5 @@ const config: StorybookConfig = {
     name: '@storybook/vue3-vite',
     options: {},
   },
-  viteFinal: async (config) => {
-    config.server = config.server || {};
-    config.server.watch = {
-      ...config.server.watch,
-      usePolling: true,
-      interval: 100,
-    };
-    return config;
-  },
 };
 export default config;
