@@ -1,3 +1,4 @@
+/* eslint import/no-default-export: 0 */
 const config = {
   stories: [
     '../stories/**/*.mdx',
@@ -27,7 +28,7 @@ const config = {
       },
     },
   },
-  viteFinal: async (config) => {
+  viteFinal: async (config: { server: { watch?: any } }) => {
     config.server = config.server || {};
     config.server.watch = {
       ...config.server.watch,
@@ -38,5 +39,4 @@ const config = {
   },
 };
 
-/* eslint import/no-default-export: 0 */
 export default config;
