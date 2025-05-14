@@ -1,3 +1,4 @@
+/* eslint unicorn/filename-case: 0 */
 /* eslint import/no-default-export: 0 */
 import '@kurocado-studio/ui/typography.css';
 import { ThemeProvider } from '@kurocado-studio/ui/vue';
