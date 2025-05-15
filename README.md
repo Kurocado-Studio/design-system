@@ -1,9 +1,9 @@
 # Kurocado Studio Design System
 
-|                 |                                                             |
-| --------------- | ----------------------------------------------------------- |
-| React Storybook | <https://design-system-kurocado-studio.vercel.app>          |
-| Vue Storybook   | <https://design-system-docs-vue-kurocado-studio.vercel.app> |
+|                 |                                                        |
+| --------------- | ------------------------------------------------------ |
+| React Storybook | <https://design-system-kurocado-studio.vercel.app>     |
+| Vue Storybook   | <https://design-system-vue-kurocado-studio.vercel.app> |
 
 ## 🚧 Current Status & Direction
 
