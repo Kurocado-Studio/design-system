@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@internal/config": "workspace:*",
-    "@storybook/react": "^8.6.12",
+    "@storybook/react": "^8.6.13",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.15.17",
