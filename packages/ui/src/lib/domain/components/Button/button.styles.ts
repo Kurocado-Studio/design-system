@@ -79,7 +79,7 @@ const iconGhost: ButtonVariantToken = {
 
 const baseButtonStyles = tv({
   extend: controlCommonStyles,
-  base: 'px-5 py-2 font-display text-sm text-center rounded-md',
+  base: 'px-5 h-12 flex items-center justify-center font-display text-sm text-center rounded-md',
   variants: {
     variant: {
       primary: twMerge(Object.values(primary)),
