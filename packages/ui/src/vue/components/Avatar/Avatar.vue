@@ -10,9 +10,19 @@ import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
 import { computed, useAttrs } from 'vue';
 
-import { avatarStyles } from '../../../lib';
-import type { AvatarProps } from './types';
+import {
+  type AvatarProps as AvatarPropsBase,
+  type CommonControlStyles,
+  avatarStyles,
+} from '../../../lib';
 
+export type AvatarProps = AvatarPropsBase & {
+  class?: string;
+} & CommonControlStyles;
+/**
+ * tsc and vue-sfc are colliding on type generation at the moment,
+ * making vue-sfc choke and bail out
+ */
 const props = defineProps</* @vue-ignore */ AvatarProps>();
 
 const MotionElement = get(motion, ['img']);

@@ -53,7 +53,7 @@ export const parameters = {
 };
 
 export const decorators = [
-  (Story: FC, context: Record<string, unknown>) => {
+  (Story: FC, context: Record<string, unknown>): React.ReactNode => {
     function Decorator(): React.ReactNode {
       const selectedTheme = get(context, ['globals', 'theme']) === LIGHT_THEME;
 
