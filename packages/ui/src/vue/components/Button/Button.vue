@@ -11,7 +11,7 @@
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { HTMLAttributes, computed } from 'vue';
+import { HTMLAttributes, computed, useAttrs } from 'vue';
 
 import {
   type A11yButtonProps,
@@ -24,13 +24,17 @@ import {
 export type ButtonProps = A11yButtonProps & {
   class?: HTMLAttributes['class'];
 };
-
 const props = defineProps<ButtonProps>();
+const { fullWidth } = useAttrs();
 
 const MotionElement = get(motion, ['button']);
-console.log({ props });
+
 const mergedClass = computed(() =>
-  twMerge(buttonStyles(props), cursorStyles(props), props.class),
+  twMerge(
+    buttonStyles({ fullWidth, ...props }),
+    cursorStyles(props),
+    props.class,
+  ),
 );
 
 const buttonProps = computed(() => ({
