@@ -1,7 +1,12 @@
+/* eslint import/order:0 */
+/**
+ *
+ * TODO: fix mismatch between ESLint sort order still
+ */
 import { get } from 'lodash-es';
 
-import { DEFAULT_STAGGER_SPEED, DEFAULT_VIEWPORT } from './constants';
 import { type Framework, type MotionIntrinsicProps } from '../../types';
+import { DEFAULT_STAGGER_SPEED, DEFAULT_VIEWPORT } from './constants';
 
 export function createStaggerContainerProps<
   T extends string,
