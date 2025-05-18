@@ -23,10 +23,6 @@ const MotionElement = motion.button;
 
 export type ButtonProps = A11yButtonProps &
   VueMotionElementProps &
-    /**
-     * tsc and vue-sfc are colliding on type generation at the moment,
-     * making vue-sfc choke and bail out
-     */
   /* @vue-ignore */ Omit<ButtonHTMLAttributes, 'style'> & {
     fullWidth?: boolean;
     class?: string;

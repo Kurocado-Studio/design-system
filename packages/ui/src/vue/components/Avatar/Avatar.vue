@@ -5,11 +5,11 @@
 </template>
 
 <script lang="ts" setup>
+import type { ImgHTMLAttributes } from '@vue/runtime-dom';
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import {  computed, useAttrs } from 'vue';
-import type { ImgHTMLAttributes } from '@vue/runtime-dom';
+import { computed, useAttrs } from 'vue';
 
 import {
   type AvatarProps as AvatarPropsBase,
@@ -19,10 +19,7 @@ import {
 export type AvatarProps = AvatarPropsBase & {
   class?: string;
 } & ImgHTMLAttributes;
-/**
- * tsc and vue-sfc are colliding on type generation at the moment,
- * making vue-sfc choke and bail out
- */
+
 const props = defineProps</* @vue-ignore */ AvatarProps>();
 
 const MotionElement = get(motion, ['img']);
