@@ -1,9 +1,14 @@
+import { type MotionProps } from 'framer-motion';
+
 import type { AvatarProps, Meta, StoryObj } from '../lib';
 
+type AvatarStoryProps = AvatarProps &
+  MotionProps & { src?: string; alt?: string };
+
 export interface AvatarStoriesGroup {
-  avatarMeta: Meta<AvatarProps>;
-  withSize: StoryObj<AvatarProps>;
-  withMotionProps: StoryObj<AvatarProps>;
+  avatarMeta: Meta<AvatarStoryProps>;
+  withSize: StoryObj<AvatarStoryProps>;
+  withMotionProps: StoryObj<AvatarStoryProps>;
 }
 
 const sizeOptions: AvatarProps['size'][] = [
@@ -15,18 +20,17 @@ const sizeOptions: AvatarProps['size'][] = [
   '2xl',
 ];
 
-export const withMotionProps: StoryObj<AvatarProps> = {
+export const withMotionProps: StoryObj<AvatarStoryProps> = {
   name: 'With Motion Props',
   args: {
     initial: { opacity: 0 },
-    // @ts-expect-error mismatch between types for `opacity`
     animate: { opacity: 1 },
     transition: { duration: 0.8 },
   },
   tags: ['autodocs'],
 };
 
-export const withSize: StoryObj<AvatarProps> = {
+export const withSize: StoryObj<AvatarStoryProps> = {
   name: 'With Size',
   args: {
     controlSize: 'lg',
