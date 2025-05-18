@@ -1,10 +1,8 @@
 import { get } from 'lodash-es';
 
-import { type AnimationProps } from '../domain';
-
 export const composeAnimationProps = (
   props: unknown,
-): { [K in keyof Required<AnimationProps>]: AnimationProps[K] } => {
+): Record<string, unknown> => {
   return {
     animate: get(props, ['animate']),
     initial: get(props, ['initial']),

@@ -7,6 +7,4 @@ export type AvatarComponentToken = {
   fg: string;
 };
 
-export interface AvatarProps
-  extends CommonControlStyles,
-    Partial<HTMLImageElement> {}
+export interface AvatarProps extends CommonControlStyles {}

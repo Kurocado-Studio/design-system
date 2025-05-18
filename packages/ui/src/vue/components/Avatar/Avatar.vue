@@ -8,17 +8,17 @@
 import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { computed, useAttrs } from 'vue';
+import {  computed, useAttrs } from 'vue';
+import type { ImgHTMLAttributes } from '@vue/runtime-dom';
 
 import {
   type AvatarProps as AvatarPropsBase,
-  type CommonControlStyles,
   avatarStyles,
 } from '../../../lib';
 
 export type AvatarProps = AvatarPropsBase & {
   class?: string;
-} & CommonControlStyles;
+} & ImgHTMLAttributes;
 /**
  * tsc and vue-sfc are colliding on type generation at the moment,
  * making vue-sfc choke and bail out

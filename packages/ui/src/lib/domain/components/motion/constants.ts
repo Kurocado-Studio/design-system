@@ -1,6 +1,4 @@
-import { type MotionProps } from '../../types';
-
-export const DEFAULT_VIEWPORT: MotionProps['viewport'] = {
+export const DEFAULT_VIEWPORT = {
   once: false,
   margin: '0px 0px -200px',
 };

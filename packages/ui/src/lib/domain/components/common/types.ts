@@ -1,5 +1,4 @@
 import { type Sizes } from '../../types';
-import { type MotionProps } from '../../types/motion.library';
 
 export type CommonHTMLElementProps<
   T extends HTMLElement,
@@ -9,7 +8,7 @@ export type CommonHTMLElementProps<
   loading?: boolean;
   disabled?: boolean;
   invalid?: boolean;
-} & MotionProps;
+};
 
 export type CommonControlStyles = {
   size?: Sizes;

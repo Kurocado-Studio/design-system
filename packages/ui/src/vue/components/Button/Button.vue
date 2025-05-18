@@ -1,44 +1,46 @@
 <template>
-  <MotionElement
-    :class="mergedClass"
-    v-bind="buttonProps as Record<string, unknown>"
-  >
+  <MotionElement as="button" :class="mergedClass" v-bind="buttonProps">
     <slot />
   </MotionElement>
 </template>
 
 <script lang="ts" setup>
-import { get } from 'lodash-es';
+import type { ButtonHTMLAttributes } from '@vue/runtime-dom';
 import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
-import { HTMLAttributes, computed, useAttrs } from 'vue';
+import { computed } from 'vue';
 
 import {
   type A11yButtonProps,
+  VueMotionElementProps,
   buttonStyles,
   composeAnimationProps,
   createA11yButtonProps,
   cursorStyles,
 } from '../../../lib';
 
-export type ButtonProps = A11yButtonProps & {
-  class?: HTMLAttributes['class'];
-};
-const props = defineProps<ButtonProps>();
-const { fullWidth } = useAttrs();
+const MotionElement = motion.button;
 
-const MotionElement = get(motion, ['button']);
+export type ButtonProps = A11yButtonProps &
+  VueMotionElementProps &
+    /**
+     * tsc and vue-sfc are colliding on type generation at the moment,
+     * making vue-sfc choke and bail out
+     */
+  /* @vue-ignore */ Omit<ButtonHTMLAttributes, 'style'> & {
+    fullWidth?: boolean;
+    class?: string;
+    type?: 'button' | 'submit' | 'reset';
+  };
+
+const props = defineProps<ButtonProps>();
 
 const mergedClass = computed(() =>
-  twMerge(
-    buttonStyles({ fullWidth, ...props }),
-    cursorStyles(props),
-    props.class,
-  ),
+  twMerge(buttonStyles(props), cursorStyles(props), props.class),
 );
 
 const buttonProps = computed(() => ({
-  ...createA11yButtonProps(props),
+  ...createA11yButtonProps(props as A11yButtonProps),
   ...composeAnimationProps(props),
 }));
 </script>

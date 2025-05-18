@@ -1,6 +1,10 @@
+/* eslint import/order:0 */
 /**
+ *
  * TODO: fix mismatch between ESLint sort order still
  */
+import { get } from 'lodash-es';
+
 import { type A11yButtonOptions, type ButtonVariants } from './types';
 
 export type A11yButtonProps = {
@@ -16,7 +20,6 @@ export type A11yButtonProps = {
 export function createA11yButtonProps({
   onClick,
   disabled = false,
-  role = 'button',
   ...restProps
 }: A11yButtonOptions): A11yButtonProps {
   const onKeyDown: HTMLElementTagNameMap['button']['onkeydown'] = (
@@ -30,7 +33,8 @@ export function createA11yButtonProps({
 
   return {
     ...restProps,
-    role,
+    type: get(restProps, ['type'], 'button'),
+    role: get(restProps, ['role'], 'button'),
     tabIndex: disabled ? -1 : 0,
     'aria-disabled': disabled || undefined,
     ...(disabled === undefined && {

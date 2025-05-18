@@ -1,10 +1,5 @@
-/* eslint-disable import/order */
-/**
- * TODO: fix mismatch between ESLint sort order still
- */
 import { get } from 'lodash-es';
 
-import { type MotionProps, type Variants } from '../../types/index';
 import {
   DEFAULT_FADE_IN_SPEED,
   DEFAULT_STAGGER_SPEED,
@@ -16,7 +11,7 @@ import { type FadePropsOptions } from './types';
 
 export function createFadeProps<T extends keyof HTMLElementTagNameMap>(
   payload: Partial<FadePropsOptions<T>>,
-): Partial<MotionProps> {
+): Record<string, unknown> {
   const { shouldReduceMotion, isInStaggerGroup } = payload;
 
   const staggerOrder = get(payload, ['staggerOrder'], 0);
@@ -39,7 +34,7 @@ export function createFadeProps<T extends keyof HTMLElementTagNameMap>(
   const positiveSpeed = shouldReduceMotion ? 0 : rawSpeed;
   const negativeSpeed = shouldReduceMotion ? 0 : -rawSpeed;
 
-  const variantMap: { [K in FadeInDirection]: Variants } = {
+  const variantMap: { [K in FadeInDirection]: Record<string, unknown> } = {
     [FadeInDirection.DEFAULT]: {
       hidden: { opacity: 0, y: 0 },
       visible: { opacity: 1, y: 0 },

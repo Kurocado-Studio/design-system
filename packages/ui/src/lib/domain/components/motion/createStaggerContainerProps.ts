@@ -1,12 +1,12 @@
-/* eslint-disable import/order */
 import { get } from 'lodash-es';
 
-import { type MotionProps } from '../../types';
 import { DEFAULT_STAGGER_SPEED, DEFAULT_VIEWPORT } from './constants';
+import { type Framework, type MotionIntrinsicProps } from '../../types';
 
-export function createStaggerContainerProps(options: {
-  staggerSpeed?: number;
-}): Partial<MotionProps> {
+export function createStaggerContainerProps<
+  T extends string,
+  K extends Framework,
+>(options: { staggerSpeed?: number }): Partial<MotionIntrinsicProps<T, K>> {
   const staggerSpeed = get(options, ['staggerSpeed'], DEFAULT_STAGGER_SPEED);
 
   return {
@@ -17,5 +17,5 @@ export function createStaggerContainerProps(options: {
       hidden: {},
       visible: { transition: { staggerChildren: staggerSpeed } },
     },
-  };
+  } as MotionIntrinsicProps<T, K>;
 }
