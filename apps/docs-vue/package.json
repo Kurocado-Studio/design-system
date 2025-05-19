@@ -27,7 +27,7 @@
     "@chromatic-com/storybook": "^3.2.6",
     "@internal/config": "workspace:*",
     "@storybook/addon-actions": "^8.6.12",
-    "@storybook/addon-docs": "^8.6.12",
+    "@storybook/addon-docs": "^8.6.14",
     "@storybook/addon-essentials": "^8.6.13",
     "@storybook/addon-links": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
