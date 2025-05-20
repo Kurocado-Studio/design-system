@@ -74,7 +74,7 @@
     "@react-aria/textfield": "^3.17.3",
     "@vue/runtime-dom": "^3.5.14",
     "lodash-es": "^4.17.21",
-    "motion": "^12.11.0",
+    "motion": "^12.12.1",
     "motion-v": "^1.0.2",
     "tailwind-merge": "^3.3.0",
     "tailwind-variants": "^1.0.0"
