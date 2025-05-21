@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
 import { get } from 'lodash-es';
+import { motion } from 'motion/react';
 import React, { type ElementType, type ReactNode } from 'react';
 
 import { createStaggerContainerProps } from '../../../lib';

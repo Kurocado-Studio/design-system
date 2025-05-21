@@ -11,8 +11,18 @@ import { get } from 'lodash-es';
 import { AnimatePresence, motion } from 'motion-v';
 import { computed, toRefs, useAttrs } from 'vue';
 
-import { createStaggerContainerProps } from '../../../lib';
-import { FadeInStaggerGroupProps } from './types';
+import {
+  type MotionLayoutOptions,
+  createStaggerContainerProps,
+} from '../../../lib';
+
+export type FadeInStaggerGroupProps<
+  T extends keyof HTMLElementTagNameMap = 'div',
+> = MotionLayoutOptions<T> & {
+  tag?: T | typeof motion;
+  as?: keyof HTMLElementTagNameMap;
+  speed?: number;
+};
 
 const props = defineProps<FadeInStaggerGroupProps>();
 

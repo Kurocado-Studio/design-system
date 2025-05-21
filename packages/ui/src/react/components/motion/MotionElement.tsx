@@ -1,4 +1,4 @@
-import { type MotionProps, motion } from 'framer-motion';
+import { type MotionProps, motion } from 'motion/react';
 import React, { type FC, type ReactNode } from 'react';
 
 export interface MotionElementProps<
