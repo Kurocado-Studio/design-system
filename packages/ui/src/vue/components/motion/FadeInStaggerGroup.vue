@@ -29,10 +29,10 @@ const props = defineProps<FadeInStaggerGroupProps>();
 const { speed, tag, as, ...rest } = toRefs(props);
 const additionalAttributes = useAttrs();
 
-const Component =
-  typeof tag.value === 'object'
+const tagName = as?.value ?? 'div';
+const Component = typeof tag?.value === 'object'
     ? tag.value
-    : get(motion, [as.value ?? 'div'], 'div');
+    : get(motion, [tagName]);
 
 const allProps = computed(() => {
   return {
