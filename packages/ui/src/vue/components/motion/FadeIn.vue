@@ -1,6 +1,6 @@
 <template>
   <AnimatePresence>
-    <component :is="FadeInElement" :as="as" v-bind="allProps">
+    <component :is="FadeInElement" v-bind="allProps">
       <slot />
     </component>
   </AnimatePresence>
@@ -9,34 +9,36 @@
 <script setup lang="ts">
 import { get } from 'lodash-es';
 import { AnimatePresence, motion, useReducedMotion } from 'motion-v';
-import { computed, toRefs } from 'vue';
+import { computed, toRefs, useAttrs } from 'vue';
 
-import { createFadeProps } from '../../../lib';
-import { FadeInProps } from './types';
+import { type FadePropsOptions, createFadeProps } from '../../../lib';
+
+export type FadeInProps<T extends keyof HTMLElementTagNameMap = 'div'> = Omit<
+  FadePropsOptions,
+  'tag'
+> & {
+  tag?: T | typeof motion;
+};
 
 const props = defineProps<FadeInProps>();
+const additionalAttributes = useAttrs();
 const { tag, as, ...rest } = toRefs(props);
 
 const shouldReduceMotion = useReducedMotion();
 
 const FadeInElement =
-  typeof as.value === 'string'
-    ? get(motion, [as.value])
-    : get(tag, ['value'], motion.div);
+  typeof tag.value === 'object'
+    ? tag.value
+    : get(motion, [as.value ?? 'div'], 'div');
 
 const allProps = computed(() => {
   return {
     ...rest,
+    ...additionalAttributes,
     ...createFadeProps({
-      as: as.value,
-      viewport: props.viewport,
-      fadeInDirection: props.fadeInDirection,
-      staggerOrder: props.staggerOrder,
-      isInStaggerGroup: props.isInStaggerGroup,
-      fadeInSpeed: props.fadeInSpeed,
-      transitionDuration: props.transitionDuration,
+      ...props,
       shouldReduceMotion: shouldReduceMotion.value,
-    }),
+    } as FadeInProps),
   };
 });
 </script>

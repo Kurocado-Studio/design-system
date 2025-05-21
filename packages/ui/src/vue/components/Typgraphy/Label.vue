@@ -7,9 +7,12 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { composeLabel } from '../../../lib';
+import { type ComposeLabelOptions, composeLabel } from '../../../lib';
 import Typography from './Typography.vue';
-import { LabelProps } from './types';
+
+export type LabelProps = ComposeLabelOptions & {
+  class?: string;
+};
 
 const props = defineProps<LabelProps>();
 

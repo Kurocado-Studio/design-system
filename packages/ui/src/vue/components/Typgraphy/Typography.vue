@@ -11,8 +11,16 @@ import { motion } from 'motion-v';
 import { twMerge } from 'tailwind-merge';
 import { computed } from 'vue';
 
-import { composeAnimationProps, modelTypography } from '../../../lib';
-import { TypographyProps } from './types';
+import {
+  type TypographyLayoutOptions,
+  composeAnimationProps,
+  modelTypography,
+} from '../../../lib';
+
+export type TypographyProps = TypographyLayoutOptions & {
+  as?: keyof HTMLElementTagNameMap;
+  class?: string;
+};
 
 const props = defineProps<TypographyProps>();
 

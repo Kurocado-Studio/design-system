@@ -11,29 +11,38 @@ import { get } from 'lodash-es';
 import { AnimatePresence, motion } from 'motion-v';
 import { computed, toRefs, useAttrs } from 'vue';
 
-import { createStaggerContainerProps } from '../../../lib';
-import { FadeInStaggerGroupProps } from './types';
+import {
+  type MotionLayoutOptions,
+  createStaggerContainerProps,
+} from '../../../lib';
+
+export type FadeInStaggerGroupProps<
+  T extends keyof HTMLElementTagNameMap = 'div',
+> = MotionLayoutOptions<T> & {
+  tag?: T | typeof motion;
+  as?: keyof HTMLElementTagNameMap;
+  speed?: number;
+};
 
 const props = defineProps<FadeInStaggerGroupProps>();
-const { staggerSpeed, tag, ...rest } = toRefs(props);
 
-const containerProps = computed(() =>
-  createStaggerContainerProps({ staggerSpeed: staggerSpeed.value }),
+const { speed, tag, as, ...rest } = toRefs(props);
+const additionalAttributes = useAttrs();
+
+const tagName = as?.value ?? 'div';
+const Component = typeof tag?.value === 'object'
+    ? tag.value
+    : get(motion, [tagName], 'div');
+
+const unwrappedRest = computed(() =>
+    Object.fromEntries(Object.entries(rest).map(([key, ref]) => [key, ref.value]))
 );
-
-const Component = computed(() => {
-  if (typeof tag.value === 'function') {
-    return tag.value;
-  }
-  console.log({ tag });
-  // @ts-ignore
-  return get(motion, [tag.value ?? 'div']);
-});
 
 const allProps = computed(() => {
   return {
-    ...rest,
-    ...containerProps.value,
+    ...unwrappedRest.value,
+    ...additionalAttributes,
+    ...createStaggerContainerProps({ staggerSpeed: speed.value }),
   };
 });
 </script>

@@ -2,13 +2,13 @@ import { type CommonHTMLElementProps } from '../common';
 import { type FadeInDirection } from './enums';
 
 export type FadePropsOptions<T extends keyof HTMLElementTagNameMap = 'div'> = {
-  fadeInDirection?: `${FadeInDirection}`;
-  fadeInSpeed?: number;
-  staggerOrder?: number;
-  isInStaggerGroup?: boolean;
+  direction?: `${FadeInDirection}`;
+  speed?: number;
+  order?: number;
+  isStagger?: boolean;
   shouldReduceMotion?: boolean | null;
   as?: T;
-  transitionDuration?: number;
+  duration?: number;
   viewport?: Record<string, unknown>;
 };
 

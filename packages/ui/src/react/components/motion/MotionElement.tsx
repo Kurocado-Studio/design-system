@@ -1,4 +1,4 @@
-import { type MotionProps, motion } from 'framer-motion';
+import { type MotionProps, motion } from 'motion/react';
 import React, { type FC, type ReactNode } from 'react';
 
 export interface MotionElementProps<
@@ -12,9 +12,7 @@ export function MotionElement<T extends keyof HTMLElementTagNameMap>({
   ...props
 }: MotionElementProps<T> &
   Record<string | number | symbol, unknown>): ReactNode {
-  const element = as || 'div';
-
-  const Component: FC = motion[element];
+  const Component: FC<MotionElementProps<T>> = motion[as || 'div'];
 
   return <Component {...props} />;
 }
