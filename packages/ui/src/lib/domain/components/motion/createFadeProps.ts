@@ -12,21 +12,15 @@ import { type FadePropsOptions } from './types';
 export function createFadeProps<T extends keyof HTMLElementTagNameMap>(
   payload: Partial<FadePropsOptions<T>>,
 ): Record<string, unknown> {
-  const { shouldReduceMotion, isInStaggerGroup } = payload;
+  const { shouldReduceMotion, isStagger } = payload;
 
-  const staggerOrder = get(payload, ['staggerOrder'], 0);
-  const fadeInDirection = get(
-    payload,
-    ['fadeInDirection'],
-    FadeInDirection.DEFAULT,
-  );
+  const staggerOrder = get(payload, ['order'], 0);
+  const fadeInDirection = get(payload, ['direction'], FadeInDirection.DEFAULT);
 
-  const rawSpeed = Math.abs(
-    get(payload, ['fadeInSpeed'], DEFAULT_FADE_IN_SPEED),
-  );
+  const rawSpeed = Math.abs(get(payload, ['speed'], DEFAULT_FADE_IN_SPEED));
 
   const transitionDuration = Math.abs(
-    get(payload, ['transitionDuration'], DEFAULT_TRANSITION_DURATION),
+    get(payload, ['duration'], DEFAULT_TRANSITION_DURATION),
   );
 
   const viewport = get(payload, ['viewport'], DEFAULT_VIEWPORT);
@@ -63,7 +57,7 @@ export function createFadeProps<T extends keyof HTMLElementTagNameMap>(
       duration: transitionDuration,
       delay: staggerOrder * DEFAULT_STAGGER_SPEED,
     },
-    ...(!isInStaggerGroup && {
+    ...(!isStagger && {
       initial: 'hidden',
       whileInView: 'visible',
       viewport,

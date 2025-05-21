@@ -9,12 +9,19 @@
 <script setup lang="ts">
 import { get } from 'lodash-es';
 import { AnimatePresence, motion, useReducedMotion } from 'motion-v';
-import { computed, toRefs } from 'vue';
+import { computed, toRefs, useAttrs } from 'vue';
 
-import { createFadeProps } from '../../../lib';
-import { FadeInProps } from './types';
+import { type FadePropsOptions, createFadeProps } from '../../../lib';
+
+export type FadeInProps<T extends keyof HTMLElementTagNameMap = 'div'> = Omit<
+  FadePropsOptions,
+  'tag'
+> & {
+  tag?: T | typeof motion;
+};
 
 const props = defineProps<FadeInProps>();
+const additionalAttributes = useAttrs();
 const { tag, as, ...rest } = toRefs(props);
 
 const shouldReduceMotion = useReducedMotion();
@@ -27,6 +34,7 @@ const FadeInElement =
 const allProps = computed(() => {
   return {
     ...props,
+    ...additionalAttributes,
     ...createFadeProps({
       ...props,
       shouldReduceMotion: shouldReduceMotion.value,

@@ -30,36 +30,33 @@ export const Grouped: Story = {
   render: (args) => (
     <FadeInStaggerGroup
       {...args}
-      tag={Grid}
+      className='max-w-7xl'
       columns={{ sm: '1', md: '2' }}
       gap='8'
       justify='center'
-      className='max-w-7xl'
+      tag={Grid}
     >
       <FadeIn
-        tag={Typography}
         as='p'
-        staggerOrder={0}
-        fadeInDirection='UP'
+        direction='UP'
+        order={0}
         size={{ base: 'sm', md: 'lg', lg: '9xl' }}
+        tag={Typography}
       >
         Item 1: UP
       </FadeIn>
-      <FadeIn
-        as='p'
-        tag={Typography}
-        staggerOrder={1}
-        fadeInDirection='LEFT_TO_RIGHT'
-      >
+      <FadeIn as='p' tag={Typography} order={1} direction='LEFT_TO_RIGHT'>
         Item 2: LEFT_TO_RIGHT
       </FadeIn>
       <FadeIn
-        tag={Typography}
         as='p'
-        staggerOrder={2}
-        fadeInDirection='RIGHT_TO_LEFT'
+        direction='LEFT_TO_RIGHT'
+        order={2}
         size={{ base: 'sm', md: 'lg', lg: '4xl' }}
-      />
+        tag={Typography}
+      >
+        Item 3: LEFT_TO_RIGHT
+      </FadeIn>
     </FadeInStaggerGroup>
   ),
 };
@@ -67,10 +64,10 @@ export const Grouped: Story = {
 export const Standalone: StoryObj = {
   render: () => (
     <Grid>
-      <FadeIn fadeInDirection='DOWN' tag={Typography}>
+      <FadeIn direction='DOWN' as='h3' tag={Typography}>
         Standalone DOWN
       </FadeIn>
-      <FadeIn tag={Typography} fadeInSpeed={48} transitionDuration={1}>
+      <FadeIn tag={Typography} as='h4' speed={48} duration={1}>
         Standalone Custom Speed
       </FadeIn>
     </Grid>

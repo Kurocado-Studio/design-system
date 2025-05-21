@@ -5,23 +5,21 @@ import React, { type ElementType, type ReactNode } from 'react';
 import { createStaggerContainerProps } from '../../../lib';
 import { type InferComponentProps } from '../../types';
 
-type FadeInStaggerProps = {
-  staggerSpeed?: number;
+export type FadeInStaggerGroupProps<T = 'div'> = InferComponentProps<T> & {
+  speed?: number;
   as?: keyof HTMLElementTagNameMap;
+  tag: T;
 };
-
-export type FadeInStaggerGroupProps<T = 'div'> = InferComponentProps<T> &
-  FadeInStaggerProps & {
-    tag: T;
-  };
 
 export function FadeInStaggerGroup<T extends ElementType = 'div'>({
   tag,
-  staggerSpeed,
+  speed,
   as,
   ...rest
 }: FadeInStaggerGroupProps<T>): ReactNode {
-  const staggerContainerProps = createStaggerContainerProps({ staggerSpeed });
+  const staggerContainerProps = createStaggerContainerProps({
+    staggerSpeed: speed,
+  });
 
   const Component: ElementType =
     typeof tag === 'function' ? tag : get(motion, [as ?? 'div']);

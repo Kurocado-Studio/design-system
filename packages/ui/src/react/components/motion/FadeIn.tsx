@@ -1,6 +1,6 @@
 import { get } from 'lodash-es';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import React, { type FC } from 'react';
+import React, { type FC, type PropsWithChildren } from 'react';
 
 import { type FadePropsOptions, createFadeProps } from '../../../lib';
 
@@ -12,9 +12,9 @@ export type FadeInProps<T extends React.ElementType = 'div'> = Omit<
 } & React.ComponentProps<T>;
 
 export function FadeIn<T extends React.ElementType>(
-  props: FadeInProps<T>,
+  props: PropsWithChildren<FadeInProps<T>>,
 ): React.ReactNode {
-  const { as, tag } = props;
+  const { as, tag, ...rest } = props;
   const shouldReduceMotion = useReducedMotion();
 
   const Component: FC =
@@ -22,14 +22,17 @@ export function FadeIn<T extends React.ElementType>(
 
   return (
     <AnimatePresence>
+      {/*  @ts-expect-error type mismatch between React and Motion*/}
       <Component
         as={as}
-        {...props}
+        {...rest}
         {...createFadeProps({
           ...props,
           shouldReduceMotion,
         })}
-      />
+      >
+        {props.children}
+      </Component>
     </AnimatePresence>
   );
 }

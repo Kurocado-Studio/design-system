@@ -15,25 +15,20 @@ import { createStaggerContainerProps } from '../../../lib';
 import { FadeInStaggerGroupProps } from './types';
 
 const props = defineProps<FadeInStaggerGroupProps>();
-const { staggerSpeed, tag, ...rest } = toRefs(props);
 
-const containerProps = computed(() =>
-  createStaggerContainerProps({ staggerSpeed: staggerSpeed.value }),
-);
+const { speed, tag, as, ...rest } = toRefs(props);
+const additionalAttributes = useAttrs();
 
-const Component = computed(() => {
-  if (typeof tag.value === 'function') {
-    return tag.value;
-  }
-  console.log({ tag });
-  // @ts-ignore
-  return get(motion, [tag.value ?? 'div']);
-});
+const Component =
+  typeof tag.value === 'object'
+    ? tag.value
+    : get(motion, [as.value ?? 'div'], 'div');
 
 const allProps = computed(() => {
   return {
     ...rest,
-    ...containerProps.value,
+    ...additionalAttributes,
+    ...createStaggerContainerProps({ staggerSpeed: speed.value }),
   };
 });
 </script>
