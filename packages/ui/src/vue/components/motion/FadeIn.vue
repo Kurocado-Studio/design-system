@@ -1,6 +1,6 @@
 <template>
   <AnimatePresence>
-    <component :is="FadeInElement" :as="as" v-bind="allProps">
+    <component :is="FadeInElement" v-bind="allProps">
       <slot />
     </component>
   </AnimatePresence>
@@ -20,23 +20,17 @@ const { tag, as, ...rest } = toRefs(props);
 const shouldReduceMotion = useReducedMotion();
 
 const FadeInElement =
-  typeof as.value === 'string'
-    ? get(motion, [as.value])
-    : get(tag, ['value'], motion.div);
+  typeof tag.value === 'object'
+    ? tag.value
+    : get(motion, [as.value ?? 'div'], 'div');
 
 const allProps = computed(() => {
   return {
-    ...rest,
+    ...props,
     ...createFadeProps({
-      as: as.value,
-      viewport: props.viewport,
-      fadeInDirection: props.fadeInDirection,
-      staggerOrder: props.staggerOrder,
-      isInStaggerGroup: props.isInStaggerGroup,
-      fadeInSpeed: props.fadeInSpeed,
-      transitionDuration: props.transitionDuration,
+      ...props,
       shouldReduceMotion: shouldReduceMotion.value,
-    }),
+    } as FadeInProps),
   };
 });
 </script>

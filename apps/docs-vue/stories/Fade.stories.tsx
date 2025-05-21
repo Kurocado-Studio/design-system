@@ -30,15 +30,11 @@ export const Standalone: StoryObj<FadeInStaggerGroupProps> = {
     },
     template: `
       <Grid>
-        <FadeIn fadeInDirection="DOWN">
-          <Typography as="h3">
-            Standalone DOWN
-          </Typography>
+        <FadeIn :tag="Typography" as="h3" fadeInDirection="DOWN">
+          Standalone DOWN
         </FadeIn>
-        <FadeIn :fadeInSpeed="48" :transitionDuration="1">
-          <Typography as="h4">
-            Standalone Custom Speed
-          </Typography>
+        <FadeIn :tag="Typography" as="h4" :fadeInSpeed="48" :transitionDuration="1">
+          Standalone Custom Speed
         </FadeIn>
       </Grid>
     `,

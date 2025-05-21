@@ -1,14 +1,18 @@
 <template>
-  <component :is="Comp" v-bind="props" />
+  <component :is="Comp" v-bind="props as MotionProps" />
 </template>
 
 <script setup lang="ts">
-import { get } from 'lodash-es';
 import { motion } from 'motion-v';
 import type { MotionProps } from 'motion-v';
-import { defineProps } from 'vue';
+import { computed } from 'vue';
 
-const props = defineProps<MotionProps & { as?: keyof HTMLElementTagNameMap }>();
+type MotionElementProps<T extends keyof HTMLElementTagNameMap = 'div'> =
+  MotionProps<T, HTMLElementTagNameMap[T]> & {
+    as?: T;
+  };
 
-const Comp = get(motion, [props.as ?? 'div']);
+const props = defineProps<MotionElementProps>();
+
+const Comp = computed(() => motion[props.as || 'div']);
 </script>

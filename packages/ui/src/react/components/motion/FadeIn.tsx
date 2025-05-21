@@ -1,5 +1,5 @@
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { get } from 'lodash-es';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import React, { type FC } from 'react';
 
 import { type FadePropsOptions, createFadeProps } from '../../../lib';
@@ -18,8 +18,7 @@ export function FadeIn<T extends React.ElementType>(
   const shouldReduceMotion = useReducedMotion();
 
   const Component: FC =
-    // @ts-ignore mismatch between Motion and VueComponent
-    typeof tag === 'function' ? tag : get(motion, [as ?? 'div'], 'div');
+    typeof tag === 'function' ? tag : get(motion, [as], 'div');
 
   return (
     <AnimatePresence>

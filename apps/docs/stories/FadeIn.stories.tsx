@@ -4,6 +4,7 @@ import {
   FadeInStaggerGroup,
   type FadeInStaggerGroupProps,
   Grid,
+  type GridProps,
   Typography,
 } from '@kurocado-studio/ui/react';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -23,17 +24,17 @@ const meta: Meta = {
 };
 
 export default meta;
-type Story = StoryObj<FadeInStaggerGroupProps>;
+type Story = StoryObj<FadeInStaggerGroupProps<GridProps>>;
 
 export const Grouped: Story = {
-  render: (args: FadeInStaggerGroupProps) => (
+  render: (args) => (
     <FadeInStaggerGroup
       {...args}
       tag={Grid}
       columns={{ sm: '1', md: '2' }}
       gap='8'
       justify='center'
-      class='max-w-7xl'
+      className='max-w-7xl'
     >
       <FadeIn
         tag={Typography}

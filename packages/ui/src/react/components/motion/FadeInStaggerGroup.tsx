@@ -1,29 +1,30 @@
 import { motion } from 'framer-motion';
 import { get } from 'lodash-es';
-import React, { type FC, type PropsWithChildren, type ReactNode } from 'react';
+import React, { type ElementType, type ReactNode } from 'react';
 
-import {
-  type MotionLayoutOptions,
-  createStaggerContainerProps,
-} from '../../../lib';
+import { createStaggerContainerProps } from '../../../lib';
+import { type InferComponentProps } from '../../types';
 
-export type FadeInStaggerGroupProps<T extends React.ElementType = 'div'> =
-  MotionLayoutOptions<T extends keyof HTMLElementTagNameMap ? T : never> & {
-    staggerSpeed?: number;
-    tag?: T;
-  } & React.ComponentProps<T>;
+type FadeInStaggerProps = {
+  staggerSpeed?: number;
+  as?: keyof HTMLElementTagNameMap;
+};
 
-export function FadeInStaggerGroup<T extends React.ElementType>({
-  staggerSpeed,
+export type FadeInStaggerGroupProps<T = 'div'> = InferComponentProps<T> &
+  FadeInStaggerProps & {
+    tag: T;
+  };
+
+export function FadeInStaggerGroup<T extends ElementType = 'div'>({
   tag,
+  staggerSpeed,
+  as,
   ...rest
-}: PropsWithChildren<FadeInStaggerGroupProps<T>>): ReactNode {
+}: FadeInStaggerGroupProps<T>): ReactNode {
   const staggerContainerProps = createStaggerContainerProps({ staggerSpeed });
-  const { as, ...restProps } = rest;
 
-  const Component: FC =
+  const Component: ElementType =
     typeof tag === 'function' ? tag : get(motion, [as ?? 'div']);
 
-  // @ts-expect-error mismatch between Motion and React.ElementType<T>
-  return <Component as={as} {...restProps} {...staggerContainerProps} />;
+  return <Component as={as} {...rest} {...staggerContainerProps} />;
 }
