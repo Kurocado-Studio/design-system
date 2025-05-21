@@ -33,7 +33,7 @@ const FadeInElement =
 
 const allProps = computed(() => {
   return {
-    ...props,
+    ...rest,
     ...additionalAttributes,
     ...createFadeProps({
       ...props,
