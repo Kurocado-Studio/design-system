@@ -32,11 +32,15 @@ const additionalAttributes = useAttrs();
 const tagName = as?.value ?? 'div';
 const Component = typeof tag?.value === 'object'
     ? tag.value
-    : get(motion, [tagName]);
+    : get(motion, [tagName], 'div');
+
+const unwrappedRest = computed(() =>
+    Object.fromEntries(Object.entries(rest).map(([key, ref]) => [key, ref.value]))
+);
 
 const allProps = computed(() => {
   return {
-    ...rest,
+    ...unwrappedRest.value,
     ...additionalAttributes,
     ...createStaggerContainerProps({ staggerSpeed: speed.value }),
   };
