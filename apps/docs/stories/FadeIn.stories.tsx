@@ -1,77 +1,86 @@
 /* eslint import/no-default-export: 0 */
 import {
-  FadeIn,
-  FadeInStaggerGroup,
-  type FadeInStaggerGroupProps,
+  type FadePropsOptions,
   Grid,
   Typography,
+  useMotion,
 } from '@kurocado-studio/ui/react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { FadeStories } from '@kurocado-studio/ui/stories';
+import type { StoryObj } from '@storybook/react';
 import React from 'react';
 
-const meta: Meta = {
-  title: 'Components/Fade',
-  component: FadeInStaggerGroup,
-  subcomponents: { FadeIn },
-  argTypes: {
-    faster: { control: 'boolean', description: 'Enable faster stagger' },
-    tag: {
-      control: 'text',
-      description: 'HTML tag to render as motion container',
+type Story = StoryObj<FadePropsOptions>;
+
+export default {
+  ...FadeStories.meta,
+  title: 'hooks/useMotion/createFadeProps',
+};
+
+export const withStaggerOrder: Story = {
+  ...FadeStories.withStaggerOrder,
+  render: (args: FadePropsOptions) => {
+    // Ignore the Warning (Safe for Storybook) as the linter assumes render is a regular function, not a component
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { createStaggerContainerProps, createFadeProps } = useMotion();
+
+    return (
+      <Grid {...createStaggerContainerProps()}>
+        <Typography {...createFadeProps({ staggerOrder: 0 })}>
+          Not being edited
+        </Typography>
+        <Typography {...createFadeProps(args)}>Being edited by you</Typography>
+      </Grid>
+    );
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `
+const { createStaggerContainerProps, createFadeProps } = useMotion();
+
+return (
+  <Grid {...createStaggerContainerProps()}>
+    <Typography {...createFadeProps({ staggerOrder: 0 })}>
+      Not being edited
+    </Typography>
+    <Typography {...createFadeProps(args)}>Being edited by you</Typography>
+  </Grid>
+);
+        `.trim(),
+        language: 'tsx',
+      },
     },
   },
 };
 
-export default meta;
-type Story = StoryObj<FadeInStaggerGroupProps>;
+export const withPlayground: Story = {
+  ...FadeStories.withPlayground,
+  render: (args: FadePropsOptions) => {
+    // Ignore the Warning (Safe for Storybook) as the linter assumes render is a regular function, not a component
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { createFadeProps } = useMotion();
+    return <Typography {...createFadeProps(args)}>Stand Alone</Typography>;
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `
+import {
+  type FadePropsOptions,
+  Typography,
+  useMotion,
+} from '@kurocado-studio/ui/react';
 
-export const Grouped: Story = {
-  render: (args: FadeInStaggerGroupProps) => (
-    <FadeInStaggerGroup
-      {...args}
-      tag={Grid}
-      columns={{ sm: '1', md: '2' }}
-      gap='8'
-      justify='center'
-      class='max-w-7xl'
-    >
-      <FadeIn
-        tag={Typography}
-        as='p'
-        staggerOrder={0}
-        fadeInDirection='UP'
-        size={{ base: 'sm', md: 'lg', lg: '9xl' }}
-      >
-        Item 1: UP
-      </FadeIn>
-      <FadeIn
-        as='p'
-        tag={Typography}
-        staggerOrder={1}
-        fadeInDirection='LEFT_TO_RIGHT'
-      >
-        Item 2: LEFT_TO_RIGHT
-      </FadeIn>
-      <FadeIn
-        tag={Typography}
-        as='p'
-        staggerOrder={2}
-        fadeInDirection='RIGHT_TO_LEFT'
-        size={{ base: 'sm', md: 'lg', lg: '4xl' }}
-      />
-    </FadeInStaggerGroup>
-  ),
-};
+import { PropsWithChildren, FC } from 'react';
 
-export const Standalone: StoryObj = {
-  render: () => (
-    <Grid>
-      <FadeIn fadeInDirection='DOWN' tag={Typography}>
-        Standalone DOWN
-      </FadeIn>
-      <FadeIn tag={Typography} fadeInSpeed={48} transitionDuration={1}>
-        Standalone Custom Speed
-      </FadeIn>
-    </Grid>
-  ),
+const ComponentExample: FC<PropsWithChildren<FadePropsOptions>> = ({ children, ...props }) => {
+  const { createFadeProps } = useMotion();
+  
+  return <Typography {...createFadeProps(props)}>{children}</Typography>;
+}
+        `.trim(),
+        language: 'tsx',
+      },
+    },
+  },
 };

@@ -8,10 +8,14 @@ import { get } from 'lodash-es';
 import { type Framework, type MotionIntrinsicProps } from '../../types';
 import { DEFAULT_STAGGER_SPEED, DEFAULT_VIEWPORT } from './constants';
 
+export interface StaggerContainerProps {
+  staggerSpeed?: number;
+}
+
 export function createStaggerContainerProps<
   T extends string,
   K extends Framework,
->(options: { staggerSpeed?: number }): Partial<MotionIntrinsicProps<T, K>> {
+>(options?: StaggerContainerProps): Partial<MotionIntrinsicProps<T, K>> {
   const staggerSpeed = get(options, ['staggerSpeed'], DEFAULT_STAGGER_SPEED);
 
   return {

@@ -1,11 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import {
-  type GridComponentProps,
-  composeAnimationProps,
-  modelGridLayout,
-} from '../../../lib';
+import { type GridComponentProps, modelGridLayout } from '../../../lib';
 import { MotionElement } from '../motion';
 
 export type GridProps = React.PropsWithChildren<
@@ -19,7 +15,7 @@ export function Grid(props: GridProps): React.ReactNode {
     <MotionElement
       as={rest.as}
       className={twMerge(modelGridLayout(props), className)}
-      {...composeAnimationProps(rest)}
+      {...rest}
     >
       {children}
     </MotionElement>
