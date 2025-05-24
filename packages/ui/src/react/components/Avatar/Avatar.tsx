@@ -1,4 +1,4 @@
-import { type HTMLMotionProps } from 'motion/react';
+import { type HTMLMotionProps } from 'framer-motion';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 

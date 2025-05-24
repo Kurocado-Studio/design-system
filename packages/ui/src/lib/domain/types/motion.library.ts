@@ -1,7 +1,7 @@
 import type {
   HTMLMotionProps as ReactMotionHTMLAttributes,
   MotionProps as ReactMotionProps,
-} from 'framer-motion';
+} from 'motion/react';
 import type {
   MotionHTMLAttributes as VueMotionHTMLAttributes,
   MotionProps as VueMotionProps,

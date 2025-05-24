@@ -1,3 +1,3 @@
-import { isValidMotionProp } from 'framer-motion';
+import { isValidMotionProp } from 'motion/react';
 
 export const isValidMotionHtmlProp = isValidMotionProp;

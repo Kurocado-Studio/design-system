@@ -20,11 +20,20 @@ export default defineConfig({
   esbuildPlugins: [vuePlugin()],
   external: [
     'vue',
+    '@vue/runtime-dom',
     'react',
     'react-dom',
-    '@storybook/react',
-    'framer-motion',
+    '@react-aria/button',
+    '@react-aria/textfield',
+    'motion',
+    'motion-v',
+    '@kurocado-studio/html-forms',
+    'lodash-es',
     'tailwindcss',
+    'tailwind-merge',
+    'tailwind-variants',
+    'tailwindcss-animate',
+    '@storybook/react',
   ],
   onSuccess: async (): Promise<void> => {
     const stdio = 'inherit';
