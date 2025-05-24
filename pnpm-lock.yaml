@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@kurocado-studio/styleguide':
         specifier: ^2.5.2
-        version: 2.5.2(qr5w4u4yycypkfipfm7o2dufkq)
+        version: 2.5.2(765g2oo3ygrf2uocp4wwlsbwde)
       commitlint:
         specifier: ^19.8.1
         version: 19.8.1(@types/node@22.15.21)(typescript@5.8.3)
@@ -159,6 +159,9 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      motion-v:
+        specifier: ^1.0.2
+        version: 1.0.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(vue@3.5.14(typescript@5.8.3))
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -255,10 +258,10 @@ importers:
     devDependencies:
       '@kurocado-studio/qa':
         specifier: 2.0.1
-        version: 2.0.1(tv6jebarn7cwutrcnnyszt7k6a)
+        version: 2.0.1(jthuhjj3rlnb6vq5jmepoukrp4)
       '@kurocado-studio/styleguide':
         specifier: ^2.5.2
-        version: 2.5.2(qr5w4u4yycypkfipfm7o2dufkq)
+        version: 2.5.2(765g2oo3ygrf2uocp4wwlsbwde)
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -9331,7 +9334,7 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
       zod: 3.25.23
 
-  '@kurocado-studio/qa@2.0.1(tv6jebarn7cwutrcnnyszt7k6a)':
+  '@kurocado-studio/qa@2.0.1(jthuhjj3rlnb6vq5jmepoukrp4)':
     dependencies:
       '@eslint/js': 9.26.0
       '@faker-js/faker': 9.8.0
@@ -9352,7 +9355,7 @@ snapshots:
       c8: 10.1.3
       dotenv: 16.5.0
       fast-text-encoding: 1.0.6
-      globals: 14.0.0
+      globals: 16.1.0
       jsdom: 26.1.0
       lodash-es: 4.17.21
       supertest: 7.1.1
@@ -9365,7 +9368,7 @@ snapshots:
       vitest: 3.1.4(@types/debug@4.1.12)(@types/node@22.15.21)(@vitest/browser@3.1.4)(jiti@2.4.2)(jsdom@26.1.0)(yaml@2.8.0)
       vitest-axe: 0.1.0(vitest@3.1.4)
 
-  '@kurocado-studio/styleguide@2.5.2(qr5w4u4yycypkfipfm7o2dufkq)':
+  '@kurocado-studio/styleguide@2.5.2(765g2oo3ygrf2uocp4wwlsbwde)':
     dependencies:
       '@babel/eslint-parser': 7.27.1(@babel/core@7.27.1)(eslint@9.26.0(jiti@2.4.2))
       '@commitlint/cli': 19.8.1(@types/node@22.15.21)(typescript@5.8.3)
@@ -9400,7 +9403,7 @@ snapshots:
       eslint-plugin-tsdoc: 0.2.17
       eslint-plugin-unicorn: 58.0.0(eslint@9.26.0(jiti@2.4.2))
       eslint-plugin-vitest: 0.5.4(@typescript-eslint/eslint-plugin@8.32.1(@typescript-eslint/parser@8.32.1(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.1.4)
-      globals: 14.0.0
+      globals: 16.1.0
       husky: 9.1.7
       lint-staged: 16.0.0
       lodash-es: 4.17.21
