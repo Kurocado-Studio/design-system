@@ -4,7 +4,6 @@ import { twMerge } from 'tailwind-merge';
 
 import {
   type TypographyComponentLayoutOptions,
-  composeAnimationProps,
   modelTypography,
 } from '../../../lib';
 import { MotionElement } from '../motion';
@@ -28,7 +27,6 @@ export function Typography<T extends keyof HTMLElementTagNameMap>(
       as={get(rest, ['as'], 'p')}
       className={twMerge(modelTypography(props), className)}
       {...rest}
-      {...composeAnimationProps(rest)}
     >
       {children}
     </MotionElement>

@@ -2,7 +2,6 @@ import { get } from 'lodash-es';
 
 import {
   DEFAULT_FADE_IN_SPEED,
-  DEFAULT_STAGGER_SPEED,
   DEFAULT_TRANSITION_DURATION,
   DEFAULT_VIEWPORT,
 } from './constants';
@@ -10,9 +9,9 @@ import { FadeInDirection } from './enums';
 import { type FadePropsOptions } from './types';
 
 export function createFadeProps<T extends keyof HTMLElementTagNameMap>(
-  payload: Partial<FadePropsOptions<T>>,
+  payload?: Partial<FadePropsOptions<T>>,
 ): Record<string, unknown> {
-  const { shouldReduceMotion, isInStaggerGroup } = payload;
+  const { shouldReduceMotion, isInStaggerGroup, staggerSpeed } = payload || {};
 
   const staggerOrder = get(payload, ['staggerOrder'], 0);
   const fadeInDirection = get(
@@ -57,16 +56,25 @@ export function createFadeProps<T extends keyof HTMLElementTagNameMap>(
     },
   };
 
+  const delay =
+    typeof staggerSpeed === 'number' && typeof staggerOrder === 'number'
+      ? staggerOrder * staggerSpeed
+      : undefined;
+
+  const initialView = {
+    initial: 'hidden',
+    whileInView: 'visible',
+    viewport,
+  };
+
   return {
     variants: get(variantMap, [fadeInDirection], variantMap.DEFAULT),
-    transition: {
-      duration: transitionDuration,
-      delay: staggerOrder * DEFAULT_STAGGER_SPEED,
-    },
-    ...(!isInStaggerGroup && {
-      initial: 'hidden',
-      whileInView: 'visible',
-      viewport,
+    ...(delay !== undefined && {
+      transition: {
+        duration: transitionDuration,
+        delay,
+      },
     }),
+    ...(!isInStaggerGroup && initialView),
   };
 }

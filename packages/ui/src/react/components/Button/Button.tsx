@@ -14,12 +14,14 @@ import { MotionElement } from '../motion';
 export type ButtonProps = React.PropsWithChildren<ButtonPropsBase>;
 
 export function Button(props: ButtonProps): React.ReactNode {
+  const { fullWidth: _, ...rest } = props;
+
   return (
     <MotionElement
       as='button'
       className={twMerge(buttonStyles(props), cursorStyles(props))}
       type={get(props, ['type'], 'button')}
-      {...createA11yButtonProps(props)}
+      {...createA11yButtonProps(rest)}
       {...composeAnimationProps(props)}
     >
       {props.children}
